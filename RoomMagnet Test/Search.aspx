@@ -69,13 +69,15 @@
 
                         <!--SEARCH BAR-->
                         <div class="col-md-6 searchBar">
-                            <input type="text" class="form-control form-control-lg" placeholder="search">
+                            <asp:TextBox ID="txtSearch" runat="server" class="form-control form-control-lg" placeholder="Search"></asp:TextBox>
+                            <%--<input type="text" class="form-control form-control-lg" placeholder="search">--%>
                         </div>
                         <!--END OF SEARCH BAR-->
 
 
                         <!--BEGINNING OF SEARCH BUTTON-->
-                        <button type="submit" class="btn btn-info">Search</button>
+                        <asp:Button ID="btnSearch" runat="server" Text="Search" class="btn btn-info"/>
+                        <%--<button type="submit" class="btn btn-info">Search</button>--%>
                         <!--END OF SERACH BUTTON-->
                     </div>
                 </div>

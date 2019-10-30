@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="CreateAccount.aspx.cs" Inherits="CreateAccount" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="HostAccount.aspx.cs" Inherits="HostAccount" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="container-fluid">
 
         <section>
@@ -55,7 +55,7 @@
                         <%--<input type="checkbox" class="form-check-input" id="exampleCheck1">--%>
                         <label class="form-check-label" for="agreement">Agreement to Terms &amp; Conditions</label>
                     </div>
-                    <asp:Button ID="btnCreateAccount" runat="server" Text="Create Account" type="submit" class="btn btn-info" OnClick="createAccountButton_Click"/>
+                    <asp:Button ID="btnCreateAccount" runat="server" Text="Create Account" type="submit" class="btn btn-info" OnClick="btnCreateAccount_Click"/>
                     <%--<button type="submit" class="btn btn-info" id="createAccountButton">Create Account</button>--%>
                     <%--</form>--%>
                 </div>

@@ -63,6 +63,7 @@
                         </li>
                     </ul>
 
+                    
                     <button class="nav-item btn loginBUTTON" type="button" data-toggle="modal" data-target="#loginModal">
                         <a class="nav-link" href="#">Login</a>
                     </button>
@@ -82,26 +83,30 @@
 
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <form>
+                        <%--<form>--%>
                             <div class="form-group">
                                 <label for="roommagnetInputEmail1">Email address</label>
-                                <input type="email" class="form-control form-control-lg" id="rommmagnetInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                <asp:TextBox ID="txtEmail" runat="server" class="form-control form-control-lg" aria-describedby="emailHelp" placeholder="Email"></asp:TextBox>
+                                <%--<input type="email" class="form-control form-control-lg" id="rommmagnetInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">--%>
                             </div>
 
                             <div class="form-group">
                                 <label for="roommagnetInputPassword1">Password</label>
-                                <input type="password" class="form-control form-control-lg" id="roommagnetInputPassword1" placeholder="Password">
+                                <asp:TextBox ID="txtPassword" runat="server" class="form-control form-control-lg" placeholder="Password"></asp:TextBox>
+                                <%--<input type="password" class="form-control form-control-lg" id="roommagnetInputPassword1" placeholder="Password">--%>
                             </div>
 
-                            <button type="submit" class="btn btn-md btn-info justify-content-center ">
+                            <asp:Button ID="btnLogin" runat="server" Text="Login" class="btn btn-md btn-info justify-content-center "/>
+                            <%--<button type="submit" class="btn btn-md btn-info justify-content-center ">
                                 <a href="#">Login </a>
-                            </button>
-                        </form>
+                            </button>--%>
+                        <%--</form>--%>
                     </div>
 
                     <!-- Modal footer -->
                     <div class="modal-footer">
                         <h5 class="modal-title">Don't  have a Account? Sign up today!</h5>
+                        <%--<asp:Button ID="btnCreateAccount" runat="server" Text="Create Account" type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" data-target="#chooseAccountType"/>--%>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" data-target="#chooseAccountType">
                             Create Account
                         </button>
@@ -122,11 +127,11 @@
 
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <form>
-                            <button type="submit" class="btn btn-info justify-content-center"><a href="CreateAccount.aspx">Host</a></button>
+                        <%--<form>--%>
+                            <button type="submit" class="btn btn-info justify-content-center"><a href="HostAccount.aspx">Host</a></button>
                             
-                                <button type="submit" class="btn btn-info justify-content-center"><a href="CreateAccount.aspx">Tenant</a></button>
-                        </form>
+                            <button type="submit" class="btn btn-info justify-content-center"><a href="TenantAccount.aspx">Tenant</a></button>
+                        <%--</form>--%>
                     </div>
                 </div>
             </div>
