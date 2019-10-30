@@ -30,6 +30,8 @@ public class Account
         setFirstName(FirstName);
         setMiddleName(MiddleName);
         setLastName(LastName);
+        setPhone(PhoneNumber);
+        setBday(BirthDate);
         setEmail(Email);
         setHouseNum(HouseNumber);
         setStreet(Street);
@@ -56,6 +58,14 @@ public class Account
     public void setLastName(string LastName)
     {
         this.LastName = LastName;
+    }
+    public void setPhone(string PhoneNumber)
+    {
+        this.PhoneNumber = PhoneNumber;
+    }
+    public void setBday(DateTime BirthDate)
+    {
+        this.BirthDate = BirthDate;
     }
     public void setEmail(string Email)
     {
@@ -109,9 +119,21 @@ public class Account
     {
         return this.FirstName;
     }
+    public string getMiddleName()
+    {
+        return this.MiddleName;
+    }
     public string getLastName()
     {
         return this.LastName;
+    }
+    public string getPhone()
+    {
+        return this.PhoneNumber;
+    }
+    public DateTime getBday()
+    {
+        return this.BirthDate;
     }
     public string getEmail()
     {
@@ -143,7 +165,7 @@ public class Account
     }
     public string getAccType()
     {
-        return this.AccountType
+        return this.AccountType;
     }
     public DateTime getModDate()
     {

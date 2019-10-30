@@ -31,14 +31,14 @@ public partial class CreateAccount : System.Web.UI.Page
         insert.Connection = sc;
 
         //create new student object
-        Account newAccount = new Account(txtPassword.Text, txtFN.Text, txtLN.Text, txtEmail.Text);
+        //Account newAccount = new Account(txtPassword.Text, txtFN.Text, txtLN.Text, txtEmail.Text);
 
-        insert.CommandText = "INSERT into simAcc VALUES (@password, @fName, @lName, @email);";
-        insert.Parameters.Add(new SqlParameter("@password", newAccount.getPassword()));
-        insert.Parameters.Add(new SqlParameter("@fName", newAccount.getFirstName()));
-        insert.Parameters.Add(new SqlParameter("@lName", newAccount.getLastName()));
-        insert.Parameters.Add(new SqlParameter("@email", newAccount.getEmail()));
-        insert.ExecuteNonQuery();
-        sc.Close();
+        //insert.CommandText = "INSERT into simAcc VALUES (@password, @fName, @lName, @email);";
+        //insert.Parameters.Add(new SqlParameter("@password", newAccount.getPassword()));
+        //insert.Parameters.Add(new SqlParameter("@fName", newAccount.getFirstName()));
+        //insert.Parameters.Add(new SqlParameter("@lName", newAccount.getLastName()));
+        //insert.Parameters.Add(new SqlParameter("@email", newAccount.getEmail()));
+        //insert.ExecuteNonQuery();
+        //sc.Close();
     }
 }
