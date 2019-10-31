@@ -8,40 +8,31 @@ using System.Web;
 /// </summary>
 public class Host
 {
-    private string Pet;
     private string BackCheck;
-    private string HostType;
-    public Host(string Pet, string BackCheck, string HostType)
+    private string HostReason;
+    public Host(string BackCheck, string HostReason)
     {
-        setPet(Pet);
         setBackCheck(BackCheck);
-        setHost(HostType);
+        setHostReason(HostReason);
     }
-
-    public void setPet(string Pet)
-    {
-        this.Pet = Pet;
-    }
+    
+    //Setters
     public void setBackCheck(string BackCheck)
     {
         this.BackCheck = BackCheck;
     }
-    public void setHost(string HostType)
+    public void setHostReason(string HostReason)
     {
-        this.HostType = HostType;
+        this.HostReason = HostReason;
     }
 
     //getter
-    public string getPet()
-    {
-        return this.Pet;
-    }
     public string getBackCheck()
     {
         return this.BackCheck;
     }
-    public string getHostType()
+    public string getHostReason()
     {
-        return this.HostType;
+        return this.HostReason;
     }
 }

@@ -63,7 +63,7 @@
                         </li>
                     </ul>
 
-                    
+                    <%--Navigation login button--%>
                     <button class="nav-item btn loginBUTTON" type="button" data-toggle="modal" data-target="#loginModal">
                         <a class="nav-link" href="#">Login</a>
                     </button>
@@ -93,11 +93,13 @@
                             <div class="form-group">
                                 <label for="roommagnetInputPassword1">Password</label>
                                 <asp:TextBox ID="txtPassword" runat="server" class="form-control form-control-lg" placeholder="Password"></asp:TextBox>
+                                
                                 <%--<input type="password" class="form-control form-control-lg" id="roommagnetInputPassword1" placeholder="Password">--%>
                             </div>
 
-                            <asp:Button ID="btnLogin" runat="server" Text="Login" class="btn btn-md btn-info justify-content-center "/>
-                            <%--<button type="submit" class="btn btn-md btn-info justify-content-center ">
+                            <asp:Button ID="btnLogin" runat="server" Text="Login" class="btn btn-md btn-info justify-content-center" OnClick="btnLogin_Click"/>
+                            <asp:Label ID="lblStatus" runat="server" Text="Label"></asp:Label>
+                        <%--<button type="submit" class="btn btn-md btn-info justify-content-center ">
                                 <a href="#">Login </a>
                             </button>--%>
                         <%--</form>--%>

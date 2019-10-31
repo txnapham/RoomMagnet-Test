@@ -8,7 +8,6 @@ using System.Web;
 /// </summary>
 public class Account
 {
-    private string Password;
     private string FirstName;
     private string MiddleName;
     private string LastName;
@@ -21,12 +20,11 @@ public class Account
     private string State;
     private string Zip;
     private string Country;
-    private string AccountType;
+    private int AccountType;
     private DateTime ModifiedDate;
     private int PermissionID;
-    public Account(string Password, string FirstName, string MiddleName, string LastName, string PhoneNumber, DateTime BirthDate, string Email, string HouseNumber, string Street, string City, string State, string Zip, string Country, string AccountType, DateTime ModifiedDate, int PermissionID)
+    public Account(string FirstName, string MiddleName, string LastName, string PhoneNumber, DateTime BirthDate, string Email, string HouseNumber, string Street, string City, string State, string Zip, string Country, int AccountType, DateTime ModifiedDate, int PermissionID)
     {
-        setPassword(Password);
         setFirstName(FirstName);
         setMiddleName(MiddleName);
         setLastName(LastName);
@@ -43,10 +41,7 @@ public class Account
         setModDate(ModifiedDate);
         setPID(PermissionID);
 }
-    public void setPassword(string password)
-    {
-        this.Password = password;
-    }
+    //setters
     public void setFirstName(string FirstName)
     {
         this.FirstName = FirstName;
@@ -95,7 +90,7 @@ public class Account
     {
         this.Country = Country;
     }
-    public void setAccType(string AccountType)
+    public void setAccType(int AccountType)
     {
         this.AccountType = AccountType;
     }
@@ -111,10 +106,6 @@ public class Account
 
 
     //getter
-    public string getPassword()
-    {
-        return this.Password;
-    }
     public string getFirstName()
     {
         return this.FirstName;
@@ -163,7 +154,7 @@ public class Account
     {
         return this.Country;
     }
-    public string getAccType()
+    public int getAccType()
     {
         return this.AccountType;
     }
