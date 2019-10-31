@@ -1,79 +1,44 @@
 ﻿using System;
 
-public partial class Tenant : Account
+public partial class Tenant
 {
     //Attributes
-    private int TenantID;
-    private String PetFriendly;
-    private String ChoreFriendly;
+    private int AccountID;
     private String BackgroundStatus;
-    private String TenantType;
+    private String TenantReason;
+    
     //Constructor
-	public Tenant(int AccountID, String Password, String FirstName, String MiddleName, String LastName, String PhoneNumber, String BirthDate, String Email,
-                   String HomeNumber, String Street, String City, String HomeState, String Zip, String Country, int PermissionID,int TenantID,String PetFriendly
-                  ,String ChoreFriendly,String BackgroundStatus,String TenantType)
+	public Tenant(int AccountID, String BackgroundStatus, String TenantReason)
 	{
+
         setAccountID(AccountID);
-        setPassword(Password);
-        setFirstName(FirstName);
-        setMiddleName(MiddleName);
-        setLastName(LastName);
-        setPhoneNumber(PhoneNumber);
-        setBirthDate(BirthDate);
-        setEmail(Email);
-        setHomeNumber(HomeNumber);
-        setStreet(Street);
-        setCity(City);
-        setHomeState(HomeState);
-        setZip(Zip);
-        setCountry(Country);
-        setPermissionID(PermissionID);
-        setTenantId(TenantID);
-        setPetFriendly(PetFriendly);
-        setChoreFriendly(ChoreFriendly);
         setBackgroundStatus(BackgroundStatus);
-        setHostType(TenantType);
+        setTenantReason(TenantReason);
     }
     //Setters
-    public void setTenantId(int TenantID)
+    public void setAccountID(int AccountID)
     {
-        this.TenantID = TenantID;
-    }
-    public void setPetFriendly(String PetFriendly)
-    {
-        this.PetFriendly = PetFriendly;
-    }
-    public void setChoreFriendly(String ChoreFriendly)
-    {
-        this.ChoreFriendly = ChoreFriendly;
+        this.AccountID = AccountID;
     }
     public void setBackgroundStatus(String BackgroundStatus)
     {
         this.BackgroundStatus = BackgroundStatus;
     }
-    public void setTenantType(String TenantType)
+    public void setTenantReason(String TenantReason)
     {
-        this.TenantType = TenantType;
+        this.TenantReason = TenantReason;
     }
     //Getters
-    public int getHostId()
+    public int getAccountID()
     {
-        return this.HostID;
-    }
-    public String getPetFriendly()
-    {
-        return this.PetFriendly;
-    }
-    public String getChoreFriendly()
-    {
-        return this.ChoreFriendly;
+        return this.AccountID;
     }
     public String getBackgroundStatus()
     {
-        this.BackgroundStatus;
+        return this.BackgroundStatus;
     }
-    public String getHostType()
+    public String getTenantReason()
     {
-        this.HostType;
+        return this.TenantReason;
     }
 }

@@ -41,7 +41,6 @@ public class Lease
         this.leaseID = leaseID;
     }
 
-
     //roomID
     public int getRoomID()
     {
@@ -116,6 +115,4 @@ public class Lease
     {
         this.modifiedDate = modifiedDate;
     }
-
-
 }

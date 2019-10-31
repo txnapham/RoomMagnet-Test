@@ -51,32 +51,32 @@ public class Payment
         this.LeaseID = LeaseID;
     }
     //Getters
-    public int setPaymentID()
+    public int getPaymentID()
     {
-        this.PaymentID;
+        return this.PaymentID;
     }
-    public String setPaymentMethod()
+    public String getPaymentMethod()
     {
-        this.PaymentMethod;
+        return this.PaymentMethod;
     }
-    public String setPaymentDate()
+    public String getPaymentDate()
     {
-        this.PaymentDate;
+        return this.PaymentDate;
     }
-    public int setPaymentAmount()
+    public int getPaymentAmount()
     {
-        this.PaymentAmount;
+        return this.PaymentAmount;
     }
-    public int setTenantID()
+    public int getTenantID()
     {
-        this.TenantID;
+        return this.TenantID;
     }
-    public int setHostID()
+    public int getHostID()
     {
-        this.HostID;
+        return this.HostID;
     }
-    public int setLeaseID()
+    public int getLeaseID()
     {
-        this.LeaseID;
+        return this.LeaseID;
     }
 }

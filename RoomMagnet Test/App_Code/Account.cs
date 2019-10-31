@@ -23,6 +23,7 @@ public class Account
     private int AccountType;
     private DateTime ModifiedDate;
     private int PermissionID;
+
     public Account(string FirstName, string MiddleName, string LastName, string PhoneNumber, DateTime BirthDate, string Email, string HouseNumber, string Street, string City, string State, string Zip, string Country, int AccountType, DateTime ModifiedDate, int PermissionID)
     {
         setFirstName(FirstName);
@@ -40,7 +41,8 @@ public class Account
         setAccType(AccountType);
         setModDate(ModifiedDate);
         setPID(PermissionID);
-}
+    }
+
     //setters
     public void setFirstName(string FirstName)
     {
@@ -102,8 +104,6 @@ public class Account
     {
         this.PermissionID = PermissionID;
     }
-
-
 
     //getter
     public string getFirstName()

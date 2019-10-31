@@ -10,6 +10,7 @@ public class Host
 {
     private string BackCheck;
     private string HostReason;
+
     public Host(string BackCheck, string HostReason)
     {
         setBackCheck(BackCheck);

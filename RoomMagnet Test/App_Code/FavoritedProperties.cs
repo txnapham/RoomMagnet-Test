@@ -9,6 +9,7 @@ public class FavoritedProperties
     private int favPropertyID;
     private int tenantID;
     private int propertyID;
+
     public FavoritedProperties(int favPropertyID, int tenantID, int propertyID)
     {
         setFavPropertyID(favPropertyID);

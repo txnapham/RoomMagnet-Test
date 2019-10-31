@@ -113,8 +113,6 @@ public class Property
         return this.zip;
     }
 
-
-
     //localPriceRangeLow
     public String getLocalPriceRangeLow()
     {
