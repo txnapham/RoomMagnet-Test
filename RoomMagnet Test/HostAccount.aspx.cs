@@ -16,7 +16,7 @@ public partial class HostAccount : System.Web.UI.Page
     protected void btnCreateAccount_Click(object sender, EventArgs e)
     {
         System.Data.SqlClient.SqlConnection sc = new System.Data.SqlClient.SqlConnection();
-        sc.ConnectionString = @"Server =  aa1evano00xv2xb.cqpnea2xsqc1.us-east-1.rds.amazonaws.com; Database=roommagnetdb; Trusted_Connection=Yes;";
+        sc.ConnectionString = "server=aa1evano00xv2xb.cqpnea2xsqc1.us-east-1.rds.amazonaws.com;database=roommagnetdb;uid=admin;password=Skylinejmu2019;";
         sc.Open();
         System.Data.SqlClient.SqlCommand checkEmailCount = new System.Data.SqlClient.SqlCommand();
         System.Data.SqlClient.SqlCommand checkAcctType = new System.Data.SqlClient.SqlCommand();
