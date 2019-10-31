@@ -10,4 +10,10 @@ public partial class Search : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
     }
+
+    [System.Web.Services.WebMethod]
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+    
+    }
 }

@@ -4,23 +4,36 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
      <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
+
       #map {
-        height: 400px;
-        width: 800px;
+        height: 600px;
+        width: 1200px;
       }
     </style>
     
-    <div id="map"></div>
+    <div align="center">
+        <div id="map">
+        </div>
+    </div>
+
     <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
-      }
+        var map;
+        function initMap()
+        {
+            var latitude = 38.4496;
+            var longitude = -78.8689;
+            map = new google.maps.Map(document.getElementById('map'),
+            {
+                center: { lat: latitude, lng: longitude },
+                zoom: 8
+            });
+        }
+
+        function newLocation(newLat, newLng)
+        {
+            map.setCenter({ newLat, newLng })
+            return false;
+        }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNcHEQpOGd14rKFMgFTgbH-fZS2dD1UBw&callback=initMap"
     async defer></script>
@@ -97,7 +110,7 @@
 
 
                         <!--BEGINNING OF SEARCH BUTTON-->
-                        <asp:Button ID="btnSearch" runat="server" Text="Search" class="btn btn-info"/>
+                        <asp:Button ID="btnSearch" runat="server" Text="Search" class="btn btn-info" OnClick="btnSearch_Click" onClientClick="newLocation(0,0)"/>
                         <%--<button type="submit" class="btn btn-info">Search</button>--%>
                         <!--END OF SERACH BUTTON-->
                     </div>
