@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 
 public partial class HostAccount : System.Web.UI.Page
 {
+    public static DateTime ModifiedDate = DateTime.Now;
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -30,7 +31,7 @@ public partial class HostAccount : System.Web.UI.Page
         int acctTypeCount;
 
         //create new account and host object
-        Account newAccount = new Account(txtFN.Text, "T", txtLN.Text, "123-456-7890", DateTime.Parse("01/11/1997"), txtEmail.Text, "800", "South Main St", "Harrisonburg", "VA", "22025", "US", Int32.Parse("2"), DateTime.Parse("10/29/2019"), Int32.Parse("2"));
+        Account newAccount = new Account(txtFN.Text, txtMN.Text, txtLN.Text, txtPhone.Text, DateTime.Parse(txtBday.Text), txtEmail.Text, txtHouseNum.Text, txtStreet.Text, txtCity.Text, ddState.SelectedValue, txtZip.Text, "US", Int32.Parse("2"), ModifiedDate, Int32.Parse("2"));
         Host newHost = new Host("N", "Retiree");
 
         checkEmailCount.CommandText = "SELECT COUNT(*) FROM ACCOUNT WHERE EMAIL = @emailCheck";

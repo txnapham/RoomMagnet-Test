@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap');
+// See node_modules/bootstrap/scss/_variables.scss for more variables that you can chage
+// When running Sass, destination file should be style.css
+
+// Variable Overrides 
+// COLORS
+$theme-colors: (
+  "primary": #5F6062,
+    "info": #94D8E9,
+  "tacotuesday": #900
+);
+// other theme-colors variables are: primary, secondary, success, info, warning, danger, light, dark
+
+$body-bg: #fff;
+$body-color: #000;
+$link-color: #ffffff;
+$link-decoration: none;
+$link-hover-color: gray;
+$link-hover-decoration: underline;
+
+// GRID VARIABLES
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+
+// FONTS
+
+$font-family-sans-serif:'Montserrat', sans-serif;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-size-base: 1.1rem;
+
+$headings-font-family:'Roboto', sans-serif;
+
+//NAVIGATION
+$nav-pills-link-active-bg: #94D8E9;
+
+
+$custom-checkbox-indicator-indeterminate-bg:#94D8E9;
+$component-active-bg: #94D8E9;
+
+
+
+
+
+.btn-info{
+    color: #ffffff !important;
+    background-color: #94D8E0;
+    border-color: #94D8E0;
+}
+
+.loginBUTTON{
+
+    background-color: none;
+    font-size: 20px;
+
+}
+
+
+nav{
+    font-size:20px;
+    .img-fluid{
+        max-width: 60%;
+        height: auto;
+    }
+    .loginBUTTON{
+        font-size:20px;
+    }
+}
+
+
+footer{
+    margin-top: 20px;
+}
+
+//INDEX HEADER IMAGE
+header{
+    margin-top:90px;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    padding:250px;
+    background-image: url(../images/architecture-concrete-daylight-2102587.jpg);
+
+    background-size: cover; 
+    color:#fff;
+    background-position: center;
+    
+    //SEARCH BAR  
+    form{
+        .searchBar{
+            padding:none;
+            //margin-right: none;
+            //margin-left:none;
+        }
+    }
+    
+}
+
+
+
+
+//GENERAL CARD STYLES
+.cardLinks{
+    color:#000;
+}
+
+a.cardLinks{
+    text-decoration: none;
+}
+
+
+
+
+//RECENTLY ADDEDCARDS
+.recentlyAddedCards{
+    padding-left: 17px;
+    //padding-top
+}
+.cardWIDTH
+{
+    max-width: 20rem;
+}
+
+.favoriteHeartButton{
+    margin-right: 80px;
+}
+
+
+
+// CREATE ACCOUNT S
+.creatAccountWelcome{
+    margin-top:130px;    
+    margin-bottom: 20px;
+}
+
+.createAccountSIDEImage
+{
+    background-image: url(../images/brina-blum-nWX4pKwzLoE-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.formPage{
+    padding-top:10px;
+}
+
+
+//CREATE ACCOUNT Filter Page
+.createAccountFilters{
+    margin-top:110px;
+}
+
+a.doLaterLink{
+    color:#94D8E9;
+    font-weight: bold;
+}
+
+.headingsetPrefs{
+    padding-top:10px;
+}
+
+
+
+//SEARCH PAGE STYLE
+
+.searchPageBodyContent{
+    margin-top:180px;
+    margin-left:0;
+    margin-right:0;
+}
+
+.pagination{
+    .page-link{
+        color:#000;
+    }
+}
+
+
+
+
+//DASHBOARD
+.userDash
+{
+    margin-top:99px;
+    margin-bottom: 30px;
+    margin-left: 0 auto;
+    margin-right: 0 auto;  
+    
+    border: 1px solid #5F6062;
+}
+
+.messageCenter{
+height:433px;
+    align-content: center;
+}
+
+.messagetext{
+    padding-bottom: 200px;
+}
+
+
+//tenant dash
+a.tenantdashlist{
+ color:#000;   
+}
+
+
+
+
+//ABOUT PAGE
+.aboutPage{
+    margin-top:99px;
+}
+
+
+
+
+//Property Detail Page
+.searchPageDetailsearchBarandBread{
+    margin-top:179px;
+    margin-left:0;
+    margin-right:0;
+    margin-bottom:-79px;
+}
+
+
+.propertyPageDetailTitle{
+    border: 1px solid #5F6062;
+}
+
+//MessageBox on Property Detail
+.messagebox{
+    height: 400px;
+}
+
+textarea#messagePerson.form-control{
+    margin-top:0px;
+    margin-bottom: 0px;
+    min-height: 300px;
+}
+
+
+
+
+//BREADCRUMBS
+nav{
+.breadcrumb{
+    background-color: transparent;
+    }  
+    .breadLink{
+        color: #94D8E9;
+    }
+    .breadcrumb-item.active{
+        color: #5F6062;
+    }
+}
+
+
+.modal-title{
+    text-align: center;
+}
+
+
+
+//ICONS
+.homepageIcontext{
+padding-top: 20px;
+    align-content: center;
+    
+}
+
+
+.searchpageWHOLE{
+    margin: 0;
+}
+
+
+.blueArrow{
+    padding-top: 40px;
+    padding-right:10px;
+    padding-left:50px;
+    margin-right:-170px !important;
+    margin-left: 65px;
+}
+
+
+//UserPrefences
+.switchwrapper{
+    display: inline;
+    margin:24px 24px 24px 24px;
+    postion:relative;
+}
+
+.switchwrapper div{
+    display: inline-block;
+    line-height:60px;}
+
+
+/* The switch - the box around the slider */
+.switch {
+vertical-align: middle;    
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+    vertical-align: middle;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #94D8E9;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #94D8E9;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+.progress{
+    width: 60%;
+}
+
+body > div.container-fluid.userDash.mb-5.pb-3 > div > div > div{
+    color:#000;
+}
+
+
+
+
+
+
+
+
+// MUST IMPORT THIS AT THE BOTTOM OF THE CUSTOM SASS FILE
+// Path must be accurate to the node_modules folder within 
+// the main project folder
+// ///////////////////////////////////////////////////////
+// Bootstrap Sass Imports
+@import "../node_modules/bootstrap/scss/bootstrap";
+
