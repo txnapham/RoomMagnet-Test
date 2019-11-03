@@ -42,7 +42,7 @@
 
                 <div class="form-row">
                     <div class="form-group col-md-7">
-                        <asp:TextBox ID="txtcity" runat="server" class="form-control form-control-lg" placeholder="City"></asp:TextBox>
+                        <asp:TextBox ID="txtCity" runat="server" class="form-control form-control-lg" placeholder="City"></asp:TextBox>
                     </div>
 
 
@@ -148,7 +148,7 @@
                     <label class="form-check-label" for="exampleCheck1">Agreement to Terms &amp; Conditions</label>
                 </div>
 
-                <asp:Button ID="btnCreateAccount" runat="server" Text="Create Account" class="btn btn-info" href="TenantAccountCategories.aspx"/>
+                <asp:Button ID="btnCreateAccount" runat="server" Text="Create Account" class="btn btn-info" href="TenantAccountCategories.aspx" OnClick="btnCreateAccount_Click"/>
 
                 <%--<a class="btn btn-info" id="createAccountButton" href="tenant-create-account-categories.html">Create Account</a>--%>
                 <%--should only go to next page (host category when creation is successful--%>
