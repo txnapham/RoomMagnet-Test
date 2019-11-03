@@ -26,7 +26,6 @@ public partial class HostAccount : System.Web.UI.Page
         checkAcctType.Connection = sc;
         insert.Connection = sc;
 
-
         int emailCount;
         int acctTypeCount;
 
@@ -121,7 +120,7 @@ public partial class HostAccount : System.Web.UI.Page
             else
             {
                 Label1.Text = "Error";
-
+                sc.Close();
             }
         }
     }
