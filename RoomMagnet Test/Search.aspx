@@ -380,6 +380,13 @@
         </section>
 
         <!--BEGINNING OF HOUSE LISTINGS-->
+                            <asp:GridView ID="PropertyUpdateTable" runat="server" AutoGenerateColumns="False" DataKeyNames="PropertyID">
+                        <Columns>
+                            <asp:BoundField DataField="PropertyID" HeaderText="PropertyID"/>
+                            <asp:BoundField DataField="City" HeaderText="City"/>
+                            <asp:BoundField DataField="State" HeaderText="State"/>
+                        </Columns>
+                    </asp:GridView>
         <section>
             <div class="row px-3 py-3">
                 <div class="col-md-3">
