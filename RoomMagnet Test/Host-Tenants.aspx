@@ -27,7 +27,7 @@
         <section>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="host-dashboard.html" class="breadLink">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="HostDashboard.aspx" class="breadLink">Dashboard</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Tenants</li>
                 </ol>
             </nav>
