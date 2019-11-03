@@ -338,7 +338,21 @@
 
                         <!--SEARCH BAR-->
                         <div class="col-md-6 searchBar">
-                            <asp:TextBox ID="txtSearch" runat="server" class="form-control form-control-lg" placeholder="search"></asp:TextBox>
+                            <link rel="stylesheet" href="awesomplete.css" />
+                            <script src="awesomplete.js" async></script>
+                            <asp:TextBox ID="txtSearch" runat="server" class="awesomplete" data-list="#mylist" placeholder="search"></asp:TextBox>
+                            <ul id="mylist">
+	                            <li>Washington,DC</li>
+	                            <li>Fairfax,VA</li>
+	                            <li>McLean,VA</li>
+	                            <li>Alexandria,VA</li>
+	                            <li>Arlington,VA</li>
+	                            <li>Vienna,VA</li>
+	                            <li>Chantilly,VA</li>
+                                <li>Baltimore,MD</li>
+	                            <li>Centreville,VA</li>
+	                            <li>Falls Church,VA</li>
+                            </ul>
                         </div>
                         <!--END OF SEARCH BAR-->
 
