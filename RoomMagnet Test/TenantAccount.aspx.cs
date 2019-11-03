@@ -25,7 +25,6 @@ public partial class TenantAccount : System.Web.UI.Page
         checkAcctType.Connection = sc;
         insert.Connection = sc;
 
-
         int emailCount;
         int acctTypeCount;
 
@@ -48,7 +47,7 @@ public partial class TenantAccount : System.Web.UI.Page
             if (emailCount == 1 && acctTypeCount == 0)
             {
                 insert.CommandText = "INSERT into Account VALUES (@fName, @mName, @lName, @phone, @bday, @email, @HouseNbr, @street, @city, @state, @zip, @country, @AccType, @ModDate, @PID); " +
-                    "INSERT into Host VALUES(@@Identity, @BackCheck, @HostReason);" +
+                    "INSERT into Tenant VALUES(@@Identity, @BackCheck, @HostReason);" +
                     "INSERT into Password VALUES((SELECT MAX(HostID) from HostID), @email, @password);";
 
                 //Insert into ACCOUNT
@@ -61,66 +60,61 @@ public partial class TenantAccount : System.Web.UI.Page
                 insert.Parameters.Add(new SqlParameter("@HouseNbr", newTenant.getHouseNumber()));
                 insert.Parameters.Add(new SqlParameter("@street", newTenant.getStreet()));
                 insert.Parameters.Add(new SqlParameter("@city", newTenant.getCity()));
-                insert.Parameters.Add(new SqlParameter("@state", newHost.getState()));
-                insert.Parameters.Add(new SqlParameter("@zip", newHost.getZip()));
-                insert.Parameters.Add(new SqlParameter("@country", newHost.getCountry()));
-                insert.Parameters.Add(new SqlParameter("@AccType", newHost.getAccType()));
-                insert.Parameters.Add(new SqlParameter("@ModDate", newHost.getModDate()));
-                insert.Parameters.Add(new SqlParameter("@PID", newHost.getPID()));
+                insert.Parameters.Add(new SqlParameter("@state", newTenant.getState()));
+                insert.Parameters.Add(new SqlParameter("@zip", newTenant.getZip()));
+                insert.Parameters.Add(new SqlParameter("@country", newTenant.getCountry()));
+                insert.Parameters.Add(new SqlParameter("@AccType", newTenant.getAccType()));
+                insert.Parameters.Add(new SqlParameter("@ModDate", newTenant.getModDate()));
+                insert.Parameters.Add(new SqlParameter("@PID", newTenant.getPID()));
 
                 //Insert into HOST
-                insert.Parameters.Add(new SqlParameter("@BackCheck", newHost.getBackCheck()));
-                insert.Parameters.Add(new SqlParameter("@HostReason", newHost.getHostReason()));
+                insert.Parameters.Add(new SqlParameter("@BackCheck", newTenant.getBackgroundStatus()));
+                insert.Parameters.Add(new SqlParameter("@HostReason", newTenant.getTenantReason()));
 
                 //Insert into PASSWORD
                 insert.Parameters.Add(new SqlParameter("@password", PasswordHash.HashPassword(txtPassword.Text))); // hash entered password
 
                 insert.ExecuteNonQuery();
-
-                Label1.Text = "Success";
 
                 sc.Close();
             }
             else if (emailCount == 0)
             {
                 insert.CommandText = "INSERT into Account VALUES (@fName, @mName, @lName, @phone, @bday, @email, @HouseNbr, @street, @city, @state, @zip, @country, @AccType, @ModDate, @PID); " +
-                   "INSERT into Host VALUES(@@Identity, @BackCheck, @HostReason);" +
-                   "INSERT into Password VALUES((SELECT MAX(HostID) from HostID), @email, @password);";
+                     "INSERT into Tenant VALUES(@@Identity, @BackCheck, @HostReason);" +
+                     "INSERT into Password VALUES((SELECT MAX(HostID) from HostID), @email, @password);";
 
                 //Insert into ACCOUNT
-                insert.Parameters.Add(new SqlParameter("@fName", newHost.getFirstName()));
-                insert.Parameters.Add(new SqlParameter("@mName", newHost.getMiddleName()));
-                insert.Parameters.Add(new SqlParameter("@lName", newHost.getLastName()));
-                insert.Parameters.Add(new SqlParameter("@phone", newHost.getPhone()));
-                insert.Parameters.Add(new SqlParameter("@bday", newHost.getBday()));
-                insert.Parameters.Add(new SqlParameter("@email", newHost.getEmail()));
-                insert.Parameters.Add(new SqlParameter("@HouseNbr", newHost.getHouseNumber()));
-                insert.Parameters.Add(new SqlParameter("@street", newHost.getStreet()));
-                insert.Parameters.Add(new SqlParameter("@city", newHost.getCity()));
-                insert.Parameters.Add(new SqlParameter("@state", newHost.getState()));
-                insert.Parameters.Add(new SqlParameter("@zip", newHost.getZip()));
-                insert.Parameters.Add(new SqlParameter("@country", newHost.getCountry()));
-                insert.Parameters.Add(new SqlParameter("@AccType", newHost.getAccType()));
-                insert.Parameters.Add(new SqlParameter("@ModDate", newHost.getModDate()));
-                insert.Parameters.Add(new SqlParameter("@PID", newHost.getPID()));
+                insert.Parameters.Add(new SqlParameter("@fName", newTenant.getFirstName()));
+                insert.Parameters.Add(new SqlParameter("@mName", newTenant.getMiddleName()));
+                insert.Parameters.Add(new SqlParameter("@lName", newTenant.getLastName()));
+                insert.Parameters.Add(new SqlParameter("@phone", newTenant.getPhone()));
+                insert.Parameters.Add(new SqlParameter("@bday", newTenant.getBday()));
+                insert.Parameters.Add(new SqlParameter("@email", newTenant.getEmail()));
+                insert.Parameters.Add(new SqlParameter("@HouseNbr", newTenant.getHouseNumber()));
+                insert.Parameters.Add(new SqlParameter("@street", newTenant.getStreet()));
+                insert.Parameters.Add(new SqlParameter("@city", newTenant.getCity()));
+                insert.Parameters.Add(new SqlParameter("@state", newTenant.getState()));
+                insert.Parameters.Add(new SqlParameter("@zip", newTenant.getZip()));
+                insert.Parameters.Add(new SqlParameter("@country", newTenant.getCountry()));
+                insert.Parameters.Add(new SqlParameter("@AccType", newTenant.getAccType()));
+                insert.Parameters.Add(new SqlParameter("@ModDate", newTenant.getModDate()));
+                insert.Parameters.Add(new SqlParameter("@PID", newTenant.getPID()));
 
                 //Insert into HOST
-                insert.Parameters.Add(new SqlParameter("@BackCheck", newHost.getBackCheck()));
-                insert.Parameters.Add(new SqlParameter("@HostReason", newHost.getHostReason()));
+                insert.Parameters.Add(new SqlParameter("@BackCheck", newTenant.getBackgroundStatus()));
+                insert.Parameters.Add(new SqlParameter("@HostReason", newTenant.getTenantReason()));
 
                 //Insert into PASSWORD
                 insert.Parameters.Add(new SqlParameter("@password", PasswordHash.HashPassword(txtPassword.Text))); // hash entered password
 
                 insert.ExecuteNonQuery();
 
-                Label1.Text = "Success";
-
                 sc.Close();
             }
             else
             {
-                Label1.Text = "Error";
-
+                sc.Close();
             }
         }
     }
