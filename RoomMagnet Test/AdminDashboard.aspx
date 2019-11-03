@@ -66,7 +66,7 @@
                                     </ul>
 
 
-                                    <a href="intent-to-lease.html" class="btn btn-info">View more</a> 
+                                    <a href="IntentToLease.aspx" class="btn btn-info">View more</a> 
                                 </div>
                             </div> 
 

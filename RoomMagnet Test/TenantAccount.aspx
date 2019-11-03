@@ -33,13 +33,16 @@
                 </div>
 
                 <div class="form-group">
-                    <asp:TextBox ID="txtStreet" runat="server" class="form-control form-control-lg" placeholder="1234 Main St"></asp:TextBox>
-                    <small id="addressDisclosure" class="form-text text-muted">*We will never share your address until you begin the lease process.</small>
+                    <asp:TextBox ID="txtHouseNum" runat="server" class="form-control form-control-lg" placeholder="House Number"></asp:TextBox>
+                </div>
+
+                <div class="form-group">
+                    <asp:TextBox ID="txtStreet" runat="server" class="form-control form-control-lg" placeholder="Street"></asp:TextBox>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-7">
-                        <asp:TextBox ID="txtcity" runat="server" class="form-control form-control-lg" placeholder="City"></asp:TextBox>
+                        <asp:TextBox ID="txtCity" runat="server" class="form-control form-control-lg" placeholder="City"></asp:TextBox>
                     </div>
 
 
@@ -106,6 +109,14 @@
                 </div>
 
                 <div class="form-group">
+                    <asp:TextBox ID="txtCountry" runat="server" class="form-control form-control-lg" placeholder="Country"></asp:TextBox>
+                </div>
+
+                <div class="form-group">
+                    <small id="addressDisclosure" class="form-text text-muted">*We will never share your address until you begin the lease process.</small>
+                </div>
+
+                <div class="form-group">
                     <asp:TextBox ID="txtPhone" runat="server" class="form-control form-control-lg" placeholder="Phone Number (XXX-XXX-XXXX)"></asp:TextBox>
                 </div>
 
@@ -137,7 +148,7 @@
                     <label class="form-check-label" for="exampleCheck1">Agreement to Terms &amp; Conditions</label>
                 </div>
 
-                <asp:Button ID="btnCreateAccount" runat="server" Text="Create Account" class="btn btn-info" href="TenantAccountCategories.aspx"/>
+                <asp:Button ID="btnCreateAccount" runat="server" Text="Create Account" class="btn btn-info" href="TenantAccountCategories.aspx" OnClick="btnCreateAccount_Click"/>
 
                 <%--<a class="btn btn-info" id="createAccountButton" href="tenant-create-account-categories.html">Create Account</a>--%>
                 <%--should only go to next page (host category when creation is successful--%>
