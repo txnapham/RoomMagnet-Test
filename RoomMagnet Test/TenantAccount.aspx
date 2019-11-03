@@ -33,8 +33,11 @@
                 </div>
 
                 <div class="form-group">
-                    <asp:TextBox ID="txtStreet" runat="server" class="form-control form-control-lg" placeholder="1234 Main St"></asp:TextBox>
-                    <small id="addressDisclosure" class="form-text text-muted">*We will never share your address until you begin the lease process.</small>
+                    <asp:TextBox ID="txtHouseNum" runat="server" class="form-control form-control-lg" placeholder="House Number"></asp:TextBox>
+                </div>
+
+                <div class="form-group">
+                    <asp:TextBox ID="txtStreet" runat="server" class="form-control form-control-lg" placeholder="Street"></asp:TextBox>
                 </div>
 
                 <div class="form-row">
@@ -103,6 +106,14 @@
                     <div class="form-group col-md-2">
                         <asp:TextBox ID="txtZip" runat="server" class="form-control form-control-lg" placeholder="Zip"></asp:TextBox>
                     </div>
+                </div>
+
+                <div class="form-group">
+                    <asp:TextBox ID="txtCountry" runat="server" class="form-control form-control-lg" placeholder="Country"></asp:TextBox>
+                </div>
+
+                <div class="form-group">
+                    <small id="addressDisclosure" class="form-text text-muted">*We will never share your address until you begin the lease process.</small>
                 </div>
 
                 <div class="form-group">

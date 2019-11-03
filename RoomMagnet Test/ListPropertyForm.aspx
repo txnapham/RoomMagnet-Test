@@ -52,25 +52,11 @@
             <section class="pt-3">
                 <form>
                     <div class="form-group">
-                        <asp:TextBox ID="txtFN" runat="server" class="form-control form-control-lg" aria-describedby="FirstName" placeholder="First Name"></asp:TextBox>
+                        <asp:TextBox ID="txtHouseNum" runat="server" class="form-control form-control-lg" placeholder="House Number"></asp:TextBox>
                     </div>
 
                     <div class="form-group">
-                        <asp:TextBox ID="txtMN" runat="server" class="form-control form-control-lg" aria-describedby="MiddleName" placeholder="Middle Name"></asp:TextBox>
-                    </div>
-
-
-                    <div class="form-group">
-                        <asp:TextBox ID="txtLN" runat="server" class="form-control form-control-lg" aria-describedby="LastName" placeholder="Last Name"></asp:TextBox>
-                    </div>
-
-                    <div class="form-group">
-                        <asp:TextBox ID="txtBday" runat="server" class="form-control form-control-lg" placeholder="Date (MM/DD/YYYY)"></asp:TextBox>
-                    </div>
-
-                    <div class="form-group">
-                        <asp:TextBox ID="txtStreet" runat="server" class="form-control form-control-lg" placeholder="1234 Main St"></asp:TextBox>
-                        <small id="addressDisclosure" class="form-text text-muted">*We will never share your address until you begin the lease process.</small>
+                        <asp:TextBox ID="txtStreet" runat="server" class="form-control form-control-lg" placeholder="Street"></asp:TextBox>
                     </div>
 
 
@@ -142,10 +128,14 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <asp:TextBox ID="txtCountry" runat="server" class="form-control form-control-lg" placeholder="Country"></asp:TextBox>
+                    </div>
 
                     <div class="form-group">
-                        <asp:TextBox ID="txtPhone" runat="server" class="form-control form-control-lg" placeholder="Phone Number (XXX-XXX-XXXX)"></asp:TextBox>
+                        <small id="addressDisclosure" class="form-text text-muted">*We will never share your address until you begin the lease process.</small>
                     </div>
+
 
                 </form>
             </section>
@@ -527,12 +517,12 @@
 
 
                 <div class="form-group form-check pt-4">
-                    <asp:checkbox id="cbBackCheck" runat="server" class="form-check-input" />
+                    <asp:CheckBox ID="cbBackCheck" runat="server" class="form-check-input" />
                     <label class="form-check-label" for="exampleCheck1">Perform background check now</label>
                 </div>
 
                 <div class="form-group form-check">
-                    <asp:checkbox id="cbAgreement" runat="server" class="form-check-input" />
+                    <asp:CheckBox ID="cbAgreement" runat="server" class="form-check-input" />
                     <label class="form-check-label" for="exampleCheck1">Agreement to Terms &amp; Conditions</label>
                 </div>
             </form>
