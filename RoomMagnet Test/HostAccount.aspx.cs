@@ -16,8 +16,6 @@ public partial class HostAccount : System.Web.UI.Page
 
     protected void btnCreateAccount_Click(object sender, EventArgs e)
     {
-        Label1.Text = "hi";
-
         System.Data.SqlClient.SqlConnection sc = new System.Data.SqlClient.SqlConnection();
         sc.ConnectionString = "server=aa1evano00xv2xb.cqpnea2xsqc1.us-east-1.rds.amazonaws.com;database=roommagnetdb;uid=admin;password=Skylinejmu2019;";
         sc.Open();
