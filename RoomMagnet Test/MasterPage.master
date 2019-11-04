@@ -1,5 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
+
 <!DOCTYPE html>
 
 <html>
@@ -19,6 +20,8 @@
     <!--FontAwesome icons-->
     <script src="https://kit.fontawesome.com/78c52ebafc.js" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" data-auto-replace-svg="nest"></script>
+
+
 
     <!--Content Placeholder-->
 
@@ -87,7 +90,7 @@
                         </div>
 
                         <div class="form-group">
-                            <asp:TextBox ID="txtPassword" runat="server" class="form-control form-control-lg" placeholder="Password"></asp:TextBox>
+                            <asp:TextBox ID="txtPassword" runat="server" class="form-control form-control-lg" placeholder="Password" TextMode ="Password"></asp:TextBox>
                         </div>
 
                         <asp:Button ID="btnLogin" runat="server" Text="Login" class="btn btn-md btn-info btn-block" OnClick="btnLogin_Click" />

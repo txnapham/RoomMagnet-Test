@@ -16,7 +16,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
     protected void btnLogin_Click(object sender, EventArgs e)
     {
         System.Data.SqlClient.SqlConnection sc = new System.Data.SqlClient.SqlConnection();
-        sc.ConnectionString = sc.ConnectionString = "server=aa1evano00xv2xb.cqpnea2xsqc1.us-east-1.rds.amazonaws.com;database=roommagnetdb;uid=admin;password=Skylinejmu2019;";
+        sc.ConnectionString = "server=aa1evano00xv2xb.cqpnea2xsqc1.us-east-1.rds.amazonaws.com;database=roommagnetdb;uid=admin;password=Skylinejmu2019;";
         sc.Open();
 
         System.Data.SqlClient.SqlCommand findPass = new System.Data.SqlClient.SqlCommand();
@@ -39,7 +39,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
                     btnLogin.Enabled = false;
                     txtEmail.Enabled = false;
                     txtPassword.Enabled = false;
-
                 }
                 else
                     lblStatus.Text = "Password is wrong.";

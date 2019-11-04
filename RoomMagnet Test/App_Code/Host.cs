@@ -14,7 +14,7 @@ public class Host : Account
     public Host(Account account, string BackCheck, string HostReason)
         : base(account.getFirstName(), account.getMiddleName(), account.getLastName(), account.getPhone(), 
             account.getBday(), account.getEmail(), account.getHouseNumber(), account.getStreet(), account.getCity(), 
-            account.getState(), account.getZip(), account.getCountry(), account.getAccType(), account.getModDate(), account.getPID())
+            account.getState(), account.getZip(), account.getCountry(), account.getAccType(), account.getPID())
     {
         setBackCheck(BackCheck);
         setHostReason(HostReason);

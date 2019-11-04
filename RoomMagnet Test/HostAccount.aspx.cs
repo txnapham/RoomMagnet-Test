@@ -16,6 +16,8 @@ public partial class HostAccount : System.Web.UI.Page
 
     protected void btnCreateAccount_Click(object sender, EventArgs e)
     {
+        Label1.Text = "hi";
+
         System.Data.SqlClient.SqlConnection sc = new System.Data.SqlClient.SqlConnection();
         sc.ConnectionString = "server=aa1evano00xv2xb.cqpnea2xsqc1.us-east-1.rds.amazonaws.com;database=roommagnetdb;uid=admin;password=Skylinejmu2019;";
         sc.Open();
@@ -30,7 +32,7 @@ public partial class HostAccount : System.Web.UI.Page
         int acctTypeCount;
 
         //create new account and host object
-        Account newAccount = new Account(txtFN.Text, txtMN.Text, txtLN.Text, txtPhone.Text, DateTime.Parse(txtBday.Text), txtEmail.Text, txtHouseNum.Text, txtStreet.Text, txtCity.Text, ddState.SelectedValue, txtZip.Text, "US", Int32.Parse("2"), DateTime.Now, Int32.Parse("2"));
+        Account newAccount = new Account(txtFN.Text, txtMN.Text, txtLN.Text, txtPhone.Text, DateTime.Parse(txtBday.Text), txtEmail.Text, txtHouseNum.Text, txtStreet.Text, txtCity.Text, ddState.SelectedValue, txtZip.Text, "US", Int32.Parse("2"), Int32.Parse("2"));
         Host newHost = new Host(newAccount, "N", "Retiree");
 
         checkEmailCount.CommandText = "SELECT COUNT(*) FROM ACCOUNT WHERE EMAIL = @emailCheck";
@@ -81,7 +83,7 @@ public partial class HostAccount : System.Web.UI.Page
 
                 sc.Close();
             }
-            else if(emailCount == 0)
+            else if (emailCount == 0)
             {
                 insert.CommandText = "INSERT into Account VALUES (@fName, @mName, @lName, @phone, @bday, @email, @HouseNbr, @street, @city, @state, @zip, @country, @AccType, @ModDate, @PID); " +
                    "INSERT into Host VALUES(@@Identity, @BackCheck, @HostReason);" +

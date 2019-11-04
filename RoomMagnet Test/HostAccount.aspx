@@ -127,7 +127,7 @@
                 <div class="form-group">
                     <label for="txtPassword">Password</label>
                     <%--for testing purposes--%>
-                    <asp:TextBox ID="txtPassword" runat="server" class="form-control form-control-lg" placeholder="Password"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" class="form-control form-control-lg" placeholder="Password" TextMode ="Password"></asp:TextBox>
                 </div>
 
                 <div class="form-group form-check">
@@ -143,7 +143,7 @@
                 <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                 <%--for testing purpose--%>
 
-                <asp:Button ID="btnCreateAccount" runat="server" Text="Create Account" class="btn btn-info" OnClick="btnCreateAccount_Click" />
+                <asp:Button ID="btnCreateAccount" runat="server" Text="Create Account" class="btn btn-info" OnClick="createBtn_Click" OnClientClick="createBtn_Click"  />
                 <%--<a class="btn btn-info" id="createAccountButton" href="HostAccountCategories.aspx">Create Account</a>--%>
 
                 <%--should only go to next page (host category when creation is successful--%>
