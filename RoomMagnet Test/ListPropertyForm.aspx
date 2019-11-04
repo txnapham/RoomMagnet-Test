@@ -159,7 +159,7 @@
                         <div class="col-md-12">
                             <div class="switchwrapper">
                                 <label class="switch">
-                                    <asp:CheckBoxList ID="cbApartment" runat="server"></asp:CheckBoxList>
+                                    <asp:CheckBox ID="cbApartment" runat="server" />
                                     <span class="slider round"></span>
                                 </label>
                                 <div>Apartment</div>
