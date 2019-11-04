@@ -380,16 +380,16 @@
         </section>
 
         <!--BEGINNING OF HOUSE LISTINGS-->
-                            <asp:GridView ID="PropertyUpdateTable" runat="server" AutoGenerateColumns="False" DataKeyNames="PropertyID">
+        <section>
+                    <asp:GridView ID="PropertyUpdateTable" runat="server" AutoGenerateColumns="False" DataKeyNames="PropertyID" Width="75%" align="center">
                         <Columns>
-                            <asp:BoundField DataField="PropertyID" HeaderText="PropertyID"/>
-                            <asp:BoundField DataField="City" HeaderText="City"/>
-                            <asp:BoundField DataField="State" HeaderText="State"/>
+                            <asp:BoundField DataField="PropertyID" HeaderText="Property ID"/>
+                            <asp:BoundField DataField="HouseNumber" HeaderText="City"/>
+                            <asp:BoundField DataField="Street" HeaderText="State"/>
                         </Columns>
                     </asp:GridView>
-        <section>
-            <div class="row px-3 py-3">
-                <div class="col-md-3">
+                </td>
+<%--                <div class="col-md-3">
                     <div class="card  shadow-sm  mb-4">
                         <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
                         <a href="search-result-page-detail.html" class="cardLinks">
@@ -602,7 +602,7 @@
                             <button id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
                         </div>
                         <!--END OF FABORITE BUTTON-->
-                    </div>
+                    </div>--%>
                 </div>
             </div>
         </section>

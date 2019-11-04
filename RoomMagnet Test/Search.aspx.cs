@@ -27,18 +27,37 @@ public partial class Search : System.Web.UI.Page
         }
         else
         {
-            //Breaking down the searchbox text
+            ////Breaking down the searchbox text
+            //DataTable propertyDataTable = new DataTable();
+            //String property = txtSearch.Text;
+            //int split = property.IndexOf(",");
+            //String city = property.Substring(0, split);
+            //String state = property.Substring(split + 1);
+            ////New select queries
+            //SqlCommand select = new SqlCommand();
+            ////Query that selects data
+            //select.CommandText = "select [City], [HomeState], [Zip], [RoomPriceRangeLow], [RoomPriceRangeHigh] from [dbo].[Property] " + "Where [City] = @City AND [HomeState] = @HomeState";
+            //select.Parameters.AddWithValue("@City", city);
+            //select.Parameters.AddWithValue("@State", state);
+
+            string tSearch = HttpUtility.HtmlEncode(txtSearch.Text);
+            sqlConn.Open();
             DataTable propertyDataTable = new DataTable();
-            String property = txtSearch.Text;
-            int split = property.IndexOf(",");
-            String city = property.Substring(0, split);
-            String state = property.Substring(split + 1);
-            //New select queries
-            SqlCommand select = new SqlCommand();
-            //Query that selects data
-            select.CommandText = "select [City], [HomeState], [Zip], [RoomPriceRangeLow], [RoomPriceRangeHigh] from [dbo].[Property] " + "Where [City] = @City AND [HomeState] = @HomeState";
-            select.Parameters.AddWithValue("@City", city);
-            select.Parameters.AddWithValue("@State", state);
+            propertyDataTable.Clear();
+            int firstSpaceIndex = tSearch.IndexOf(" ");
+            string cityString = tSearch.Substring(firstSpaceIndex + 1);
+            SqlDataAdapter sqlDa = new SqlDataAdapter("select [City], [HomeState], [PropertyID] from[dbo].[Property] where upper([City]) like upper('%" + cityString + "%');", sqlConn);
+            sqlDa.Fill(propertyDataTable);
+            if (propertyDataTable.Rows.Count == 0)
+            {
+                propertyDataTable.Clear();
+            }
+            else
+            {
+                PropertyUpdateTable.DataSource = propertyDataTable;
+                PropertyUpdateTable.DataBind();
+                PropertyUpdateTable.Visible = true;
+            }
         }
     }
 }
