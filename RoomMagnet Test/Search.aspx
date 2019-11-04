@@ -344,7 +344,7 @@
 
 
                         <!--BEGINNING OF SEARCH BUTTON-->
-                        <asp:Button ID="btnSearch" runat="server" Text="Search" class="btn btn-info"/>
+                        <asp:Button ID="btnSearch" OnClick="btnSearch_Click" runat="server" Text="Search" class="btn btn-info"/>
                         <!--END OF SERACH BUTTON-->
                     </div>
                 </div>
@@ -380,20 +380,32 @@
         </section>
 
         <!--BEGINNING OF HOUSE LISTINGS-->
-                           <asp:GridView ID="PropertyUpdateTable" runat="server" AutoGenerateColumns="False" Width="75%" align="center" DataSourceID="GridViewBackUp"  AppendDataBoundItems="true" Visible="true">
-                        <Columns>
-                            <asp:BoundField DataField="City" HeaderText="City"/>
-                            <asp:BoundField DataField="HomeState" HeaderText="HomeState"/>
-                            <asp:BoundField DataField="Zip" HeaderText="Zip"/>
-                            <asp:BoundField DataField="RoomPriceRangeLow" HeaderText="Starting At"/>
-                        </Columns>
-                    </asp:GridView> 
+        <div>
+            <asp:Literal ID="Card1" runat="server" Mode="Transform"></asp:Literal>
 
-        <asp:SqlDataSource ID="GridViewBackUp" runat="server" ConnectionString="<%$ ConnectionStrings:myConnectionString %>"></asp:SqlDataSource>
-        <%--<section>
-            <div class="row px-3 py-3">
-                <div class="col-md-3">
-                    <div class="card  shadow-sm  mb-4">
+               <%-- <div class="col-md-3">
+                   
+                    <div class="card  shadow-sm  mb-4" >
+                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
+                        <a href="search-result-page-detail.html" class="cardLinks">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer c </p>
+                            </div>
+                        </a>
+
+                        <!--FAVORITE BUTTON-->
+                        <div>
+                            <button id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
+                        </div>
+                        <!--END OF FAVORITE BUTTON-->
+                    </div>
+                </div>--%>
+            </div>
+ 
+<%--            <div class="col-md-3">
+                     <asp:Literal ID="Card2" runat="server" Mode="Transform"></asp:Literal>
+                    div class="card  shadow-sm  mb-4">
                         <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
                         <a href="search-result-page-detail.html" class="cardLinks">
                             <div class="card-body">
@@ -552,7 +564,7 @@
                         </div>
                         <!--END OF FABORITE BUTTON-->
                     </div>
-                </div>--%>
+                </div>
 
                 <div class="col-md-3">
                     <div class="card shadow-sm  mb-4">
@@ -608,7 +620,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>--%>
         <!--END OF HOUSE LISTINGS-->
 
 
