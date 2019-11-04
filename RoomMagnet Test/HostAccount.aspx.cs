@@ -14,7 +14,7 @@ public partial class HostAccount : System.Web.UI.Page
 
     }
 
-    protected void btnCreateAccount_Click(object sender, EventArgs e)
+    protected void createBtn_Click(object sender, EventArgs e)
     {
         Label1.Text = "hi";
 
