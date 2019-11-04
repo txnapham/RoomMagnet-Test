@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ListPropertyForm.aspx.cs" Inherits="ListPropertyForm" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ListPropertyForm.aspx.cs" Inherits="ListPropertyForm" EnableEventValidation ="false"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -529,7 +529,7 @@
                 </div>
             </form>
 
-            <asp:Button ID="btnListPropert" runat="server" class="btn btn-info btn-block" Text="List Property" OnClick="btnListPropert_Click" />
+            <asp:Button ID="btnListPropert" runat="server" class="btn btn-info btn-block" Text="List Property" OnClick="btnListPropert_Click" EventValidation ="false"/>
 
 
 

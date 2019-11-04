@@ -21,14 +21,14 @@ public class Property
     private DateTime modifiedDate;
     private int hostID;
 
-    public Property(String houseNumber, String street, String city, String homeState, String country, String zip)
+    public Property(String houseNumber, String street, String city, String homeState, String zip, String country)
     {
         setHouseNumber(houseNumber);
         setStreet(street);
         setCity(city);
         setHomeState(homeState);
-        setCountry(country);
         setZip(zip);
+        setCountry(country);
         //setHostID(hostID);
         setModDate(DateTime.Now);
     }

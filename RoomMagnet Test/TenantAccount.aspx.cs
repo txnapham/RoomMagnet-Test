@@ -39,7 +39,7 @@ public partial class TenantAccount : System.Web.UI.Page
 
         if (emailCount < 2)
         {
-            checkAcctType.CommandText = "SELECT COUNT(*) FROM ACCOUNT WHERE EMAIL = @emailCheck AND AccountType = 2";
+            checkAcctType.CommandText = "SELECT COUNT(*) FROM ACCOUNT WHERE EMAIL = @emailCheck AND AccountType = 3";
             checkAcctType.Parameters.Add(new SqlParameter("@emailCheck", newAccount.getEmail()));
 
             acctTypeCount = (int)checkAcctType.ExecuteScalar();
@@ -47,8 +47,8 @@ public partial class TenantAccount : System.Web.UI.Page
             if (emailCount == 1 && acctTypeCount == 0)
             {
                 insert.CommandText = "INSERT into Account VALUES (@fName, @mName, @lName, @phone, @bday, @email, @HouseNbr, @street, @city, @state, @zip, @country, @AccType, @ModDate, @PID); " +
-                    "INSERT into Tenant VALUES(@@Identity, @BackCheck, @HostReason);" +
-                    "INSERT into Password VALUES((SELECT MAX(HostID) from HostID), @email, @password);";
+                                    "INSERT into Tenant VALUES(@@IDENTITY from Account), @BackCheck, @TenantReason);" +
+                                    "INSERT into Password VALUES((SELECT MAX(TenantID) from Tenant), @email, @password);";
 
                 //Insert into ACCOUNT
                 insert.Parameters.Add(new SqlParameter("@fName", newTenant.getFirstName()));
@@ -69,7 +69,7 @@ public partial class TenantAccount : System.Web.UI.Page
 
                 //Insert into HOST
                 insert.Parameters.Add(new SqlParameter("@BackCheck", newTenant.getBackgroundStatus()));
-                insert.Parameters.Add(new SqlParameter("@HostReason", newTenant.getTenantReason()));
+                insert.Parameters.Add(new SqlParameter("@TenantReason", newTenant.getTenantReason()));
 
                 //Insert into PASSWORD
                 insert.Parameters.Add(new SqlParameter("@password", PasswordHash.HashPassword(txtPassword.Text))); // hash entered password
@@ -81,8 +81,8 @@ public partial class TenantAccount : System.Web.UI.Page
             else if (emailCount == 0)
             {
                 insert.CommandText = "INSERT into Account VALUES (@fName, @mName, @lName, @phone, @bday, @email, @HouseNbr, @street, @city, @state, @zip, @country, @AccType, @ModDate, @PID); " +
-                     "INSERT into Tenant VALUES(@@Identity, @BackCheck, @HostReason);" +
-                     "INSERT into Password VALUES((SELECT MAX(HostID) from HostID), @email, @password);";
+                     "INSERT into Tenant VALUES(@@IDENTITY, @BackCheck, @TenantReason);" +
+                     "INSERT into Password VALUES((SELECT MAX(TenantID) from Tenant), @email, @password);";
 
                 //Insert into ACCOUNT
                 insert.Parameters.Add(new SqlParameter("@fName", newTenant.getFirstName()));
@@ -103,7 +103,7 @@ public partial class TenantAccount : System.Web.UI.Page
 
                 //Insert into HOST
                 insert.Parameters.Add(new SqlParameter("@BackCheck", newTenant.getBackgroundStatus()));
-                insert.Parameters.Add(new SqlParameter("@HostReason", newTenant.getTenantReason()));
+                insert.Parameters.Add(new SqlParameter("@TenantReason", newTenant.getTenantReason()));
 
                 //Insert into PASSWORD
                 insert.Parameters.Add(new SqlParameter("@password", PasswordHash.HashPassword(txtPassword.Text))); // hash entered password

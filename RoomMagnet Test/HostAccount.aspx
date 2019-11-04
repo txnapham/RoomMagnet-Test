@@ -127,7 +127,7 @@
                 <div class="form-group">
                     <label for="txtPassword">Password</label>
                     <%--for testing purposes--%>
-                    <asp:TextBox ID="txtPassword" runat="server" class="form-control form-control-lg" placeholder="Password"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" class="form-control form-control-lg" placeholder="Password" TextMode ="Password"></asp:TextBox>
                 </div>
 
                 <div class="form-group form-check">
