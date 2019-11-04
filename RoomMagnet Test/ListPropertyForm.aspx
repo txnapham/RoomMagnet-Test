@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ListPropertyForm.aspx.cs" Inherits="ListPropertyForm" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ListPropertyForm.aspx.cs" Inherits="ListPropertyForm" EnableEventValidation ="false"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -52,31 +52,17 @@
             <section class="pt-3">
                 <form>
                     <div class="form-group">
-                        <asp:TextBox ID="txtFN" runat="server" class="form-control form-control-lg" aria-describedby="FirstName" placeholder="First Name"></asp:TextBox>
+                        <asp:TextBox ID="txtHouseNum" runat="server" class="form-control form-control-lg" placeholder="House Number"></asp:TextBox>
                     </div>
 
                     <div class="form-group">
-                        <asp:TextBox ID="txtMN" runat="server" class="form-control form-control-lg" aria-describedby="MiddleName" placeholder="Middle Name"></asp:TextBox>
-                    </div>
-
-
-                    <div class="form-group">
-                        <asp:TextBox ID="txtLN" runat="server" class="form-control form-control-lg" aria-describedby="LastName" placeholder="Last Name"></asp:TextBox>
-                    </div>
-
-                    <div class="form-group">
-                        <asp:TextBox ID="txtBday" runat="server" class="form-control form-control-lg" placeholder="Date (MM/DD/YYYY)"></asp:TextBox>
-                    </div>
-
-                    <div class="form-group">
-                        <asp:TextBox ID="txtStreet" runat="server" class="form-control form-control-lg" placeholder="1234 Main St"></asp:TextBox>
-                        <small id="addressDisclosure" class="form-text text-muted">*We will never share your address until you begin the lease process.</small>
+                        <asp:TextBox ID="txtStreet" runat="server" class="form-control form-control-lg" placeholder="Street"></asp:TextBox>
                     </div>
 
 
                     <div class="form-row">
                         <div class="form-group col-md-7">
-                            <asp:TextBox ID="txtcity" runat="server" class="form-control form-control-lg" placeholder="City"></asp:TextBox>
+                            <asp:TextBox ID="txtCity" runat="server" class="form-control form-control-lg" placeholder="City"></asp:TextBox>
                         </div>
 
 
@@ -91,6 +77,8 @@
                                 <asp:ListItem>CA</asp:ListItem>
                                 <asp:ListItem>CO</asp:ListItem>
                                 <asp:ListItem>CT</asp:ListItem>
+                                <asp:ListItem>CT</asp:ListItem>
+                                <asp:ListItem>DC</asp:ListItem>
                                 <asp:ListItem>DE</asp:ListItem>
                                 <asp:ListItem>FL</asp:ListItem>
                                 <asp:ListItem>GA</asp:ListItem>
@@ -142,10 +130,14 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <asp:TextBox ID="txtCountry" runat="server" class="form-control form-control-lg" placeholder="Country"></asp:TextBox>
+                    </div>
 
                     <div class="form-group">
-                        <asp:TextBox ID="txtPhone" runat="server" class="form-control form-control-lg" placeholder="Phone Number (XXX-XXX-XXXX)"></asp:TextBox>
+                        <small id="addressDisclosure" class="form-text text-muted">*We will never share your address until you begin the lease process.</small>
                     </div>
+
 
                 </form>
             </section>
@@ -169,7 +161,7 @@
                         <div class="col-md-12">
                             <div class="switchwrapper">
                                 <label class="switch">
-                                    <asp:CheckBoxList ID="cbApartment" runat="server"></asp:CheckBoxList>
+                                    <asp:CheckBox ID="cbApartment" runat="server" />
                                     <span class="slider round"></span>
                                 </label>
                                 <div>Apartment</div>
@@ -527,22 +519,23 @@
 
 
                 <div class="form-group form-check pt-4">
-                    <asp:checkbox id="cbBackCheck" runat="server" class="form-check-input" />
+                    <asp:CheckBox ID="cbBackCheck" runat="server" class="form-check-input" />
                     <label class="form-check-label" for="exampleCheck1">Perform background check now</label>
                 </div>
 
                 <div class="form-group form-check">
-                    <asp:checkbox id="cbAgreement" runat="server" class="form-check-input" />
+                    <asp:CheckBox ID="cbAgreement" runat="server" class="form-check-input" />
                     <label class="form-check-label" for="exampleCheck1">Agreement to Terms &amp; Conditions</label>
                 </div>
             </form>
 
-            <asp:Button ID="btnListPropert" runat="server" class="btn btn-info btn-block" Text="List Property" />
+            <asp:Button ID="btnListPropert" runat="server" class="btn btn-info btn-block" Text="List Property" OnClick="btnListPropert_Click" EventValidation ="false"/>
 
 
 
 
         </div>
         <!--END OF BODY CONTENT-->
+    </div>
 </asp:Content>
 

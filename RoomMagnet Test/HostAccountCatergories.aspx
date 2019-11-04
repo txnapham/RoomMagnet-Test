@@ -33,7 +33,7 @@
                     <div class="col-md-12">
                         <div class="switchwrapper">
                             <label class="switch">
-                                <input type="checkbox">
+                                <asp:CheckBox ID="cbEnglish" runat="server" />
                                 <span class="slider round"></span>
                             </label>
                             <div>English</div>
@@ -43,7 +43,7 @@
                     <div class="col-md-12">
                         <div class="switchwrapper">
                             <label class="switch">
-                                <input type="checkbox">
+                                <asp:CheckBox ID="cbSpanish" runat="server" />
                                 <span class="slider round"></span>
                             </label>
                             <div>Spanish</div>
@@ -58,7 +58,7 @@
                     <div class="col-md-12">
                         <div class="switchwrapper">
                             <label class="switch">
-                                <input type="checkbox">
+                                <asp:CheckBox ID="cbMandarin" runat="server" />
                                 <span class="slider round"></span>
                             </label>
                             <div>Mandarin</div>
@@ -68,7 +68,7 @@
                     <div class="col-md-12">
                         <div class="switchwrapper">
                             <label class="switch">
-                                <input type="checkbox">
+                                <asp:CheckBox ID="cbJapanese" runat="server" />
                                 <span class="slider round"></span>
                             </label>
                             <div>Japanese</div>
@@ -82,7 +82,7 @@
                     <div class="col-md-12">
                         <div class="switchwrapper">
                             <label class="switch">
-                                <input type="checkbox">
+                                <asp:CheckBox ID="cbGerman" runat="server" />
                                 <span class="slider round"></span>
                             </label>
                             <div>German</div>
@@ -92,13 +92,14 @@
                     <div class="col-md-12">
                         <div class="switchwrapper">
                             <label class="switch">
-                                <input type="checkbox">
+                                <asp:CheckBox ID="cbFrench" runat="server" />
                                 <span class="slider round"></span>
                             </label>
                             <div>French</div>
-                        </div>
-                    </div>
 
+                        </div>
+
+                    </div>
                 </div>
 
 
@@ -128,7 +129,7 @@
                     <div class="col-md-12">
                         <div class="switchwrapper">
                             <label class="switch">
-                                <input type="checkbox">
+                                <asp:CheckBox ID="cbEarlyRiser" runat="server" />
                                 <span class="slider round"></span>
                             </label>
                             <div>Early Riser</div>
@@ -138,7 +139,7 @@
                     <div class="col-md-12">
                         <div class="switchwrapper">
                             <label class="switch">
-                                <input type="checkbox">
+                                <asp:CheckBox ID="cbNightOwl" runat="server" />
                                 <span class="slider round"></span>
                             </label>
                             <div>Night Owl</div>
@@ -153,7 +154,7 @@
                     <div class="col-md-12">
                         <div class="switchwrapper">
                             <label class="switch">
-                                <input type="checkbox">
+                                <asp:CheckBox ID="cbIntrovert" runat="server" />
                                 <span class="slider round"></span>
                             </label>
                             <div>Introvert</div>
@@ -163,7 +164,7 @@
                     <div class="col-md-12">
                         <div class="switchwrapper">
                             <label class="switch">
-                                <input type="checkbox">
+                                <asp:CheckBox ID="cbExtrovert" runat="server" />
                                 <span class="slider round"></span>
                             </label>
                             <div>Extrovert</div>
@@ -177,7 +178,7 @@
                     <div class="col-md-12">
                         <div class="switchwrapper">
                             <label class="switch">
-                                <input type="checkbox">
+                                <asp:CheckBox ID="fbFamily" runat="server" />
                                 <span class="slider round"></span>
                             </label>
                             <div>Family Oriented</div>
@@ -187,7 +188,7 @@
                     <div class="col-md-12">
                         <div class="switchwrapper">
                             <label class="switch">
-                                <input type="checkbox">
+                                <asp:CheckBox ID="cbReligious" runat="server" />
                                 <span class="slider round"></span>
                             </label>
                             <div>Religious</div>
@@ -201,7 +202,7 @@
                     <div class="col-md-12">
                         <div class="switchwrapper">
                             <label class="switch">
-                                <input type="checkbox">
+                                <asp:CheckBox ID="cbTechSavy" runat="server" />
                                 <span class="slider round"></span>
                             </label>
                             <div>Tech Savy</div>
@@ -211,7 +212,7 @@
                     <div class="col-md-12">
                         <div class="switchwrapper">
                             <label class="switch">
-                                <input type="checkbox">
+                                <asp:CheckBox ID="cbSportsFan" runat="server" />
                                 <span class="slider round"></span>
                             </label>
                             <div>Sports Fan</div>
@@ -225,7 +226,7 @@
                     <div class="col-md-12">
                         <div class="switchwrapper">
                             <label class="switch">
-                                <input type="checkbox">
+                                <asp:CheckBox ID="cbAdventurous" runat="server" />
                                 <span class="slider round"></span>
                             </label>
                             <div>Adventurous</div>
@@ -235,7 +236,7 @@
                     <div class="col-md-12">
                         <div class="switchwrapper">
                             <label class="switch">
-                                <input type="checkbox">
+                                <asp:CheckBox ID="cbMusicAf" runat="server" />
                                 <span class="slider round"></span>
                             </label>
                             <div>Music Aficionado</div>
@@ -244,7 +245,7 @@
 
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-4">
 
                     <div class="col-md-12">
                         <div class="switchwrapper">
@@ -274,7 +275,7 @@
             </div>
         </section>
 
-        <asp:Button ID="btnSet" runat="server" Text="Set Now" class="btn btn-info btn-block" href="HostDashboard.aspx"/>
+        <asp:Button ID="btnSet" runat="server" Text="Set Now" class="btn btn-info btn-block" href="HostDashboard.aspx" />
 
 
 

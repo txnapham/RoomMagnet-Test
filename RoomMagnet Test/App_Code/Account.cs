@@ -24,7 +24,8 @@ public class Account
     private DateTime ModifiedDate;
     private int PermissionID;
 
-    public Account(string FirstName, string MiddleName, string LastName, string PhoneNumber, DateTime BirthDate, string Email, string HouseNumber, string Street, string City, string State, string Zip, string Country, int AccountType, DateTime ModifiedDate, int PermissionID)
+    public Account(string FirstName, string MiddleName, string LastName, string PhoneNumber, DateTime BirthDate, string Email, 
+        string HouseNumber, string Street, string City, string State, string Zip, string Country, int AccountType, int PermissionID)
     {
         setFirstName(FirstName);
         setMiddleName(MiddleName);
@@ -39,7 +40,7 @@ public class Account
         setZip(Zip);
         setCountry(Country);
         setAccType(AccountType);
-        setModDate(ModifiedDate);
+        setModDate(DateTime.Now);
         setPID(PermissionID);
     }
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="Home" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="Home" EnableEventValidation ="false"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -40,35 +40,35 @@
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                                <label class="form-check-lable" for="filterPetFriendly">Connected bathroom</label>
+                                                                <label class="form-check-label" for="filterPetFriendly">Connected bathroom</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Walk-in closet</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Walk-in closet</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Dryer</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Dryer</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Ceiling fan</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Ceiling fan</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Kitchen</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Kitchen</label>
                                                             </div>
                                                         </div>
 
@@ -79,35 +79,35 @@
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                                <label class="form-check-lable" for="filterPetFriendly">Separate entrance</label>
+                                                                <label class="form-check-label" for="filterPetFriendly">Separate entrance</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Air conditioning</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Air conditioning</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Washer</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Washer</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Wifi</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Wifi</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Heating</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Heating</label>
                                                             </div>
                                                         </div>
 
@@ -125,21 +125,21 @@
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                                <label class="form-check-lable" for="filterPetFriendly">Street Paking</label>
+                                                                <label class="form-check-label" for="filterPetFriendly">Street Paking</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Pool</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Pool</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Deck</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Deck</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -149,21 +149,21 @@
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                                <label class="form-check-lable" for="filterPetFriendly">Garage parking</label>
+                                                                <label class="form-check-label" for="filterPetFriendly">Garage parking</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Backyard</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Backyard</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Porch</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Porch</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -180,28 +180,28 @@
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                                <label class="form-check-lable" for="filterPetFriendly">Introvert</label>
+                                                                <label class="form-check-label" for="filterPetFriendly">Introvert</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Extrovert</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Extrovert</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Family oriented</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Family oriented</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Tech savy</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Tech savy</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -211,28 +211,28 @@
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                                <label class="form-check-lable" for="filterPetFriendly">Early riser</label>
+                                                                <label class="form-check-label" for="filterPetFriendly">Early riser</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Night owl</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Night owl</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Religious</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Religious</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Non-smoker</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Non-smoker</label>
                                                             </div>
                                                         </div>
 
@@ -253,21 +253,21 @@
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                                <label class="form-check-lable" for="filterPetFriendly">English</label>
+                                                                <label class="form-check-label" for="filterPetFriendly">English</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Spanish</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Spanish</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">Mandarin</label>
+                                                                <label class="form-check-label" for="filterSportsFan">Mandarin</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -277,21 +277,21 @@
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                                <label class="form-check-lable" for="filterPetFriendly">Japanese </label>
+                                                                <label class="form-check-label" for="filterPetFriendly">Japanese </label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">German</label>
+                                                                <label class="form-check-label" for="filterSportsFan">German</label>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-12">
                                                             <div class="form-check">
                                                                 <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-lable" for="filterSportsFan">French</label>
+                                                                <label class="form-check-label" for="filterSportsFan">French</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -326,14 +326,14 @@
                                                         <div class="col-sm-4">
                                                         <div class="form-check">
                                                         <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                        <label class="form-check-lable" for="filterPetFriendly">Pet friendly</label>
+                                                        <label class="form-check-label" for="filterPetFriendly">Pet friendly</label>
                                                         </div>    
                                                         </div>
                                                         
                                                         <div class="col-sm-4">
                                                         <div class="form-check">
                                                         <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                        <label class="form-check-lable" for="filterSportsFan">Sports Fan</label>
+                                                        <label class="form-check-label" for="filterSportsFan">Sports Fan</label>
                                                         </div>
                                                         </div>
                                                         
@@ -346,14 +346,14 @@
                                                         <div class="col-sm-4">
                                                         <div class="form-check">
                                                         <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                        <label class="form-check-lable" for="filterPetFriendly">Pet friendly</label>
+                                                        <label class="form-check-label" for="filterPetFriendly">Pet friendly</label>
                                                         </div>    
                                                         </div>
                                                         
                                                         <div class="col-sm-4">
                                                         <div class="form-check">
                                                         <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                        <label class="form-check-lable" for="filterSportsFan">Sports Fan</label>
+                                                        <label class="form-check-label" for="filterSportsFan">Sports Fan</label>
                                                         </div>
                                                         </div>
                                                         
@@ -366,14 +366,14 @@
                                                         <div class="col-sm-4">
                                                         <div class="form-check">
                                                         <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                        <label class="form-check-lable" for="filterPetFriendly">Pet friendly</label>
+                                                        <label class="form-check-label" for="filterPetFriendly">Pet friendly</label>
                                                         </div>    
                                                         </div>
                                                         
                                                         <div class="col-sm-4">
                                                         <div class="form-check">
                                                         <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                        <label class="form-check-lable" for="filterSportsFan">Sports Fan</label>
+                                                        <label class="form-check-label" for="filterSportsFan">Sports Fan</label>
                                                         </div>
                                                         </div>
                                                         
@@ -388,12 +388,12 @@
 
                                 <!--SEARCH BAR-->
                                 <div class="col-md-6 searchBar">
-                                    <input type="text" class="form-control form-control-lg" placeholder="search">
+                                    <asp:TextBox ID="txtSearch" runat="server" class="form-control form-control-lg" placeholder="Search"></asp:TextBox>
                                 </div>
                                 <!--END OF SEARCH BAR-->
 
                                 <!--BEGINNING OF SEARCH BUTTON-->
-                                <button type="submit" class="btn btn-info">Search</button>
+                                <asp:Button ID="btnSearch" runat="server" Text="Search" class="btn btn-info"/>
                                 <!--END OF SERACH BUTTON-->
                             </div>
                         </div>
