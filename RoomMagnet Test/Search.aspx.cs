@@ -46,7 +46,7 @@ public partial class Search : System.Web.UI.Page
             propertyDataTable.Clear();
             int firstSpaceIndex = tSearch.IndexOf(" ");
             string cityString = tSearch.Substring(firstSpaceIndex + 1);
-            SqlDataAdapter sqlDa = new SqlDataAdapter("select [City], [HomeState], [PropertyID] from[dbo].[Property] where upper([City]) like upper('%" + cityString + "%');", sqlConn);
+            SqlDataAdapter sqlDa = new SqlDataAdapter("select [City], [HomeState], [Zip], [RoomPriceRangeLow], [RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like upper('%" + cityString + "%');", sqlConn);
             sqlDa.Fill(propertyDataTable);
             if (propertyDataTable.Rows.Count == 0)
             {

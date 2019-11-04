@@ -344,7 +344,7 @@
 
 
                         <!--BEGINNING OF SEARCH BUTTON-->
-                        <asp:Button ID="btnSearch" runat="server" Text="Search" class="btn btn-info"/>
+                        <asp:Button ID="btnSearch" OnClick="btnSearch_Click" runat="server" Text="Search" class="btn btn-info"/>
                         <!--END OF SERACH BUTTON-->
                     </div>
                 </div>
@@ -383,9 +383,11 @@
         <section>
                     <asp:GridView ID="PropertyUpdateTable" runat="server" AutoGenerateColumns="False" DataKeyNames="PropertyID" Width="75%" align="center">
                         <Columns>
-                            <asp:BoundField DataField="PropertyID" HeaderText="Property ID"/>
-                            <asp:BoundField DataField="HouseNumber" HeaderText="City"/>
-                            <asp:BoundField DataField="Street" HeaderText="State"/>
+                            <asp:BoundField DataField="City" HeaderText="City"/>
+                            <asp:BoundField DataField="HomeState" HeaderText="HomeState"/>
+                            <asp:BoundField DataField="Zip" HeaderText="Zip"/>
+                            <asp:BoundField DataField="RoomPriceRangeLow" HeaderText="RoomPriceRangeLow"/>
+                            <asp:BoundField DataField="RoomPriceRangeHigh" HeaderText="RoomPriceRangeHigh"/>
                         </Columns>
                     </asp:GridView>
                 </td>
