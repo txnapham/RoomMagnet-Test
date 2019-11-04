@@ -380,14 +380,17 @@
         </section>
 
         <!--BEGINNING OF HOUSE LISTINGS-->
-                            <asp:GridView ID="PropertyUpdateTable" runat="server" AutoGenerateColumns="False" DataKeyNames="PropertyID">
+                           <asp:GridView ID="PropertyUpdateTable" runat="server" AutoGenerateColumns="False" Width="75%" align="center" DataSourceID="GridViewBackUp"  AppendDataBoundItems="true" Visible="true">
                         <Columns>
-                            <asp:BoundField DataField="PropertyID" HeaderText="PropertyID"/>
                             <asp:BoundField DataField="City" HeaderText="City"/>
-                            <asp:BoundField DataField="State" HeaderText="State"/>
+                            <asp:BoundField DataField="HomeState" HeaderText="HomeState"/>
+                            <asp:BoundField DataField="Zip" HeaderText="Zip"/>
+                            <asp:BoundField DataField="RoomPriceRangeLow" HeaderText="Starting At"/>
                         </Columns>
-                    </asp:GridView>
-        <section>
+                    </asp:GridView> 
+
+        <asp:SqlDataSource ID="GridViewBackUp" runat="server" ConnectionString="<%$ ConnectionStrings:myConnectionString %>"></asp:SqlDataSource>
+        <%--<section>
             <div class="row px-3 py-3">
                 <div class="col-md-3">
                     <div class="card  shadow-sm  mb-4">
@@ -549,7 +552,7 @@
                         </div>
                         <!--END OF FABORITE BUTTON-->
                     </div>
-                </div>
+                </div>--%>
 
                 <div class="col-md-3">
                     <div class="card shadow-sm  mb-4">

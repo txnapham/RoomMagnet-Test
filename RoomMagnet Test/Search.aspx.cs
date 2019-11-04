@@ -11,9 +11,6 @@ using System.Web.UI.WebControls;
 
 public partial class Search : System.Web.UI.Page
 {
-    private static string connection = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
-    SqlConnection sc = new SqlConnection(connection);
-
     protected void Page_Load(object sender, EventArgs e)
     {
         
@@ -26,7 +23,7 @@ public partial class Search : System.Web.UI.Page
             int split = property.IndexOf(",");
             String city = property.Substring(0, split).ToUpper();
             String street = property.Substring(split + 1).ToUpper();
-            GridviewBackup.SelectCommand = "SELECT [City],[HomeState],[Zip],[RoomPriceRangeLow] FROM [dbo].[Property] WHERE upper(City)= "+city+ "AND upper(HomeState)= "+street+";";
+            GridViewBackUp.SelectCommand = "SELECT [City],[HomeState],[Zip],[RoomPriceRangeLow] FROM [dbo].[Property] WHERE upper(City)= "+city+ "AND upper(HomeState)= "+street+";";
             PropertyUpdateTable.DataBind();
     }
     //[WebMethod]
@@ -42,7 +39,7 @@ public partial class Search : System.Web.UI.Page
     //    Locations.Add("Chantilly, VA");
     //    Locations.Add("Baltimore, MD");
     //    Locations.Add("Centreville, VA");
-    //    Locations.Add("Falls Church, VA"); 
+    //    Locations.Add("Falls Church, VA");  
 
     //    return Locations;
     //}
