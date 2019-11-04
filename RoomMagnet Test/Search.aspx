@@ -380,19 +380,32 @@
         </section>
 
         <!--BEGINNING OF HOUSE LISTINGS-->
-        <section>
-                    <asp:GridView ID="PropertyUpdateTable" runat="server" AutoGenerateColumns="False" DataKeyNames="PropertyID" Width="75%" align="center">
-                        <Columns>
-                            <asp:BoundField DataField="City" HeaderText="City"/>
-                            <asp:BoundField DataField="HomeState" HeaderText="HomeState"/>
-                            <asp:BoundField DataField="Zip" HeaderText="Zip"/>
-                            <asp:BoundField DataField="RoomPriceRangeLow" HeaderText="RoomPriceRangeLow"/>
-                            <asp:BoundField DataField="RoomPriceRangeHigh" HeaderText="RoomPriceRangeHigh"/>
-                        </Columns>
-                    </asp:GridView>
-                </td>
-<%--                <div class="col-md-3">
-                    <div class="card  shadow-sm  mb-4">
+        <div>
+            <asp:Literal ID="Card1" runat="server" Mode="Transform"></asp:Literal>
+
+               <%-- <div class="col-md-3">
+                   
+                    <div class="card  shadow-sm  mb-4" >
+                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
+                        <a href="search-result-page-detail.html" class="cardLinks">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer c </p>
+                            </div>
+                        </a>
+
+                        <!--FAVORITE BUTTON-->
+                        <div>
+                            <button id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
+                        </div>
+                        <!--END OF FAVORITE BUTTON-->
+                    </div>
+                </div>--%>
+            </div>
+ 
+<%--            <div class="col-md-3">
+                     <asp:Literal ID="Card2" runat="server" Mode="Transform"></asp:Literal>
+                    div class="card  shadow-sm  mb-4">
                         <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
                         <a href="search-result-page-detail.html" class="cardLinks">
                             <div class="card-body">
@@ -604,10 +617,10 @@
                             <button id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
                         </div>
                         <!--END OF FABORITE BUTTON-->
-                    </div>--%>
+                    </div>
                 </div>
             </div>
-        </section>
+        </section>--%>
         <!--END OF HOUSE LISTINGS-->
 
 
