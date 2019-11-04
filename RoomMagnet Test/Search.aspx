@@ -335,28 +335,50 @@
                             </div>
                         </div>
                         <!--END OF FILTER FORM-->
-
+<%--<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<script>
+    $(function () {
+        $('#txtSearch').autocomplete({
+            source: function (request, response) {
+                
+                $.ajax({
+                    url: "Search.aspx/GetLocation",
+                    data: "{ 'pre':'" + request.term + "'}",
+                    DataType: "JSON",
+                    type: post,
+                    contentType: "application/json; charset=utf-8",
+                    datafiller: function (data) { return data; },
+                    success: function (data) {
+                        response($.map(data.d, function (item) { return { value: item }}))
+                    },
+                });
+            },
+            minLength:1
+        });
+    });
+</script>--%>
+                        
                         <!--SEARCH BAR-->
                         <div class="col-md-6 searchBar">
-                            <link rel="stylesheet" href="awesomplete.css" />
-                            <script src="awesomplete.js" async></script>
-                            <asp:TextBox ID="txtSearch" runat="server" class="awesomplete" data-list="#mylist" placeholder="search"></asp:TextBox>
-                            <ul id="mylist">
-	                            <li>Washington,DC</li>
-	                            <li>Fairfax,VA</li>
-	                            <li>McLean,VA</li>
-	                            <li>Alexandria,VA</li>
-	                            <li>Arlington,VA</li>
-	                            <li>Vienna,VA</li>
-	                            <li>Chantilly,VA</li>
-                                <li>Baltimore,MD</li>
-	                            <li>Centreville,VA</li>
-	                            <li>Falls Church,VA</li>
-                            </ul>
+                            <link href="awesomplete/awesomplete.css" rel="stylesheet" />
+                            <script src="awesomplete/awesomplete.js" async></script>
+                            <asp:TextBox ID="txtSearch" runat="server" class="awesomplete" data-maxitems="5" data-minchars ="2" placeholder="search"></asp:TextBox>
+                            <input id="myinput" />
+
+
+                            <script>
+                                var input = document.getElementById("myinput");
+                                var n= new Awesomplete(input, {
+                                    list: ["Washington,DC", "Fairfax,VA", "McLean,VA", "Alexandria,VA", "Arlington,VA", "Vienna,VA", "Chantilly,VA", "Baltimore,MD", "Centreville,VA", "Falls Church,VA"],
+                                    minChars: 1
+                                });
+                            </script>
                         </div>
                         <!--END OF SEARCH BAR-->
 
-
+                        
                         <!--BEGINNING OF SEARCH BUTTON-->
                         <asp:Button ID="btnSearch" runat="server" Text="Search" class="btn btn-info"/>
                         <!--END OF SERACH BUTTON-->
@@ -394,7 +416,16 @@
         </section>
 
         <!--BEGINNING OF HOUSE LISTINGS-->
-        <section>
+        <asp:GridView ID="PropertyUpdateTable" runat="server" AutoGenerateColumns="False" DataKeyNames="PropertyID" Width="75%" align="center" DataSourceID="GridviewBackup" OnSelectedIndexChanged="PropertyUpdateTable_SelectedIndexChanged">
+                        <Columns>
+                            <asp:BoundField DataField="City" HeaderText="City"/>
+                            <asp:BoundField DataField="HomeState" HeaderText="HomeState"/>
+                            <asp:BoundField DataField="Zip" HeaderText="Zip"/>
+                            <asp:BoundField DataField="RoomPriceRangeLow" HeaderText="Starts At"/>
+                        </Columns>
+                    </asp:GridView>
+        <asp:SqlDataSource ID="GridviewBackup" ConnectionString="<%$ ConnectionStrings:myConnectionString %>" runat="server"></asp:SqlDataSource>
+        <%--<section>
             <div class="row px-3 py-3">
                 <div class="col-md-3">
                     <div class="card  shadow-sm  mb-4">
@@ -548,7 +579,7 @@
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">This is a longer c </p>
                             </div>
-                        </a>
+                        </a>--%>
 
                         <!--FAVORITE BUTTON-->
                         <div>

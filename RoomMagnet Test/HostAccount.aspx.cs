@@ -14,8 +14,9 @@ public partial class HostAccount : System.Web.UI.Page
 
     }
 
-    protected void btnCreateAccount_Click(object sender, EventArgs e)
+    protected void createBtn_Click(object sender, EventArgs e)
     {
+        txtCity.Text = "Gainesville";
         System.Data.SqlClient.SqlConnection sc = new System.Data.SqlClient.SqlConnection();
         sc.ConnectionString = "server=aa1evano00xv2xb.cqpnea2xsqc1.us-east-1.rds.amazonaws.com;database=roommagnetdb;uid=admin;password=Skylinejmu2019;";
         sc.Open();
