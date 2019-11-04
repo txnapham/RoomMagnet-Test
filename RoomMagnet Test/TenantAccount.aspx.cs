@@ -29,7 +29,7 @@ public partial class TenantAccount : System.Web.UI.Page
         int acctTypeCount;
 
         //create new account and host object
-        Account newAccount = new Account(txtFN.Text, txtMN.Text, txtLN.Text, txtPhone.Text, DateTime.Parse(txtBday.Text), txtEmail.Text, txtHouseNum.Text, txtStreet.Text, txtCity.Text, ddState.SelectedValue, txtZip.Text, "US", Int32.Parse("3"), DateTime.Now, Int32.Parse("3"));
+        Account newAccount = new Account(txtFN.Text, txtMN.Text, txtLN.Text, txtPhone.Text, DateTime.Parse(txtBday.Text), txtEmail.Text, txtHouseNum.Text, txtStreet.Text, txtCity.Text, ddState.SelectedValue, txtZip.Text, "US", Int32.Parse("3"), Int32.Parse("3"));
         Tenant newTenant = new Tenant(newAccount, "N", "Student");
 
         checkEmailCount.CommandText = "SELECT COUNT(*) FROM ACCOUNT WHERE EMAIL = @emailCheck";

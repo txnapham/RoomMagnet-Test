@@ -8,8 +8,6 @@ using System.Web;
 /// </summary>
 public class Property
 {
-    private int propertyID;
-    private int hostID;
     private String houseNumber;
     private String street;
     private String city;
@@ -20,32 +18,19 @@ public class Property
     private String localPriceRangeHigh;
     private String roomPriceRangeLow;
     private String roomPriceRangeHigh;
-    private String modifiedDate;
-    public Property(int propertyID, int hostID, String houseNumber, String street, String city, String homeState, String country, String zip, String localPriceRangeLow, String localPriceRangeHigh, String roomPriceRangeLow, String roomPriceRangeHigh, String modifiedDate )
+    private DateTime modifiedDate;
+    private int hostID;
+
+    public Property(String houseNumber, String street, String city, String homeState, String country, String zip)
     {
-        setPropertyID(propertyID);
-        setHostID(hostID);
         setHouseNumber(houseNumber);
         setStreet(street);
         setCity(city);
         setHomeState(homeState);
         setCountry(country);
         setZip(zip);
-        setLocalPriceRangeLow(localPriceRangeLow);
-        setLocalPriceRangeHigh(localPriceRangeHigh);
-        setRoomPriceRangeLow(roomPriceRangeLow);
-        setRoomPriceRangeHigh(roomPriceRangeHigh);
-    }
-
-    //propertyID
-    public int getPropertyID()
-    {
-        return this.propertyID;
-    }
-
-    public void setPropertyID(int propertyID)
-    {
-        this.propertyID = propertyID;
+        //setHostID(hostID);
+        setModDate(DateTime.Now);
     }
 
     //hostID
@@ -154,4 +139,14 @@ public class Property
         this.roomPriceRangeHigh = roomPriceRangeHigh;
     }
 
+    //modifiedDate
+    public DateTime getModDate()
+    {
+        return this.modifiedDate;
+    }
+
+    public void setModDate(DateTime ModDate)
+    {
+        this.modifiedDate = ModDate;
+    }
 }
