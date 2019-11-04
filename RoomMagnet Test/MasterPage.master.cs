@@ -23,7 +23,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
         findPass.Connection = sc;
         // SELECT PASSWORD STRING WHERE THE ENTERED USERNAME MATCHES
         findPass.CommandText = "SELECT PasswordHash from Password where Email = @email";
-        findPass.Parameters.Add(new SqlParameter("@email", txtEmail.Text));
+        findPass.Parameters.Add(new SqlParameter("@email", HttpUtility.HtmlEncode(txtEmail.Text)));
 
         SqlDataReader reader = findPass.ExecuteReader(); // create a reader
 
@@ -33,7 +33,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
             {
                 string storedHash = reader["PasswordHash"].ToString(); // store the database password into this variable
 
-                if (PasswordHash.ValidatePassword(txtPassword.Text, storedHash)) // if the entered password matches what is stored, it will show success
+                if (PasswordHash.ValidatePassword(HttpUtility.HtmlEncode(txtPassword.Text), storedHash)) // if the entered password matches what is stored, it will show success
                 {
                     lblStatus.Text = "Success!";
                     btnLogin.Enabled = false;
