@@ -10,6 +10,8 @@ public partial class TenantAccount : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        txtCountry.Enabled = false;
+        txtCountry.Text = "US";
         ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
     }
 

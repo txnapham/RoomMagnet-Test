@@ -9,11 +9,14 @@ public partial class ListPropertyForm : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        txtCountry.Enabled = false;
+        txtCountry.Text = "US";
         ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
     }
 
     protected void btnListPropert_Click(object sender, EventArgs e)
     {
+        String countryText = "US";
         Property newProperty = new Property(HttpUtility.HtmlEncode(txtHouseNum.Text), HttpUtility.HtmlEncode(txtStreet.Text), HttpUtility.HtmlEncode(txtCity.Text), ddState.SelectedValue, HttpUtility.HtmlEncode(txtZip.Text), HttpUtility.HtmlEncode(txtCountry.Text));
 
         if (cbGuest.Checked == true)
@@ -46,7 +49,7 @@ public partial class ListPropertyForm : System.Web.UI.Page
         txtCity.Text = "";
         ddState.ClearSelection();
         txtZip.Text = "";
-        txtCountry.Text = "";
+        txtCountry.Text = "US";
 
         cbApartment.Checked = true;
     }
