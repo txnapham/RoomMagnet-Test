@@ -20,8 +20,23 @@
     <!--FontAwesome icons-->
     <script src="https://kit.fontawesome.com/78c52ebafc.js" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" data-auto-replace-svg="nest"></script>
-
-
+    <script src="favoriteFunction.js"></script>
+    <script>
+        function favoriteBtn(propertyID, city, state, priceLow, priceHigh) {
+            populatePropID(propertyID);
+            populateCityState(city, state);
+            populatePrice(priceLow,priceHigh);
+        };
+        function populatePropID(propertyID) {
+            return propertyID;
+        };
+        function populateCityState(city, state) {
+            document.getElementById("CityState").innerHTML = city +", " + state;
+        };
+        function populatePrice(priceLow, priceHigh) {
+            document.getElementById("Price").innerHTML ="$"+ priceLow +" - "+ priceHigh;
+        };
+    </script>
 
     <!--Content Placeholder-->
 

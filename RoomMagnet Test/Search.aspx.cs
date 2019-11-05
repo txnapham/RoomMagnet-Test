@@ -52,16 +52,21 @@ public partial class Search : System.Web.UI.Page
             int commaSplit = tSearch.IndexOf(",");
             String cityString = tSearch.Substring(0, commaSplit).ToUpper();
             String state = tSearch.Substring(commaSplit + 2).ToUpper(); 
-            String query = "select [City], [HomeState], [Zip], [RoomPriceRangeLow],[RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like '" + cityString + "' AND upper([HomeState]) like '"+state+ "';";
+            String query = "select [PropertyID],[City], [HomeState], [Zip], [RoomPriceRangeLow],[RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like '" + cityString + "' AND upper([HomeState]) like '"+state+ "';";
             System.Data.SqlClient.SqlCommand sqlComm = new System.Data.SqlClient.SqlCommand(query, sqlConn);
             //sqlComm.CommandText = ("select [City], [HomeState], [Zip], [RoomPriceRangeLow], [RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like upper('%" + cityString + "%')"); 
             System.Data.SqlClient.SqlDataReader reader = sqlComm.ExecuteReader();
+            int count = 0;
             while (reader.Read())
             {
+                String propertyID = reader["PropertyID"].ToString();
                 String city = reader["City"].ToString();
                 String homeState = reader["HomeState"].ToString();
                 String priceRangeLow = reader["RoomPriceRangeLow"].ToString();
                 String priceRangeHigh = reader["RoomPriceRangeHigh"].ToString();
+                int propIdInt = Convert.ToInt32(propertyID);
+                double priceLowRounded = Math.Round(Convert.ToDouble(priceRangeLow), 0, MidpointRounding.ToEven);
+                double priceHighRounded = Math.Round(Convert.ToDouble(priceRangeHigh), 0,MidpointRounding.ToEven);
 
                 StringBuilder myCard = new StringBuilder();
                 myCard
@@ -71,19 +76,20 @@ public partial class Search : System.Web.UI.Page
                     .Append("                        <a href=\"search-result-page-detail.html\" class=\"cardLinks\">")
                     .Append("                            <div class=\"card-body\">")
                     .Append("                                <h5 class=\"card-title\">" + city + ", " + homeState + "</h5>")
-                    .Append("                                <p class=\"card-text\">" + "$" + priceRangeLow + " - " + "$" + priceRangeHigh + "</p>")
+                    .Append("                                <p class=\"card-text\">" + "$" + priceLowRounded + " - " + "$" + priceHighRounded + "</p>")
                     .Append("                            </div>")
                     .Append("                        </a>")
                     .Append("")
                     .Append("                        <div>")
-                    .Append("                            <button id=\"heartbtn\" class=\"btn favoriteHeartButton\"><i id=\"hearti\" class=\"far fa-heart\"></i></button>")
+                    .Append("                            <button type=\"button\" id=\"heartbtn"+count+ "\" onClick=\"favoriteBtn("+ propIdInt+","+"\'"+city+ "\'"+ "," +
+                                                            "\'"+homeState+ "\'" + ","+ "\'"+priceLowRounded+ "\'" + "," + "\'"+priceHighRounded+ "\'" + ")\" " +
+                                                        "class=\"btn favoriteHeartButton\"><i id=\"hearti\" class=\"far fa-heart\"></i></button>") 
                     .Append("                        </div>")
                     .Append("                    </div>")
                     .Append("</div>");
 
-	
-
-                Card1.Text += myCard.ToString();
+                    count++;
+                    Card1.Text += myCard.ToString();
             }
             reader.Close();
 

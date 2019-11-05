@@ -34,7 +34,7 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNcHEQpOGd14rKFMgFTgbH-fZS2dD1UBw&callback=initMap"
         async defer></script>
-
+ 
     <!--BEGINNING OF SEARCH BAR-->
     <div class="container-fluid searchPageBodyContent">
 
@@ -382,8 +382,8 @@
         <!--BEGINNING OF HOUSE LISTINGS-->
         <div>
             <asp:Literal ID="Card1" runat="server" Mode="Transform"></asp:Literal>
-
-               <%-- <div class="col-md-3">
+            
+                <%--<div class="col-md-3">
                    
                     <div class="card  shadow-sm  mb-4" >
                         <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
@@ -396,7 +396,7 @@
 
                         <!--FAVORITE BUTTON-->
                         <div>
-                            <button id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
+                            <button type="button" id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
                         </div>
                         <!--END OF FAVORITE BUTTON-->
                     </div>
