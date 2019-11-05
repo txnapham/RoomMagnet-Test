@@ -19,6 +19,8 @@ public partial class Home : System.Web.UI.Page
     [System.Web.Services.WebMethod]
     protected void btnSearch_Click(object sender, EventArgs e)
     {
+        Session["Search"] = txtSearch.Text;
+        Response.Redirect("Search.aspx");
         //if (String.IsNullOrEmpty(searchBox.Text))
         //{
 
