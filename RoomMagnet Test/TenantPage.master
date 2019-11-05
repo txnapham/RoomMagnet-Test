@@ -1,0 +1,136 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="TenantPage.master.cs" Inherits="TenantPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>RoomMagnet</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <!-- Font Awesome for icons - see https://fontawesome.com/v4.7.0/cheatsheet/ -->
+    <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Custom CSS - update this if you use a name other than style.css for the Sass-generated CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!--FontAwesome icons-->
+    <script src="https://kit.fontawesome.com/78c52ebafc.js" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" data-auto-replace-svg="nest"></script>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top mainNav">
+            <div class="container-fluid">
+
+
+                <a class="navbar-brand ml-0 logo" href="index.html">
+                    <img src="images/roommagnetLOGO.png" alt="roommagnet logo" class="img-fluid" width="300" height="300"></a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="nav nav-pills ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link " href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="search.html active">Search</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item js-scroll-trigger" href="about-us.html#whoAreWe">Who are we?</a>
+                                <a class="dropdown-item js-scroll-trigger" href="about-us.html#ourGoals">Our Goals</a>
+                                <a class="dropdown-item js-scroll-trigger" href="about-us.html#faQs">Frequently Asked Questions</a>
+                                <a class="dropdown-item js-scroll-trigger" href="about-us.html#ourPolicy">Our Policy</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Welcome</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item js-scroll-trigger" href="#">View Profile</a>
+                                <a class="dropdown-item js-scroll-trigger" href="#">Edit Profile</a>
+                                <a class="dropdown-item js-scroll-trigger" href="#">Settings</a>
+                                <a class="dropdown-item js-scroll-trigger" href="#">Logout</a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+
+                </div>
+            </div>
+        </nav>
+        <!--END OF NAVIGATION-->
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+            <!--FOOTER-->
+            <footer class="page-footer bg-primary container-fluid">
+                <div class="row">
+                    <div class="col-md-2">
+                        <a href="index.html">
+                            <img src="images/roommagnetLOGO.png" alt="roommagnet logo" class="img-fluid"></a>
+                    </div>
+
+                    <div class="col-md-10 pt-4">
+                        <ul class="nav justify-content-end">
+                            <li class="nav-item">
+                                <a class="nav-link " href="about-us.html#whoAreWe">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about-us.html#faQs">Frequently Asked Questions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about-us.html#ourPolicy">Policy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-center">
+                            Copyright &copy; 2019 Skyline Consulting. All rights reserved.
+                       
+                        </p>
+                    </div>
+                </div>
+            </footer>
+            <!--END OF FOOTER-->
+
+            <!--END OF PAGE-->
+
+
+
+
+
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        </div>
+    </form>
+</body>
+</html>
