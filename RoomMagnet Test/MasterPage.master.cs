@@ -36,9 +36,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 if (PasswordHash.ValidatePassword(txtPassword.Text, storedHash)) // if the entered password matches what is stored, it will show success
                 {
                     lblStatus.Text = "Success!";
-                    btnLogin.Enabled = false;
-                    txtEmail.Enabled = false;
-                    txtPassword.Enabled = false;
                 }
                 else
                     lblStatus.Text = "Password is wrong.";
