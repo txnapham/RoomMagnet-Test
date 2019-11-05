@@ -103,7 +103,7 @@ public partial class Search : System.Web.UI.Page
                 Card1.Text += myCard.ToString();
             }
             reader.Close();
-            Session["Search"] = null;
+             
         }
     }
 
