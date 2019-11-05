@@ -4,6 +4,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
+    <%--<script>
+        function populateCityState(city, state) {
+            document.getElementById("CityState").innerHTML = city +", " + state;
+        };
+        function populatePrice(priceLow, priceHigh) {
+            document.getElementById("Price").innerHTML ="$"+ priceLow +" - "+"$"+ priceHigh;
+        };
+    </script>--%>
+
+
     <!--USER DASH-NAV-->
     <div class="container-fluid userDash mb-5 pb-3">
         <div class="navbar navbar-light">
@@ -75,29 +85,11 @@
                     <div class="card  shadow-sm  mb-4">
                         <div class="card-body">
                             <h5 class="card-title">Favorited Properties</h5>
-
-            <section>
+            <!--CARD-->
+             <section>
             <div class="row px-3 py-3">
-
-                <div class="col-md-3">
-                    <div class="card shadow-sm  mb-4">
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="PropertyDetails.aspx" class="cardLinks">
-                            <div class="card-body">
-                                <h5 id="CityState" class="card-title"></h5>
-                                <p id="Price"class="card-text"></p>
-                            </div>
-                        </a>
-                        
-                        <!--FAVORITE BUTTON-->
-
-                          <div>
-                            <button class="btn"><i class="fas fa-heart"></i></button>
-                        </div>
-
-                  </div>
-                </div>
-           </div>
+                <asp:Literal ID="Card2" runat="server" Mode="Transform"></asp:Literal>
+            </div>
         </section>
 
 

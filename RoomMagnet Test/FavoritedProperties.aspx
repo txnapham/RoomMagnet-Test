@@ -55,7 +55,7 @@
                         <!--FAVORITE BUTTON-->
 
                           <div>
-                            <button class="btn"><i class="fas fa-heart"></i></button>
+                            <asp:CheckBox runat="server" id="heartbutton"  CausesValidation="false" />
                         </div>
 
                   </div>

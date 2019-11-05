@@ -90,6 +90,7 @@ public partial class Search : System.Web.UI.Page
                 double priceLowRounded = Math.Round(Convert.ToDouble(priceRangeLow), 0, MidpointRounding.ToEven);
                 double priceHighRounded = Math.Round(Convert.ToDouble(priceRangeHigh), 0,MidpointRounding.ToEven);
 
+
                 StringBuilder myCard = new StringBuilder();
                 myCard
                     .Append("<div class=\"col-md-3\">")
@@ -103,8 +104,8 @@ public partial class Search : System.Web.UI.Page
                     .Append("                        </a>")
                     .Append("")
                     .Append("                        <div>")
-                    .Append("                            <button type=\"button\" id=\"heartbtn"+count+ "\" onClick=\"favoriteBtn("+ propIdInt+","+"\'"+city+ "\'"+ "," +
-                                                            "\'"+homeState+ "\'" + ","+ "\'"+priceLowRounded+ "\'" + "," + "\'"+priceHighRounded+ "\'" + ")\" " +
+                    .Append("                            <button type=\"button\" id=\"heartbtn" + count + "\" onClick=\"favoriteBtn(" + propIdInt + "," + "\'" + city + "\'" + "," +
+                                                            "\'" + homeState + "\'" + "," + "\'" + priceLowRounded + "\'" + "," + "\'" + priceHighRounded + "\'" + ")\" " +
                                                         "class=\"btn favoriteHeartButton\"><i id=\"hearti\" class=\"far fa-heart\"></i></button>") 
                     .Append("                        </div>")
                     .Append("                    </div>")
@@ -127,5 +128,32 @@ public partial class Search : System.Web.UI.Page
         }
 
     }
+    //protected void heartBtn_CheckedChanged(object sender, EventArgs e)
+    //{
+    //    sqlConn.Open();
+    //    String tSearch = HttpUtility.HtmlEncode(txtSearch.Text);
+    //    int commaSplit = tSearch.IndexOf(",");
+    //    String cityString = tSearch.Substring(0, commaSplit).ToUpper();
+    //    String state = tSearch.Substring(commaSplit + 2).ToUpper();
+    //    String query = "select [PropertyID],[City], [HomeState], [Zip], [RoomPriceRangeLow],[RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like '" + cityString + "' AND upper([HomeState]) like '" + state + "';";
+    //    System.Data.SqlClient.SqlCommand sqlComm = new System.Data.SqlClient.SqlCommand(query, sqlConn);
+    //    System.Data.SqlClient.SqlDataReader reader = sqlComm.ExecuteReader();
+    //    while (reader.Read())
+    //    {
+    //        String propertyID = reader["PropertyID"].ToString();
+    //        String city = reader["City"].ToString();
+    //        String homeState = reader["HomeState"].ToString();
+    //        String priceRangeLow = reader["RoomPriceRangeLow"].ToString();
+    //        String priceRangeHigh = reader["RoomPriceRangeHigh"].ToString();
+    //        int propIdInt = Convert.ToInt32(propertyID);
+    //        double priceLowRounded = Math.Round(Convert.ToDouble(priceRangeLow), 0, MidpointRounding.ToEven);
+    //        double priceHighRounded = Math.Round(Convert.ToDouble(priceRangeHigh), 0, MidpointRounding.ToEven);
+    //        Session["propertyID"] = propertyID;
+    //        Session["city"] = city;
+    //        Session["homeState"] = homeState;
+    //        Session["priceLow"] = priceLowRounded;
+    //        Session["priceHigh"] = priceHighRounded;
+    //    }
+    //}
 
 }
