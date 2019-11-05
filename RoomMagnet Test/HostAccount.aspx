@@ -34,7 +34,7 @@
                 <div class="form-group">
                     <asp:TextBox ID="txtBday" runat="server" class="form-control form-control-lg" placeholder="Birthdate (MM/DD/YYYY)"></asp:TextBox>
                 </div>
-
+                <asp:RegularExpressionValidator ID="houseNumValidatorNumbers" Display="Dynamic" runat="server" ErrorMessage="Please enter a valid house number name" Text="*" ControlToValidate="txtHouseNum" ValidationExpression="[0-9]"></asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="houseNumReqField" Display ="Dynamic" runat="server" ErrorMessage="Please enter a house number." ControlToValidate="txtHouseNum" Text="*"></asp:RequiredFieldValidator>
                 <div class="form-group">
                     <asp:TextBox ID="txtHouseNum" runat="server" class="form-control form-control-lg" placeholder="House Number"></asp:TextBox>
@@ -109,6 +109,7 @@
                         </asp:DropDownList>
                     </div>
                     <asp:RequiredFieldValidator ID="zipReqFieldValidator" Display ="Dynamic" runat="server" ErrorMessage="Please enter a zip code." ControlToValidate="txtZip" Text="*"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="zipNumValidator" Display="Dynamic" runat="server" ErrorMessage="Please enter a valid zip code" Text="*" ControlToValidate="txtZip" ValidationExpression="[0-9]"></asp:RegularExpressionValidator>
                     <div class="form-group col-md-2">
                         <asp:TextBox ID="txtZip" runat="server" class="form-control form-control-lg" placeholder="Zip"></asp:TextBox>
                     </div>
