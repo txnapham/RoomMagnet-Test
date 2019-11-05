@@ -10,7 +10,7 @@ public partial class TenantAccount : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
     }
 
     protected void btnCreateAccount_Click(object sender, EventArgs e)

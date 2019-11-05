@@ -64,7 +64,7 @@
 
                                                 <div class="col-sm-12">
                                                     <div class="form-check">
-                                                        <asp:CheckBox ID="cbConBath" runat="server"  class="form-check-input"/>
+                                                        <asp:CheckBox ID="cbConBath" runat="server" class="form-check-input" />
                                                         <label class="form-check-label" for="cbConBath">Connected bathroom</label>
                                                     </div>
                                                 </div>
@@ -78,7 +78,7 @@
 
                                                 <div class="col-sm-12">
                                                     <div class="form-check">
-                                                        <asp:CheckBox ID="cbDryer" runat="server" class="form-check-input"/>
+                                                        <asp:CheckBox ID="cbDryer" runat="server" class="form-check-input" />
                                                         <label class="form-check-label" for="cbDryer">Dryer</label>
                                                     </div>
                                                 </div>
@@ -345,6 +345,7 @@
 
                         <!--BEGINNING OF SEARCH BUTTON-->
                         <asp:Button ID="btnSearch" OnClick="btnSearch_Click" runat="server" Text="Search" class="btn btn-info"/>
+
                         <!--END OF SERACH BUTTON-->
                     </div>
                 </div>
