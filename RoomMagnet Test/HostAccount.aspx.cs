@@ -120,6 +120,21 @@ public partial class HostAccount : System.Web.UI.Page
                 Label1.Text = "Success";
 
                 sc.Close();
+
+                //Clear text boxes
+                txtFN.Text = "";
+                txtMN.Text = "";
+                txtLN.Text = "";
+                txtBday.Text = "";
+                txtEmail.Text = "";
+                txtPhone.Text = "";
+                txtPassword.Text = "";
+                txtHouseNum.Text = "";
+                txtStreet.Text = "";
+                txtCity.Text = "";
+                ddState.ClearSelection();
+                txtZip.Text = "";
+                txtCountry.Text = "US";
             }
             else
             {

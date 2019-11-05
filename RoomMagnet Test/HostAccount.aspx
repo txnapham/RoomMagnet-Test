@@ -116,7 +116,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <asp:TextBox ID="txtCountry" runat="server" class="form-control form-control-lg" placeholder="Country" MaxLength="2"></asp:TextBox>
+                    <asp:TextBox ID="txtCountry" runat="server" class="form-control form-control-lg" placeholder="Country" MaxLength="2" Enabled="False">US</asp:TextBox>
                 </div>
 
                 <div class="form-group">
