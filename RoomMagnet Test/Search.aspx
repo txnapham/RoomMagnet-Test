@@ -5,8 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <style>
         #map {
-            height: 600px;
-            width: 1200px;
+            height: 300px;
+            width: auto;
         }
     </style>
 
