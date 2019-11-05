@@ -108,6 +108,21 @@ public partial class HostAccount : System.Web.UI.Page
                 Session["type"] = 2;
 
                 sc.Close();
+
+                //Clear text boxes
+                txtFN.Text = "";
+                txtMN.Text = "";
+                txtLN.Text = "";
+                txtBday.Text = "";
+                txtEmail.Text = "";
+                txtPhone.Text = "";
+                txtPassword.Text = "";
+                txtHouseNum.Text = "";
+                txtStreet.Text = "";
+                txtCity.Text = "";
+                ddState.ClearSelection();
+                txtZip.Text = "";
+                txtCountry.Text = "US";
             }
             else if (emailCount == 0)
             {
@@ -147,11 +162,39 @@ public partial class HostAccount : System.Web.UI.Page
                 Session["type"] = 2;
 
                 sc.Close();
+                //Clear text boxes
+                txtFN.Text = "";
+                txtMN.Text = "";
+                txtLN.Text = "";
+                txtBday.Text = "";
+                txtEmail.Text = "";
+                txtPhone.Text = "";
+                txtPassword.Text = "";
+                txtHouseNum.Text = "";
+                txtStreet.Text = "";
+                txtCity.Text = "";
+                ddState.ClearSelection();
+                txtZip.Text = "";
+                txtCountry.Text = "US";
             }
             else
             {
                 Label1.Text = "Error";
                 sc.Close();
+                //Clear text boxes
+                txtFN.Text = "";
+                txtMN.Text = "";
+                txtLN.Text = "";
+                txtBday.Text = "";
+                txtEmail.Text = "";
+                txtPhone.Text = "";
+                txtPassword.Text = "";
+                txtHouseNum.Text = "";
+                txtStreet.Text = "";
+                txtCity.Text = "";
+                ddState.ClearSelection();
+                txtZip.Text = "";
+                txtCountry.Text = "US";
             }
         }
     }

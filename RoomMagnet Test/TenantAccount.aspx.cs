@@ -105,6 +105,22 @@ public partial class TenantAccount : System.Web.UI.Page
                 Session["type"] = 3;
 
                 sc.Close();
+
+                //Clear text boxes
+                txtFN.Text = "";
+                txtMN.Text = "";
+                txtLN.Text = "";
+                txtBday.Text = "";
+                txtEmail.Text = "";
+                txtPhone.Text = "";
+                txtPassword.Text = "";
+                txtHouseNum.Text = "";
+                txtStreet.Text = "";
+                txtCity.Text = "";
+                ddState.ClearSelection();
+                txtZip.Text = "";
+                txtCountry.Text = "US";
+
             }
             else if (emailCount == 0)
             {
@@ -142,10 +158,40 @@ public partial class TenantAccount : System.Web.UI.Page
                 Session["type"] = 3;
 
                 sc.Close();
+
+                //Clear text boxes
+                txtFN.Text = "";
+                txtMN.Text = "";
+                txtLN.Text = "";
+                txtBday.Text = "";
+                txtEmail.Text = "";
+                txtPhone.Text = "";
+                txtPassword.Text = "";
+                txtHouseNum.Text = "";
+                txtStreet.Text = "";
+                txtCity.Text = "";
+                ddState.ClearSelection();
+                txtZip.Text = "";
+                txtCountry.Text = "US";
+
             }
             else
             {
                 sc.Close();
+                //Clear text boxes
+                txtFN.Text = "";
+                txtMN.Text = "";
+                txtLN.Text = "";
+                txtBday.Text = "";
+                txtEmail.Text = "";
+                txtPhone.Text = "";
+                txtPassword.Text = "";
+                txtHouseNum.Text = "";
+                txtStreet.Text = "";
+                txtCity.Text = "";
+                ddState.ClearSelection();
+                txtZip.Text = "";
+                txtCountry.Text = "US";
             }
         }
     }
