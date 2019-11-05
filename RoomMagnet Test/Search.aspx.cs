@@ -31,19 +31,6 @@ public partial class Search : System.Web.UI.Page
         }
         else
         {
-            ////Breaking down the searchbox text
-            //DataTable propertyDataTable = new DataTable();
-            //String property = txtSearch.Text;
-            //int split = property.IndexOf(",");
-            //String city = property.Substring(0, split);
-            //String state = property.Substring(split + 1);
-            ////New select queries
-            //SqlCommand select = new SqlCommand();
-            ////Query that selects data
-            //select.CommandText = "select [City], [HomeState], [Zip], [RoomPriceRangeLow], [RoomPriceRangeHigh] from [dbo].[Property] " + "Where [City] = @City AND [HomeState] = @HomeState";
-            //select.Parameters.AddWithValue("@City", city);
-            //select.Parameters.AddWithValue("@State", state);
-
             sqlConn.Open();
             String classType = "card";
             String imgSource = "";
@@ -56,6 +43,9 @@ public partial class Search : System.Web.UI.Page
             System.Data.SqlClient.SqlCommand sqlComm = new System.Data.SqlClient.SqlCommand(query, sqlConn);
             //sqlComm.CommandText = ("select [City], [HomeState], [Zip], [RoomPriceRangeLow], [RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like upper('%" + cityString + "%')"); 
             System.Data.SqlClient.SqlDataReader reader = sqlComm.ExecuteReader();
+
+            Card1.Text = "";
+
             while (reader.Read())
             {
                 String city = reader["City"].ToString();
@@ -65,36 +55,25 @@ public partial class Search : System.Web.UI.Page
 
                 StringBuilder myCard = new StringBuilder();
                 myCard
-                    .Append("<div class=\"col-md-3\">")
-                    .Append("<div class=\"card  shadow-sm  mb-4\" >")
-                    .Append("                        <img src=\"images/scott-webb-1ddol8rgUH8-unsplash.jpg\" class=\"card-img-top\" alt=\"image\">")
-                    .Append("                        <a href=\"search-result-page-detail.html\" class=\"cardLinks\">")
-                    .Append("                            <div class=\"card-body\">")
-                    .Append("                                <h5 class=\"card-title\">" + city + ", " + homeState + "</h5>")
-                    .Append("                                <p class=\"card-text\">" + "$" + priceRangeLow + " - " + "$" + priceRangeHigh + "</p>")
-                    .Append("                            </div>")
-                    .Append("                        </a>")
-                    .Append("")
-                    .Append("                        <div>")
-                    .Append("                            <button id=\"heartbtn\" class=\"btn favoriteHeartButton\"><i id=\"hearti\" class=\"far fa-heart\"></i></button>")
-                    .Append("                        </div>")
-                    .Append("                    </div>")
-                    .Append("</div>");
-
-	
+                .Append("<div class=\"col-xs-4 col-md-3\">")
+                .Append("<div class=\"card  shadow-sm  mb-4\" >")
+                .Append("                        <img src=\"images/scott-webb-1ddol8rgUH8-unsplash.jpg\" class=\"card-img-top\" alt=\"image\">")
+                .Append("                        <a href=\"search-result-page-detail.html\" class=\"cardLinks\">")
+                .Append("                            <div class=\"card-body\">")
+                .Append("                                <h5 class=\"card-title\">" + city + ", " + homeState + "</h5>")
+                .Append("                                <p class=\"card-text\">" + "$" + priceRangeLow + " - " + "$" + priceRangeHigh + "</p>")
+                .Append("                            </div>")
+                .Append("                        </a>")
+                .Append("")
+                .Append("                        <div>")
+                .Append("                            <button id=\"heartbtn\" class=\"btn favoriteHeartButton\"><i id=\"hearti\" class=\"far fa-heart\"></i></button>")
+                .Append("                        </div>")
+                .Append("                    </div>")
+                .Append("</div>");
 
                 Card1.Text += myCard.ToString();
             }
             reader.Close();
-
-            //Card1.Text = "<div class = \"card shadow-sm mb-4" + ">"   
-            //    + "<img src=" + imgSource + "class=" + "card-img-top" alt" + "image" + ">"
-            //    + "<a href=" + "search-result-page-detail.html class=" + "cardLinks" + ">"
-            //    + "<div class=" + cardBody + "\">"  + "<h5 class=" + cardTitle +
-
-
-
-
 
         }
 
