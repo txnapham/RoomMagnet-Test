@@ -15,36 +15,40 @@
                 </div>
 
                 <%--<form>--%>
+                <asp:RequiredFieldValidator ID="fnReqFieldValidator" Display ="Dynamic" runat="server" ErrorMessage="Please enter a first name" Visible="False" Text="*" ControlToValidate="txtFN"></asp:RequiredFieldValidator>
                 <div class="form-group">
                     <asp:TextBox ID="txtFN" runat="server" class="form-control form-control-lg" aria-describedby="FirstName" placeholder="First Name"></asp:TextBox>
                 </div>
-
+                
+                
                 <div class="form-group">
                     <asp:TextBox ID="txtMN" runat="server" class="form-control form-control-lg" aria-describedby="MiddleName" placeholder="Middle Name"></asp:TextBox>
                 </div>
-
+                <asp:RequiredFieldValidator ID="lnReqFieldValidator" Display ="Dynamic" runat="server" ErrorMessage="Please enter a last name." ControlToValidate="txtLN" Text="*"></asp:RequiredFieldValidator>
                 <div class="form-group">
                     <asp:TextBox ID="txtLN" runat="server" class="form-control form-control-lg" aria-describedby="LastName" placeholder="Last Name"></asp:TextBox>
                 </div>
 
+                <asp:RequiredFieldValidator ID="bdayReqFieldValidator" Display ="Dynamic" runat="server" ErrorMessage="Please enter a birth date." ControlToValidate="txtBday" Text="*"></asp:RequiredFieldValidator>
                 <div class="form-group">
                     <asp:TextBox ID="txtBday" runat="server" class="form-control form-control-lg" placeholder="Birthdate (MM/DD/YYYY)"></asp:TextBox>
                 </div>
 
+                <asp:RequiredFieldValidator ID="houseNumReqField" Display ="Dynamic" runat="server" ErrorMessage="Please enter a house number." ControlToValidate="txtHouseNum" Text="*"></asp:RequiredFieldValidator>
                 <div class="form-group">
                     <asp:TextBox ID="txtHouseNum" runat="server" class="form-control form-control-lg" placeholder="House Number"></asp:TextBox>
                 </div>
-
+                <asp:RequiredFieldValidator ID="streetReqFieldValidator" Display ="Dynamic" runat="server" ErrorMessage="Please enter a street." ControlToValidate="txtStreet" Text="*"></asp:RequiredFieldValidator>
                 <div class="form-group">
                     <asp:TextBox ID="txtStreet" runat="server" class="form-control form-control-lg" placeholder="Street"></asp:TextBox>
                 </div>
-
+                <asp:RequiredFieldValidator ID="cityReqFieldValidator" Display ="Dynamic" runat="server" ErrorMessage="Please enter a city." ControlToValidate="txtCity" Text="*"></asp:RequiredFieldValidator>
                 <div class="form-row">
                     <div class="form-group col-md-7">
                         <asp:TextBox ID="txtCity" runat="server" class="form-control form-control-lg" placeholder="City"></asp:TextBox>
                     </div>
 
-
+                    <asp:RequiredFieldValidator ID="stateReqFieldValidator" Display ="Dynamic" runat="server" ErrorMessage="Please select a state." ControlToValidate="ddState" Text="*"></asp:RequiredFieldValidator>
                     <div class="form-group col-md-3">
 
                         <asp:DropDownList ID="ddState" runat="server" class="form-control  form-control-lg">
@@ -101,12 +105,12 @@
                             <asp:ListItem>WY</asp:ListItem>
                         </asp:DropDownList>
                     </div>
-
+                    <asp:RequiredFieldValidator ID="zipReqFieldValidator" Display ="Dynamic" runat="server" ErrorMessage="Please enter a zip code." ControlToValidate="txtZip" Text="*"></asp:RequiredFieldValidator>
                     <div class="form-group col-md-2">
                         <asp:TextBox ID="txtZip" runat="server" class="form-control form-control-lg" placeholder="Zip"></asp:TextBox>
                     </div>
                 </div>
-
+                
                 <div class="form-group">
                     <asp:TextBox ID="txtCountry" runat="server" class="form-control form-control-lg" placeholder="Country"></asp:TextBox>
                 </div>
@@ -114,16 +118,16 @@
                 <div class="form-group">
                     <small id="addressDisclosure" class="form-text text-muted">*We will never share your address until you begin the lease process.</small>
                 </div>
-
+                <asp:RequiredFieldValidator ID="phoneReqField" Display ="Dynamic" runat="server" ErrorMessage="Please enter a phone number." ControlToValidate="txtPhone" Text="*"></asp:RequiredFieldValidator>
                 <div class="form-group">
                     <asp:TextBox ID="txtPhone" runat="server" class="form-control form-control-lg" placeholder="Phone Number (XXX-XXX-XXXX)"></asp:TextBox>
                 </div>
-
+                <asp:RequiredFieldValidator ID="emailReqFieldValidator" Display ="Dynamic" runat="server" ErrorMessage="Please enter an email." ControlToValidate="txtEmail" Text="*"></asp:RequiredFieldValidator>
                 <div class="form-group">
                     <asp:TextBox ID="txtEmail" runat="server" class="form-control form-control-lg" aria-describedby="emailHelp" placeholder="Email"></asp:TextBox>
                     <small id="emailHelp" class="form-text text-muted">*We will never share your email with anyone else.</small>
                 </div>
-
+                <asp:RequiredFieldValidator ID="passwordReqField" Display ="Dynamic" runat="server" ErrorMessage="Please enter a password." ControlToValidate="txtPassword" Text="*"></asp:RequiredFieldValidator>
                 <div class="form-group">
                     <label for="txtPassword">Password</label>
                     <%--for testing purposes--%>
