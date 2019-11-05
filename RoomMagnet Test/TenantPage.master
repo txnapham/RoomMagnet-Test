@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="TenantPage.master.cs" Inherits="TenantPage" %>
 
 <!DOCTYPE html>
 
@@ -21,36 +21,34 @@
     <script src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" data-auto-replace-svg="nest"></script>
 
 
-
-    <!--Content Placeholder-->
-
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-
 </head>
-
 <body>
-
     <form id="form1" runat="server">
 
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top mainNav">
-            <div class="container">
+            <div class="container-fluid">
+
+
                 <a class="navbar-brand ml-0 logo" href="Home.aspx">
                     <img src="images/roommagnetLOGO.png" alt="roommagnet logo" class="img-fluid" width="300" height="300"></a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+
+
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="nav nav-pills ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="Home.aspx">Home</a>
+                            <a class="nav-link " href="Home.aspx">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Search.aspx">Search</a>
+                            <a class="active nav-link" href="Search.aspx">Search</a>
                         </li>
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
                             <div class="dropdown-menu">
@@ -60,82 +58,25 @@
                                 <a class="dropdown-item js-scroll-trigger" href="AboutUs.aspx#ourPolicy">Our Policy</a>
                             </div>
                         </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Welcome</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item js-scroll-trigger" href="TenantDashboard.aspx">View Profile</a>
+                                <a class="dropdown-item js-scroll-trigger" href="#">Edit Profile</a>
+                                <a class="dropdown-item js-scroll-trigger" href="#">Settings</a>
+                                <a class="dropdown-item js-scroll-trigger" href="Home.aspx">Logout</a>
+                            </div>
+                        </li>
+
                     </ul>
 
-                    <%--Navigation login button--%>
 
-                    <button class="nav-item btn loginBUTTON" type="button" data-toggle="modal" data-target="#loginModal">
-                        <a class="nav-link" href="#">Login</a>
-                    </button>
                 </div>
             </div>
         </nav>
-
-        <%--Login Modal--%>
-        <div class="modal" id="loginModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <%--<form>--%>
-                        <div class="form-group">
-                            <asp:TextBox ID="txtEmail" runat="server" class="form-control form-control-lg" aria-describedby="emailHelp" placeholder="Email"></asp:TextBox>
-                        </div>
-
-                        <div class="form-group">
-                            <asp:TextBox ID="txtPassword" runat="server" class="form-control form-control-lg" placeholder="Password" TextMode ="Password"></asp:TextBox>
-                        </div>
-
-                        <asp:Button ID="btnLogin" runat="server" Text="Login" class="btn btn-md btn-info btn-block" OnClick="btnLogin_Click" />
-                        <asp:Label ID="lblStatus" runat="server" Text="Label"></asp:Label>
-                    </div>
-
-
-                    <!-- Modal footer -->
-
-                    <div class="modal-body">
-
-                        <div class="pb-3">
-                            <h5 class="modal-title">Don't have an account? Sign up today!</h5>
-                        </div>
-
-                        <div>
-                            <button type="button" class="btn btn-info btn-block" data-toggle="modal" data-dismiss="modal" data-target="#chooseAccountType">
-                                Create Account
-                   
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal justify-content-center" id="chooseAccountType">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- Modal Header -->
-                    <div class="modal-body ">
-<%--                        <form>--%>
-                            <h4 class="modal-title pb-3">Are you a</h4>
-
-                            <a class="btn btn-info btn-block" href="HostAccount.aspx">Host</a>
-
-                            <a class="btn btn-info btn-block" href="TenantAccount.aspx">Tenant</a>
-                            <!--TENANT A TAG GOES IN BUTTON-->
-<%--                        </form>--%>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!--END OF NAVIGATION-->
 
-        <%--Content Place Holder--%>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
@@ -148,16 +89,17 @@
                         <a href="Home.aspx">
                             <img src="images/roommagnetLOGO.png" alt="roommagnet logo" class="img-fluid"></a>
                     </div>
+
                     <div class="col-md-10 pt-4">
                         <ul class="nav justify-content-end">
                             <li class="nav-item">
-                                <a class="nav-link " href="AboutUS.aspx">About Us</a>
+                                <a class="nav-link " href="AboutUs.aspx#whoAreWe">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="AboutUs.aspx#frequentlyAsked">Frequently Asked Questions</a>
+                                <a class="nav-link" href="AboutUs.aspx#faQs">Frequently Asked Questions</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="AboutUs.aspx#policy">Policy</a>
+                                <a class="nav-link" href="AboutUs.aspx#ourPolicy">Policy</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
@@ -170,23 +112,25 @@
                     <div class="col-md-12">
                         <p class="text-center">
                             Copyright &copy; 2019 Skyline Consulting. All rights reserved.
+                       
                         </p>
                     </div>
                 </div>
             </footer>
-
             <!--END OF FOOTER-->
 
             <!--END OF PAGE-->
 
-            <script src="js/roommagnet.js"></script>
+
+
+
 
             <!-- jQuery first, then Popper.js, then Bootstrap JS -->
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
         </div>
     </form>
 </body>
-
 </html>

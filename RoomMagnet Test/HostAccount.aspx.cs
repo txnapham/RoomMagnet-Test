@@ -8,8 +8,29 @@ using System.Data.SqlClient;
 
 public partial class HostAccount : System.Web.UI.Page
 {
-    public static DateTime ModifiedDate = DateTime.Now;
-    
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        if (Session["type"] != null)
+        {
+            if ((int)Session["type"] == 1)
+            {
+                this.MasterPageFile = "~/AdminPage.master";
+            }
+            else if ((int)Session["type"] == 2)
+            {
+                this.MasterPageFile = "~/HostPage.master";
+            }
+            else if ((int)Session["type"] == 3)
+            {
+                this.MasterPageFile = "~/TenantPage.master";
+            }
+        }
+        else if (Session["type"] == null)
+        {
+            this.MasterPageFile = "~/MasterPage.master";
+        }
+    }
+
     protected void Page_Load(object sender, EventArgs e)
     {
         txtCountry.Enabled = false;
@@ -83,6 +104,9 @@ public partial class HostAccount : System.Web.UI.Page
 
                 Label1.Text = "Success";
 
+                Response.Redirect("HostDashboard.aspx");
+                Session["type"] = 2;
+
                 sc.Close();
             }
             else if (emailCount == 0)
@@ -118,6 +142,9 @@ public partial class HostAccount : System.Web.UI.Page
                 insert.ExecuteNonQuery();
 
                 Label1.Text = "Success";
+
+                Response.Redirect("HostDashboard.aspx");
+                Session["type"] = 2;
 
                 sc.Close();
             }

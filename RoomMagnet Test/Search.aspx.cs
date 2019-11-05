@@ -15,8 +15,31 @@ using System.Data.SqlClient;
 
 public partial class Search : System.Web.UI.Page
 {
-
     System.Data.SqlClient.SqlConnection sqlConn = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ToString());
+    System.Data.SqlClient.SqlConnection sqlConn2 = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ToString());
+
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        if (Session["type"] != null)
+        {
+            if ((int)Session["type"] == 1)
+            {
+                this.MasterPageFile = "~/AdminPage.master";
+            }
+            else if ((int)Session["type"] == 2)
+            {
+                this.MasterPageFile = "~/HostPage.master";
+            }
+            else if ((int)Session["type"] == 3)
+            {
+                this.MasterPageFile = "~/TenantPage.master";
+            }
+        }
+        else if (Session["type"] == null)
+        {
+            this.MasterPageFile = "~/MasterPage.master";
+        }
+    }
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -32,6 +55,7 @@ public partial class Search : System.Web.UI.Page
         else
         {
             sqlConn.Open();
+            sqlConn2.Open();
             String classType = "card";
             String imgSource = "";
             String cardBody = "";
@@ -40,9 +64,14 @@ public partial class Search : System.Web.UI.Page
             String cityString = tSearch.Substring(0, commaSplit).ToUpper();
             String state = tSearch.Substring(commaSplit + 2).ToUpper(); 
             String query = "select [City], [HomeState], [Zip], [RoomPriceRangeLow],[RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like '" + cityString + "' AND upper([HomeState]) like '"+state+ "';";
+            String countResults = "select count(*) from [dbo].[Property] where upper([City]) like '" + cityString + "' AND upper([HomeState]) like '" + state + "';";
             System.Data.SqlClient.SqlCommand sqlComm = new System.Data.SqlClient.SqlCommand(query, sqlConn);
+            System.Data.SqlClient.SqlCommand sqlCount = new System.Data.SqlClient.SqlCommand(countResults, sqlConn2);
+            
             //sqlComm.CommandText = ("select [City], [HomeState], [Zip], [RoomPriceRangeLow], [RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like upper('%" + cityString + "%')"); 
             System.Data.SqlClient.SqlDataReader reader = sqlComm.ExecuteReader();
+            int resultCount = (int)sqlCount.ExecuteScalar();
+            int runCount = 0;
 
             Card1.Text = "";
 
@@ -72,6 +101,7 @@ public partial class Search : System.Web.UI.Page
                 .Append("</div>");
 
                 Card1.Text += myCard.ToString();
+                runCount++;
             }
             reader.Close();
 

@@ -8,6 +8,29 @@ using System.Data.SqlClient;
 
 public partial class TenantAccount : System.Web.UI.Page
 {
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        if (Session["type"] != null)
+        {
+            if ((int)Session["type"] == 1)
+            {
+                this.MasterPageFile = "~/AdminPage.master";
+            }
+            else if ((int)Session["type"] == 2)
+            {
+                this.MasterPageFile = "~/HostPage.master";
+            }
+            else if ((int)Session["type"] == 3)
+            {
+                this.MasterPageFile = "~/TenantPage.master";
+            }
+        }
+        else if (Session["type"] == null)
+        {
+            this.MasterPageFile = "~/MasterPage.master";
+        }
+    }  
+
     protected void Page_Load(object sender, EventArgs e)
     {
         txtCountry.Enabled = false;
@@ -78,6 +101,9 @@ public partial class TenantAccount : System.Web.UI.Page
 
                 insert.ExecuteNonQuery();
 
+                Response.Redirect("TenantDashboard.aspx");
+                Session["type"] = 3;
+
                 sc.Close();
             }
             else if (emailCount == 0)
@@ -111,6 +137,9 @@ public partial class TenantAccount : System.Web.UI.Page
                 insert.Parameters.Add(new SqlParameter("@password", PasswordHash.HashPassword(txtPassword.Text))); // hash entered password
 
                 insert.ExecuteNonQuery();
+
+                Response.Redirect("TenantDashboard.aspx");
+                Session["type"] = 3;
 
                 sc.Close();
             }
