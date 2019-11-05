@@ -34,7 +34,7 @@
                     <asp:TextBox ID="txtBday" runat="server" class="form-control form-control-lg" placeholder="Birthday (MM/DD/YYYY)" MaxLength="10"></asp:TextBox>
                     <%--<input class="form-control form-control-lg" id="date" name="date" placeholder="MM/DD/YYY" type="text">--%>
                 </div>
-                <asp:RegularExpressionValidator ID="houseNumValidatorNumbers" Display="Dynamic" runat="server" ErrorMessage="Please enter a valid house number name" Text="*" ControlToValidate="txtHouseNum" ValidationExpression="[0-9]"></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="houseNumValidatorNumbers" Display="Dynamic" runat="server" ErrorMessage="Please enter a valid house number name" Text="*" ControlToValidate="txtHouseNum" ValidationExpression="^[0-9]+$"></asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="houseNumReqField" Display ="Dynamic" runat="server" ErrorMessage="Please enter a house number." ControlToValidate="txtHouseNum" Text="*"></asp:RequiredFieldValidator>
                 <div class="form-group">
                     <asp:TextBox ID="txtHouseNum" runat="server" class="form-control form-control-lg" placeholder="House Number"></asp:TextBox>
@@ -109,7 +109,7 @@
                         </asp:DropDownList>
                     </div>
                     <asp:RequiredFieldValidator ID="zipReqFieldValidator" Display ="Dynamic" runat="server" ErrorMessage="Please enter a zip code." ControlToValidate="txtZip" Text="*"></asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="zipNumValidator" Display="Dynamic" runat="server" ErrorMessage="Please enter a valid zip code" Text="*" ControlToValidate="txtZip" ValidationExpression="[0-9]"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="zipNumValidator" Display="Dynamic" runat="server" ErrorMessage="Please enter a valid zip code" Text="*" ControlToValidate="txtZip" ValidationExpression="^[0-9]+$"></asp:RegularExpressionValidator>
                     <div class="form-group col-md-2">
                         <asp:TextBox ID="txtZip" runat="server" class="form-control form-control-lg" placeholder="Zip" MaxLength="9"></asp:TextBox>
                     </div>
@@ -141,7 +141,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleFormControlFile1">Letter of Recommindation: </label>
+                    <label for="exampleFormControlFile1">Letter of Recommendation: </label>
                     <input type="file" class="form-control-file" id="exampleFormControlFile1">
                 </div>
 
