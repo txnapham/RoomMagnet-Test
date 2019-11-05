@@ -158,7 +158,7 @@
                 </div>
 
                 <asp:Button ID="btnCreateAccount" runat="server" Text="Create Account" class="btn btn-info" href="TenantAccountCategories.aspx" OnClick="btnCreateAccount_Click" CausesValidation="False" />
-
+                <asp:Label ID="resultLabel" runat="server" Text="Result Label" Visible="False" ForeColor="#FF3300"></asp:Label>
                 <%--<a class="btn btn-info" id="createAccountButton" href="tenant-create-account-categories.html">Create Account</a>--%>
                 <%--should only go to next page (host category when creation is successful--%>
 

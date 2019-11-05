@@ -31,7 +31,7 @@ public partial class HostAccount : System.Web.UI.Page
 
         int emailCount;
         int acctTypeCount;
-
+         
         //create new account and host object
         //use HttpUtility.HtmlEncode for these inputs
         Account newAccount = new Account(HttpUtility.HtmlEncode(txtFN.Text), HttpUtility.HtmlEncode(txtMN.Text), HttpUtility.HtmlEncode(txtLN.Text), HttpUtility.HtmlEncode(txtPhone.Text), DateTime.Parse(txtBday.Text), HttpUtility.HtmlEncode(txtEmail.Text), HttpUtility.HtmlEncode(txtHouseNum.Text), HttpUtility.HtmlEncode(txtStreet.Text), HttpUtility.HtmlEncode(txtCity.Text), ddState.SelectedValue, HttpUtility.HtmlEncode(txtZip.Text), "US", Int32.Parse("2"), Int32.Parse("2"));
