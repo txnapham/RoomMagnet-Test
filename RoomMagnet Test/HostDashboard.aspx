@@ -76,7 +76,7 @@
                         </ul>
                     <!--BUTTON-->    
                         <div class=" text-center">
-                        <a href="properties-page.html" class="btn btn-info">View more</a> 
+                        <a href="ListedProperties.aspx" class="btn btn-info">View more</a> 
                         </div>
                     <!--END OF BUTTON-->        
                         </div>
@@ -128,7 +128,7 @@
                                 
                         <!--BUTTON-->   
                                 <div class=" text-center">
-                                <a href="message-page.html" class="btn btn-info">View Messages</a> 
+                                <a href="HostMessageCenter.aspx" class="btn btn-info">View Messages</a> 
                                 </div>
                         <!--END OF BUTTON-->        
                             </div>
@@ -155,7 +155,7 @@
                             </ul>
                         <!--BUTTON-->        
                             <div class=" text-center">    
-                            <a href="host-tenants-page.html" class="btn btn-info">View more</a>
+                            <a href="Host-Tenants.aspx" class="btn btn-info">View more</a>
                             </div>    
                         <!--END OF BUTTON-->        
                             </div>

@@ -340,7 +340,7 @@
                                 
 <!--SEARCH BAR-->                                
                                 <div class="col-md-6 searchBar">
-                                    <input type="text" class="form-control form-control-lg" placeholder="Search">
+                                    <asp:TextBox ID="txtSearch" runat="server" class="form-control form-control-lg" placeholder="Search"></asp:TextBox>
                                 </div>
                                 <!--END OF SEARCH BAR-->
 

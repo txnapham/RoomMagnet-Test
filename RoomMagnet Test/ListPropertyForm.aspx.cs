@@ -32,14 +32,12 @@ public partial class ListPropertyForm : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        txtCountry.Enabled = false;
         txtCountry.Text = "US";
         ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
     }
 
-    protected void btnListPropert_Click(object sender, EventArgs e)
+    protected void btnListProperty_Click(object sender, EventArgs e)
     {
-        
         Property newProperty = new Property(HttpUtility.HtmlEncode(txtHouseNum.Text), HttpUtility.HtmlEncode(txtStreet.Text), HttpUtility.HtmlEncode(txtCity.Text), ddState.SelectedValue, HttpUtility.HtmlEncode(txtZip.Text), HttpUtility.HtmlEncode(txtCountry.Text));
 
         if (cbGuest.Checked == true)

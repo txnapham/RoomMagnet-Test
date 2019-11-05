@@ -101,8 +101,8 @@ public partial class TenantAccount : System.Web.UI.Page
 
                 insert.ExecuteNonQuery();
 
-                Response.Redirect("TenantDashboard.aspx");
                 Session["type"] = 3;
+                Response.Redirect("TenantDashboard.aspx");
 
                 sc.Close();
 
@@ -154,8 +154,9 @@ public partial class TenantAccount : System.Web.UI.Page
 
                 insert.ExecuteNonQuery();
 
-                Response.Redirect("TenantDashboard.aspx");
                 Session["type"] = 3;
+                Response.Redirect("TenantDashboard.aspx");
+
 
                 sc.Close();
 
