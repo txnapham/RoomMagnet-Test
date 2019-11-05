@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ListPropertyForm.aspx.cs" Inherits="ListPropertyForm" EnableEventValidation ="false"%>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ListPropertyForm.aspx.cs" Inherits="ListPropertyForm" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -13,7 +13,7 @@
 
             <!--END OF USER DASH-NAV-->
             <div class="progress" style="height: 30px;">
-                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Profile Completion</div>
+                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width:66%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Profile Completion</div>
             </div>
 
         </div>
@@ -77,8 +77,6 @@
                                 <asp:ListItem>CA</asp:ListItem>
                                 <asp:ListItem>CO</asp:ListItem>
                                 <asp:ListItem>CT</asp:ListItem>
-                                <asp:ListItem>CT</asp:ListItem>
-                                <asp:ListItem>DC</asp:ListItem>
                                 <asp:ListItem>DE</asp:ListItem>
                                 <asp:ListItem>FL</asp:ListItem>
                                 <asp:ListItem>GA</asp:ListItem>
@@ -141,6 +139,28 @@
 
                 </form>
             </section>
+            
+            
+            <section>
+                <div class="row pt-3">
+                    <div class="col-md-12">
+                        <h5>Please provide a brief description of your property:</h5>
+                    </div>
+                </div>
+            </section>
+            
+            
+            
+            <section>
+                <form>           
+                        <div class="form-group descripmessagebox">
+                            <textarea class="form-control " id="descriptionMessagebox"> </textarea>
+                        </div>
+                    
+                </form>
+            </section>
+            
+            
 
 
             <section>
@@ -225,7 +245,7 @@
                                     <asp:CheckBox ID="cbConnBath" runat="server" />
                                     <span class="slider round"></span>
                                 </label>
-                                <div>Connected bathroom</div>
+                                <div>Connected Bathroom</div>
                             </div>
                         </div>
 
@@ -235,7 +255,7 @@
                                     <asp:CheckBox ID="cbWalkInClos" runat="server" />
                                     <span class="slider round"></span>
                                 </label>
-                                <div>Walk-in closet</div>
+                                <div>Walk-In Closet</div>
                             </div>
                         </div>
 
@@ -281,7 +301,7 @@
                                     <asp:CheckBox ID="cbSepEnt" runat="server" />
                                     <span class="slider round"></span>
                                 </label>
-                                <div>Separate entrance</div>
+                                <div>Separate Entrance</div>
                             </div>
                         </div>
 
@@ -385,7 +405,7 @@
                                     <asp:CheckBox ID="cbGarPark" runat="server" />
                                     <span class="slider round"></span>
                                 </label>
-                                <div>Garage parking</div>
+                                <div>Garage Parking</div>
                             </div>
                         </div>
 
@@ -446,7 +466,7 @@
                                     <asp:CheckBox ID="cbSmoke" runat="server" />
                                     <span class="slider round"></span>
                                 </label>
-                                <div>Smoking allowed</div>
+                                <div>Smoking Allowed</div>
                             </div>
                         </div>
                     </div>
@@ -460,13 +480,13 @@
                                     <asp:CheckBox ID="cbGuest" runat="server" />
                                     <span class="slider round"></span>
                                 </label>
-                                <div>Guest allowed</div>
+                                <div>Guest Allowed</div>
                             </div>
                         </div>
 
 
                         <form>
-                            <h6>Don't see one that applies to you. Fill out the form below:</h6>
+                            <h6>Don't see one that applies to you? Fill out the form below:</h6>
                             <div class="form-group">
                                 <asp:TextBox ID="txtOtherRules" runat="server" class="form-control" aria-describedby="HouseRule" placeholder="Type your house rule here"></asp:TextBox>
                             </div>
@@ -513,7 +533,7 @@
 
             <form class="pt-4">
                 <div class="form-group">
-                    <h5>Upload propery images here:</h5>
+                    <h5>Upload property images here:</h5>
                     <input type="file" class="form-control-file" id="exampleFormControlFile1">
                 </div>
 
@@ -529,13 +549,11 @@
                 </div>
             </form>
 
-            <asp:Button ID="btnListPropert" runat="server" class="btn btn-info btn-block" Text="List Property" OnClick="btnListPropert_Click" EventValidation ="false"/>
+            <asp:Button ID="btnListPropert" runat="server" class="btn btn-info btn-block" Text="List Property" />
 
 
 
 
         </div>
         <!--END OF BODY CONTENT-->
-    </div>
 </asp:Content>
-

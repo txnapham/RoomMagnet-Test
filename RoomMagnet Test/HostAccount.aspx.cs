@@ -77,7 +77,7 @@ public partial class HostAccount : System.Web.UI.Page
 
                 insert.ExecuteNonQuery();
 
-                Label1.Text = "Success";
+                //Label1.Text = "Success";
 
                 sc.Close();
             }
@@ -113,13 +113,13 @@ public partial class HostAccount : System.Web.UI.Page
 
                 insert.ExecuteNonQuery();
 
-                Label1.Text = "Success";
+                //Label1.Text = "Success";
 
                 sc.Close();
             }
             else
             {
-                Label1.Text = "Error";
+                //Label1.Text = "Error";
                 sc.Close();
             }
         }

@@ -13,7 +13,7 @@
 
 
             <div class="progress" style="height: 30px;">
-                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Profile Completion</div>
+                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 66%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Profile Completion</div>
             </div>
 
         </div>
@@ -66,4 +66,3 @@
 
     </div>
 </asp:Content>
-
