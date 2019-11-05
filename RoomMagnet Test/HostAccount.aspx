@@ -153,7 +153,7 @@
                 <%--for testing purpose--%>
 
                 <asp:Button ID="btnCreateAccount" runat="server" Text="Create Account" class="btn btn-info" OnClick="btnCreateAccount_Click"  CausesValidation="false"/>
-
+                <asp:Label ID="resultLabel" runat="server" Text="Result Label" Visible="False"></asp:Label>
                 <%--<a class="btn btn-info" id="createAccountButton" href="HostAccountCategories.aspx">Create Account</a>--%>
 
                 <%--should only go to next page (host category when creation is successful--%>
