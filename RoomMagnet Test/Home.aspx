@@ -5,404 +5,330 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <div class="container-fluid pl-0 pr-0">
-        <!--BEGINNING OF ROOMMAGNET IMAGE HEADER/JUMBOTRON-->
-        <header class="bg-white text-black expand-lg">
-            <div class="container text-center" id="#">
-
+        <!--BEGINNING OF ROOMMAGNET IMAGE HEADER/JUMBOTRON-->              
+            <header>
+                <div class="container">
+                    
                 <!--BACKGROUND IMAGE HERE-->
-
-                <h1>Real Homes. Real People. Real Life.</h1>
-
-                <section>
+                
+                    <h1 class="text-center">Real Homes. Real People. Real Life.</h1>
+                    
+                    <section>
                     <div class="row">
                         <div class="col-md-12">
-                            <!--FILTER BUTTON AND FILTER FORM-->
+     <!--FILTER BUTTON AND FILTER FORM-->                       
                             <div class="form-row justify-content-center">
-                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#filterOptions">Filter</button>
-                                <!--END OF FILTER BUTTON-->
-
-
-                                <!--filter form starts-->
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#filterOptions" >Filter</button>
+                        <!--END OF FILTER BUTTON-->   
+                                
+                                
+                                <!--filter form starts-->    
                                 <div class="modal" id="filterOptions">
                                     <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
+                                      <div class="modal-content">
 
-                                            <div class="modal-body">
+                                        <div class="modal-body">
 
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                                                <!--start of amentities-->
-                                                <h6>Amenities</h6>
-                                                <div class="form-group row">
-
-                                                    <div class="col-sm-6">
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                                <label class="form-check-label" for="filterPetFriendly">Connected bathroom</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Walk-in closet</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Dryer</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Ceiling fan</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Kitchen</label>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-                                                    <div class="col-sm-6">
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                                <label class="form-check-label" for="filterPetFriendly">Separate entrance</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Air conditioning</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Washer</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Wifi</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Heating</label>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <!--end of amenities-->
-
-
-                                                <!--start of facilites-->
-                                                <h6>Facilites</h6>
-                                                <div class="form-group row">
-
-                                                    <div class="col-sm-6">
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                                <label class="form-check-label" for="filterPetFriendly">Street Paking</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Pool</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Deck</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-6">
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                                <label class="form-check-label" for="filterPetFriendly">Garage parking</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Backyard</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Porch</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!--end of facilities-->
-
-
-                                                <!--start of personality-->
-                                                <h6>Personality *will come up with better name</h6>
-                                                <div class="form-group row">
-
-                                                    <div class="col-sm-6">
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                                <label class="form-check-label" for="filterPetFriendly">Introvert</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Extrovert</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Family oriented</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Tech savy</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-6">
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                                <label class="form-check-label" for="filterPetFriendly">Early riser</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Night owl</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Religious</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Non-smoker</label>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <!--end of personality-->
-
-
-
-
-
-                                                <!--start of languages-->
-                                                <h6>Languages</h6>
-                                                <div class="form-group row">
-
-                                                    <div class="col-sm-6">
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                                <label class="form-check-label" for="filterPetFriendly">English</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Spanish</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">Mandarin</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-6">
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                                <label class="form-check-label" for="filterPetFriendly">Japanese </label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">German</label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12">
-                                                            <div class="form-check">
-                                                                <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                                <label class="form-check-label" for="filterSportsFan">French</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!--end of languages-->
-
-
-                                                <button type="button" class="btn btn-info btn-block">
-                                                    Add Filters
-                                           
-                                                </button>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END OF FILTER FORM-->
-
-
-
-
-                                <!--BEGINNING OF FILTER FORM-->
-                                <!--<div class="dropdown-menu">
-                                        <form class="px-1 py-1">
+                                            <!--start of amentities-->
+                                            <h6>Amenities</h6>
                                             <div class="form-group row">
-                                                
-                                                
-                                                    
-                                                    <div class="col-sm-4">
+                                             
+                                                <div class="col-sm-6">
                                                         
-                                                        <div class="col-sm-4">
+                                                        <div class="col-sm-12">
                                                         <div class="form-check">
                                                         <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                        <label class="form-check-label" for="filterPetFriendly">Pet friendly</label>
+                                                        <label class="form-check-lable" for="filterPetFriendly">Connected bathroom</label>
                                                         </div>    
                                                         </div>
                                                         
-                                                        <div class="col-sm-4">
+                                                        <div class="col-sm-12">
                                                         <div class="form-check">
                                                         <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                        <label class="form-check-label" for="filterSportsFan">Sports Fan</label>
+                                                        <label class="form-check-lable" for="filterSportsFan">Walk-in closet</label>
+                                                        </div>
+                                                        </div>
+                                                    
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">Dryer</label>
+                                                        </div>
+                                                        </div>
+                                                    
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">Ceiling fan</label>
+                                                        </div>
+                                                        </div>
+                                                    
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">Kitchen</label>
                                                         </div>
                                                         </div>
                                                         
                                                     </div>    
                                                 
-                                                    
-                                                
-                                                     <div class="col-sm-4">
+                                                <div class="col-sm-6">
                                                         
-                                                        <div class="col-sm-4">
+                                                        <div class="col-sm-12">
                                                         <div class="form-check">
                                                         <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                        <label class="form-check-label" for="filterPetFriendly">Pet friendly</label>
+                                                        <label class="form-check-lable" for="filterPetFriendly">Separate entrance</label>
                                                         </div>    
                                                         </div>
                                                         
-                                                        <div class="col-sm-4">
+                                                        <div class="col-sm-12">
                                                         <div class="form-check">
                                                         <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                        <label class="form-check-label" for="filterSportsFan">Sports Fan</label>
+                                                        <label class="form-check-lable" for="filterSportsFan">Air conditioning</label>
                                                         </div>
                                                         </div>
-                                                        
-                                                    </div>  
-                                                 
-                                                
-                                                
-                                                     <div class="col-sm-4">
-                                                        
-                                                        <div class="col-sm-4">
-                                                        <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" id="filterPetFriendly">
-                                                        <label class="form-check-label" for="filterPetFriendly">Pet friendly</label>
-                                                        </div>    
-                                                        </div>
-                                                        
-                                                        <div class="col-sm-4">
-                                                        <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
-                                                        <label class="form-check-label" for="filterSportsFan">Sports Fan</label>
-                                                        </div>
-                                                        </div>
-                                                        
-                                                    </div>     
-                                                
                                                     
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">Washer</label>
+                                                        </div>
+                                                        </div>
+                                                        
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">Wifi</label>
+                                                        </div>
+                                                        </div>
+                                                    
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">Heating</label>
+                                                        </div>
+                                                        </div>
+                                                        
+                                                    </div>    
                                             </div>
-                                        </form>
-                                    </div>-->
+                                        <!--end of amenities-->  
+                                            
+                                            
+                                         <!--start of facilites-->   
+                                            <h6>Facilites</h6>
+                                            <div class="form-group row">
+                                             
+                                                <div class="col-sm-6">
+                                                        
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterPetFriendly">
+                                                        <label class="form-check-lable" for="filterPetFriendly">Street Paking</label>
+                                                        </div>    
+                                                        </div>
+                                                        
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">Pool</label>
+                                                        </div>
+                                                        </div>
+                                                    
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">Deck</label>
+                                                        </div>
+                                                        </div>   
+                                                    </div>    
+                                                
+                                                <div class="col-sm-6">
+                                                        
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterPetFriendly">
+                                                        <label class="form-check-lable" for="filterPetFriendly">Garage parking</label>
+                                                        </div>    
+                                                        </div>
+                                                        
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">Backyard</label>
+                                                        </div>
+                                                        </div>
+                                                    
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">Porch</label>
+                                                        </div>
+                                                        </div>
+                                                    </div>    
+                                            </div>
+                                            <!--end of facilities-->
+                                            
+                                            
+                                            <!--start of personality-->
+                                            <h6>Personality *will come up with better name</h6>
+                                            <div class="form-group row">
+                                             
+                                                <div class="col-sm-6">
+                                                        
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterPetFriendly">
+                                                        <label class="form-check-lable" for="filterPetFriendly">Introvert</label>
+                                                        </div>    
+                                                        </div>
+                                                        
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">Extrovert</label>
+                                                        </div>
+                                                        </div>
+                                                    
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">Family oriented</label>
+                                                        </div>
+                                                        </div>
+                                                    
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">Tech savy</label>
+                                                        </div>
+                                                        </div>
+                                                    </div>    
+                                                
+                                                <div class="col-sm-6">
+                                                        
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterPetFriendly">
+                                                        <label class="form-check-lable" for="filterPetFriendly">Early riser</label>
+                                                        </div>    
+                                                        </div>
+                                                        
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">Night owl</label>
+                                                        </div>
+                                                        </div>
+                                                    
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">Religious</label>
+                                                        </div>
+                                                        </div>
+                                                    
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">Non-smoker</label>
+                                                        </div>
+                                                        </div>
+                                                        
+                                                    </div>    
+                                            </div>
+                                            <!--end of personality-->
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            <!--start of languages-->
+                                            <h6>Languages</h6>
+                                            <div class="form-group row">
+                                             
+                                                <div class="col-sm-6">
+                                                        
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterPetFriendly">
+                                                        <label class="form-check-lable" for="filterPetFriendly">English</label>
+                                                        </div>    
+                                                        </div>
+                                                        
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">Spanish</label>
+                                                        </div>
+                                                        </div>
+                                                    
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">Mandarin</label>
+                                                        </div>
+                                                        </div>
+                                                    </div>    
+                                                
+                                                <div class="col-sm-6">
+                                                        
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterPetFriendly">
+                                                        <label class="form-check-lable" for="filterPetFriendly">Japanese </label>
+                                                        </div>    
+                                                        </div>
+                                                        
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">German</label>
+                                                        </div>
+                                                        </div>
+                                                    
+                                                        <div class="col-sm-12">
+                                                        <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="filterSportsFan">
+                                                        <label class="form-check-lable" for="filterSportsFan">French</label>
+                                                        </div>
+                                                        </div>
+                                                    </div>    
+                                            </div>
+                                            <!--end of languages-->
+                                            
+                                            
+                                            <button type="button" class="btn btn-info btn-block">
+                                                Add Filters
+                                            </button>
 
-                                <!--END OF FILTER FORM-->
-
-                                <!--SEARCH BAR-->
-                                <div class="col-md-6 searchBar">
-                                    <asp:TextBox ID="txtSearch" runat="server" class="form-control form-control-lg" placeholder="Search"></asp:TextBox>
+                                            
+                                        </div>
+                                    </div>
                                 </div>
-                                <!--END OF SEARCH BAR-->
-
-                                <!--BEGINNING OF SEARCH BUTTON-->
-                                <asp:Button ID="btnSearch" runat="server" Text="Search" class="btn btn-info"/>
-                                <!--END OF SERACH BUTTON-->
+                              </div>
+                    <!--END OF FILTER FORM-->
+                                
+<!--SEARCH BAR-->                                
+                                <div class="col-md-6 searchBar">
+                                    <input type="text" class="form-control form-control-lg" placeholder="search">
+                                </div>
+<!--END OF SEARCH BAR-->
+                                
+<!--BEGINNING OF SEARCH BUTTON-->                               
+                                <a role="button" class="btn btn-info">Search</a>
+<!--END OF SERACH BUTTON-->                                
                             </div>
-                        </div>
+                        </div>    
                     </div>
                 </section>
+                    
+                </div>        
+            </header>
+<!--END OF IMAGE HEADER/JUMBOTRON-->
 
-            </div>
-        </header>
-        <!--END OF IMAGE HEADER/JUMBOTRON-->
+
 
 
 
