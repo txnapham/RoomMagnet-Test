@@ -32,8 +32,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top mainNav">
             <div class="container-fluid">
 
-
-                <a class="navbar-brand ml-0 logo" href="index.html">
+                <a class="navbar-brand ml-0 logo" href="Home.aspx">
                     <img src="images/roommagnetLOGO.png" alt="roommagnet logo" class="img-fluid" width="300" height="300"></a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,28 +44,29 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="nav nav-pills ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link " href="index.html">Home</a>
+
+                            <a class="nav-link " href="Home.aspx">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="search.html active">Search</a>
+                            <a class="active nav-link" href="Search.aspx">Search</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item js-scroll-trigger" href="about-us.html#whoAreWe">Who are we?</a>
-                                <a class="dropdown-item js-scroll-trigger" href="about-us.html#ourGoals">Our Goals</a>
-                                <a class="dropdown-item js-scroll-trigger" href="about-us.html#faQs">Frequently Asked Questions</a>
-                                <a class="dropdown-item js-scroll-trigger" href="about-us.html#ourPolicy">Our Policy</a>
+                                <a class="dropdown-item js-scroll-trigger" href="AboutUs.aspx#whoAreWe">Who are we?</a>
+                                <a class="dropdown-item js-scroll-trigger" href="AboutUs.aspx#ourGoals">Our Goals</a>
+                                <a class="dropdown-item js-scroll-trigger" href="AboutUs.aspx#faQs">Frequently Asked Questions</a>
+                                <a class="dropdown-item js-scroll-trigger" href="AboutUs.aspx#ourPolicy">Our Policy</a>
                             </div>
                         </li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Welcome</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item js-scroll-trigger" href="#">View Profile</a>
+                                <a class="dropdown-item js-scroll-trigger" href="AdminDashboard.aspx">View Profile</a>
                                 <a class="dropdown-item js-scroll-trigger" href="#">Edit Profile</a>
                                 <a class="dropdown-item js-scroll-trigger" href="#">Settings</a>
-                                <a class="dropdown-item js-scroll-trigger" href="#">Logout</a>
+                                <a class="dropdown-item js-scroll-trigger" href="Home.aspx">Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -90,20 +90,20 @@
         <footer class="page-footer bg-primary container-fluid">
             <div class="row">
                 <div class="col-md-2">
-                    <a href="index.html">
+                    <a href="Home.aspx">
                         <img src="images/roommagnetLOGO.png" alt="roommagnet logo" class="img-fluid"></a>
                 </div>
 
                 <div class="col-md-10 pt-4">
                     <ul class="nav justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link " href="about-us.html#whoAreWe">About Us</a>
+                            <a class="nav-link " href="AboutUs.aspx#whoAreWe">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about-us.html#faQs">Frequently Asked Questions</a>
+                            <a class="nav-link" href="AboutUs.aspx#faQs">Frequently Asked Questions</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about-us.html#ourPolicy">Policy</a>
+                            <a class="nav-link" href="AboutUs.aspx#ourPolicy">Policy</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
@@ -137,3 +137,4 @@
     </form>
 </body>
 </html>
+

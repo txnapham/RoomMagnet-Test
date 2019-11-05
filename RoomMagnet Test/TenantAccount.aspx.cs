@@ -8,9 +8,34 @@ using System.Data.SqlClient;
 
 public partial class TenantAccount : System.Web.UI.Page
 {
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        if (Session["type"] != null)
+        {
+            if ((int)Session["type"] == 1)
+            {
+                this.MasterPageFile = "~/AdminPage.master";
+            }
+            else if ((int)Session["type"] == 2)
+            {
+                this.MasterPageFile = "~/HostPage.master";
+            }
+            else if ((int)Session["type"] == 3)
+            {
+                this.MasterPageFile = "~/TenantPage.master";
+            }
+        }
+        else if (Session["type"] == null)
+        {
+            this.MasterPageFile = "~/MasterPage.master";
+        }
+    }  
+
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        txtCountry.Enabled = false;
+        txtCountry.Text = "US";
+        ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
     }
 
     protected void btnCreateAccount_Click(object sender, EventArgs e)
@@ -76,7 +101,26 @@ public partial class TenantAccount : System.Web.UI.Page
 
                 insert.ExecuteNonQuery();
 
+                Response.Redirect("TenantDashboard.aspx");
+                Session["type"] = 3;
+
                 sc.Close();
+
+                //Clear text boxes
+                txtFN.Text = "";
+                txtMN.Text = "";
+                txtLN.Text = "";
+                txtBday.Text = "";
+                txtEmail.Text = "";
+                txtPhone.Text = "";
+                txtPassword.Text = "";
+                txtHouseNum.Text = "";
+                txtStreet.Text = "";
+                txtCity.Text = "";
+                ddState.ClearSelection();
+                txtZip.Text = "";
+                txtCountry.Text = "US";
+
             }
             else if (emailCount == 0)
             {
@@ -110,11 +154,44 @@ public partial class TenantAccount : System.Web.UI.Page
 
                 insert.ExecuteNonQuery();
 
+                Response.Redirect("TenantDashboard.aspx");
+                Session["type"] = 3;
+
                 sc.Close();
+
+                //Clear text boxes
+                txtFN.Text = "";
+                txtMN.Text = "";
+                txtLN.Text = "";
+                txtBday.Text = "";
+                txtEmail.Text = "";
+                txtPhone.Text = "";
+                txtPassword.Text = "";
+                txtHouseNum.Text = "";
+                txtStreet.Text = "";
+                txtCity.Text = "";
+                ddState.ClearSelection();
+                txtZip.Text = "";
+                txtCountry.Text = "US";
+
             }
             else
             {
                 sc.Close();
+                //Clear text boxes
+                txtFN.Text = "";
+                txtMN.Text = "";
+                txtLN.Text = "";
+                txtBday.Text = "";
+                txtEmail.Text = "";
+                txtPhone.Text = "";
+                txtPassword.Text = "";
+                txtHouseNum.Text = "";
+                txtStreet.Text = "";
+                txtCity.Text = "";
+                ddState.ClearSelection();
+                txtZip.Text = "";
+                txtCountry.Text = "US";
             }
         }
     }
