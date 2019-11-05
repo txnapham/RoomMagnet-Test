@@ -553,7 +553,7 @@
                 </div>
             </form>
 
-            <asp:Button ID="btnListPropert" runat="server" class="btn btn-info btn-block" Text="List Property" CausesValidation="false"/>
+            <asp:Button ID="btnListProperty" runat="server" class="btn btn-info btn-block" Text="List Property" CausesValidation="false" OnClick="btnListProperty_Click"/>
 
 
 
@@ -561,4 +561,5 @@
 
         </div>
         <!--END OF BODY CONTENT-->
+</div>
 </asp:Content>

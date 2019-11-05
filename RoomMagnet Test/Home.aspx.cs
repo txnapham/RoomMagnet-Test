@@ -14,6 +14,7 @@ public partial class Home : System.Web.UI.Page
 
     protected void Page_PreInit(object sender, EventArgs e)
     {
+        Session.Clear();
         if (Session["type"] != null)
         {
             if ((int)Session["type"] == 1)
