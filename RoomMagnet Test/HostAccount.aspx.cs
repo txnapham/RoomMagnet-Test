@@ -8,16 +8,38 @@ using System.Data.SqlClient;
 
 public partial class HostAccount : System.Web.UI.Page
 {
-    public static DateTime ModifiedDate = DateTime.Now;
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        if (Session["type"] != null)
+        {
+            if ((int)Session["type"] == 1)
+            {
+                this.MasterPageFile = "~/AdminPage.master";
+            }
+            else if ((int)Session["type"] == 2)
+            {
+                this.MasterPageFile = "~/HostPage.master";
+            }
+            else if ((int)Session["type"] == 3)
+            {
+                this.MasterPageFile = "~/TenantPage.master";
+            }
+        }
+        else if (Session["type"] == null)
+        {
+            this.MasterPageFile = "~/MasterPage.master";
+        }
+    }
+
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        txtCountry.Enabled = false;
+        txtCountry.Text = "US";
+        ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
     }
 
     protected void btnCreateAccount_Click(object sender, EventArgs e)
     {
-        Label1.Text = "hi";
-
         System.Data.SqlClient.SqlConnection sc = new System.Data.SqlClient.SqlConnection();
         sc.ConnectionString = "server=aa1evano00xv2xb.cqpnea2xsqc1.us-east-1.rds.amazonaws.com;database=roommagnetdb;uid=admin;password=Skylinejmu2019;";
         sc.Open();
@@ -32,7 +54,8 @@ public partial class HostAccount : System.Web.UI.Page
         int acctTypeCount;
 
         //create new account and host object
-        Account newAccount = new Account(txtFN.Text, txtMN.Text, txtLN.Text, txtPhone.Text, DateTime.Parse(txtBday.Text), txtEmail.Text, txtHouseNum.Text, txtStreet.Text, txtCity.Text, ddState.SelectedValue, txtZip.Text, "US", Int32.Parse("2"), Int32.Parse("2"));
+        //use HttpUtility.HtmlEncode for these inputs
+        Account newAccount = new Account(HttpUtility.HtmlEncode(txtFN.Text), HttpUtility.HtmlEncode(txtMN.Text), HttpUtility.HtmlEncode(txtLN.Text), HttpUtility.HtmlEncode(txtPhone.Text), DateTime.Parse(txtBday.Text), HttpUtility.HtmlEncode(txtEmail.Text), HttpUtility.HtmlEncode(txtHouseNum.Text), HttpUtility.HtmlEncode(txtStreet.Text), HttpUtility.HtmlEncode(txtCity.Text), ddState.SelectedValue, HttpUtility.HtmlEncode(txtZip.Text), "US", Int32.Parse("2"), Int32.Parse("2"));
         Host newHost = new Host(newAccount, "N", "Retiree");
 
         checkEmailCount.CommandText = "SELECT COUNT(*) FROM ACCOUNT WHERE EMAIL = @emailCheck";
@@ -81,6 +104,9 @@ public partial class HostAccount : System.Web.UI.Page
 
                 Label1.Text = "Success";
 
+                Response.Redirect("HostDashboard.aspx");
+                Session["type"] = 2;
+
                 sc.Close();
             }
             else if (emailCount == 0)
@@ -116,6 +142,9 @@ public partial class HostAccount : System.Web.UI.Page
                 insert.ExecuteNonQuery();
 
                 Label1.Text = "Success";
+
+                Response.Redirect("HostDashboard.aspx");
+                Session["type"] = 2;
 
                 sc.Close();
             }

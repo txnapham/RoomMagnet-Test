@@ -12,6 +12,29 @@ public partial class Home : System.Web.UI.Page
     private static string connection = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
     SqlConnection sc = new SqlConnection(connection);
 
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        if (Session["type"] != null)
+        {
+            if ((int)Session["type"] == 1)
+            {
+                this.MasterPageFile = "~/AdminPage.master";
+            }
+            else if ((int)Session["type"] == 2)
+            {
+                this.MasterPageFile = "~/HostPage.master";
+            }
+            else if ((int)Session["type"] == 3)
+            {
+                this.MasterPageFile = "~/TenantPage.master";
+            }
+        }
+        else if (Session["type"] == null)
+        {
+            this.MasterPageFile = "~/MasterPage.master";
+        }
+    }
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -25,7 +48,7 @@ public partial class Home : System.Web.UI.Page
         //}
         //else
         //{
-        //    String property = searchBox.Text;
+        //    String property = HttpUtility.HtmlEncode(searchBox.Text);
         //    int space = property.IndexOf(" ");
         //    String houseNum = property.Substring(0, space);
         //    String street = property.Substring(space + 1);

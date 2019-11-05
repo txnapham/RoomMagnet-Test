@@ -119,7 +119,7 @@
                         <div>
                             <button class="btn"><i class="fas fa-heart"></i></button>
                         </div>
-                        <!--END OF FABORITE BUTTON-->
+                        <!--END OF FAVORITE BUTTON-->
                     </div>
                 </div>
 
