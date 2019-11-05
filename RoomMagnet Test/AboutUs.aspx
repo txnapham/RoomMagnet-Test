@@ -63,7 +63,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h3>Frequently Asked Questions</h3>
-                           <h5>What makes RoomMagnet different?</h5> 
+                           <h5 class="pt-1">What makes RoomMagnet different?</h5> 
                             <p>RoomMagnet provides an easy to use platform where pre-screened Tenants and Hosts come together, and in exchange for a modest cost and/or in exchange for light domestic duties, enjoy reduced rent. It’s a win-win! Hosts monetize their extra living space and if they wish get a little help around the house. Tenants enjoy affordable housing.</p>
                             
                            <h5>Who can use Roommagnet</h5> 
@@ -134,4 +134,3 @@
         
         </div>
 </asp:Content>
-

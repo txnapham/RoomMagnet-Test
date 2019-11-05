@@ -149,7 +149,7 @@
                     <label class="form-check-label" for="exampleCheck1">Agreement to Terms &amp; Conditions</label>
                 </div>
 
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <%--<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>--%>
                 <%--for testing purpose--%>
 
                 <asp:Button ID="btnCreateAccount" runat="server" Text="Create Account" class="btn btn-info" OnClick="btnCreateAccount_Click"  CausesValidation="false"/>

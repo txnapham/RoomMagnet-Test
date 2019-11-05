@@ -102,7 +102,7 @@ public partial class HostAccount : System.Web.UI.Page
 
                 insert.ExecuteNonQuery();
 
-                Label1.Text = "Success";
+                //Label1.Text = "Success";
 
                 Response.Redirect("HostDashboard.aspx");
                 Session["type"] = 2;
@@ -156,7 +156,7 @@ public partial class HostAccount : System.Web.UI.Page
 
                 insert.ExecuteNonQuery();
 
-                Label1.Text = "Success";
+                //Label1.Text = "Success";
 
                 Response.Redirect("HostDashboard.aspx");
                 Session["type"] = 2;
@@ -179,7 +179,7 @@ public partial class HostAccount : System.Web.UI.Page
             }
             else
             {
-                Label1.Text = "Error";
+                //Label1.Text = "Error";
                 sc.Close();
                 //Clear text boxes
                 txtFN.Text = "";

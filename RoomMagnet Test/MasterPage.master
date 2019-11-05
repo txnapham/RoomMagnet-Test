@@ -16,9 +16,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Custom CSS - update this if you use a name other than style.css for the Sass-generated CSS -->
     <link rel="stylesheet" href="style.css">
+
     <!--FontAwesome icons-->
     <script src="https://kit.fontawesome.com/78c52ebafc.js" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" data-auto-replace-svg="nest"></script>
+
     <script src="favoriteFunction.js"></script>
     <script>
         function favoriteBtn(propertyID, city, state, priceLow, priceHigh) {
@@ -38,21 +40,18 @@
     </script>
 
     <!--Content Placeholder-->
-
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-
 </head>
 
 <body>
-
     <form id="form1" runat="server">
 
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top mainNav">
             <div class="container">
                 <a class="navbar-brand ml-0 logo" href="Home.aspx">
-                    <img src="images/roommagnetLOGO.png" alt="roommagnet logo" class="img-fluid" width="300" height="300"></a>
+                    <img src="images/roommagnetlogo1.png" alt="roommagnet logo" class="img-fluid" width="110" height="110"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -65,7 +64,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="Search.aspx">Search</a>
                         </li>
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
                             <div class="dropdown-menu">
@@ -78,41 +76,36 @@
                     </ul>
 
                     <%--Navigation login button--%>
-
                     <button class="nav-item btn loginBUTTON" type="button" data-toggle="modal" data-target="#loginModal">
                         <a class="nav-link" href="#">Login</a>
                     </button>
                 </div>
             </div>
         </nav>
-
-        <%--Login Modal--%>
+        <!--LOGIN MOD-->
         <div class="modal" id="loginModal">
             <div class="modal-dialog">
                 <div class="modal-content">
 
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal body -->
                     <div class="modal-body">
-                        <%--<form>--%>
-                        <div class="form-group">
-                            <asp:TextBox ID="txtEmail" runat="server" class="form-control form-control-lg" aria-describedby="emailHelp" placeholder="Email"></asp:TextBox>
-                        </div>
 
-                        <div class="form-group">
-                            <asp:TextBox ID="txtPassword" runat="server" class="form-control form-control-lg" placeholder="Password" TextMode ="Password"></asp:TextBox>
-                        </div>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                        <asp:Button ID="btnLogin" runat="server" Text="Login" class="btn btn-md btn-info btn-block" OnClick="btnLogin_Click" />
-                        <asp:Label ID="lblStatus" runat="server" Text="Label"></asp:Label>
+                        <form>
+                            <div class="form-group">
+                                <asp:TextBox ID="txtEmail" runat="server" class="form-control form-control-lg" aria-describedby="emailHelp" placeholder="Email"></asp:TextBox>
+                            </div>
+
+                            <div class="form-group">
+                                <asp:TextBox ID="txtPassword" runat="server" class="form-control form-control-lg" placeholder="Password"></asp:TextBox>
+                            </div>
+
+                            <asp:Button ID="btnLogin" runat="server" Text="Login" class="btn btn-md btn-info btn-block" OnClick="btnLogin_Click" />
+                            <%--<asp:Label ID="lblStatus" runat="server" Text="Label"></asp:Label>--%>
+                        </form>
+
                     </div>
 
-
-                    <!-- Modal footer -->
 
                     <div class="modal-body">
 
@@ -121,33 +114,47 @@
                         </div>
 
                         <div>
+                            <%--<asp:Button ID="btnCreateAccount" runat="server" Text="Create Account" type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" data-target="#chooseAccountType"/>--%>
                             <button type="button" class="btn btn-info btn-block" data-toggle="modal" data-dismiss="modal" data-target="#chooseAccountType">
                                 Create Account
-                   
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!--END OF LOGIN MOD-->
 
+
+        <!--HOST OR TENANT MOD-->
         <div class="modal justify-content-center" id="chooseAccountType">
             <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content pb-1">
+
                     <!-- Modal Header -->
+                    <div class="modal-header">
+
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
                     <div class="modal-body ">
-<%--                        <form>--%>
+                        <<%--form>--%>
                             <h4 class="modal-title pb-3">Are you a</h4>
 
-                            <a class="btn btn-info btn-block" href="HostAccount.aspx">Host</a>
+                            <button type="submit" class="btn btn-info justify-content-center"><a href="HostAccount.aspx">Host</a></button>
 
-                            <a class="btn btn-info btn-block" href="TenantAccount.aspx">Tenant</a>
+                            <button type="submit" class="btn btn-info justify-content-center"><a href="TenantAccount.aspx">Tenant</a></button>
                             <!--TENANT A TAG GOES IN BUTTON-->
-<%--                        </form>--%>
+                        <%--</form>--%>
                     </div>
+
+
                 </div>
             </div>
         </div>
+        <!--END OF HOST OR TENANT MOD-->
+
         <!--END OF NAVIGATION-->
 
         <%--Content Place Holder--%>
@@ -156,23 +163,27 @@
             </asp:ContentPlaceHolder>
 
 
+
+
+
             <!--FOOTER-->
             <footer class="page-footer bg-primary container-fluid">
                 <div class="row">
                     <div class="col-md-2">
-                        <a href="Home.aspx">
+                        <a href="index.html">
                             <img src="images/roommagnetLOGO.png" alt="roommagnet logo" class="img-fluid"></a>
                     </div>
+
                     <div class="col-md-10 pt-4">
                         <ul class="nav justify-content-end">
                             <li class="nav-item">
-                                <a class="nav-link " href="AboutUS.aspx">About Us</a>
+                                <a class="nav-link " href="about-us.html#whoAreWe">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="AboutUs.aspx#frequentlyAsked">Frequently Asked Questions</a>
+                                <a class="nav-link" href="about-us.html#faQs">Frequently Asked Questions</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="AboutUs.aspx#policy">Policy</a>
+                                <a class="nav-link" href="about-us.html#ourPolicy">Policy</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
@@ -185,14 +196,15 @@
                     <div class="col-md-12">
                         <p class="text-center">
                             Copyright &copy; 2019 Skyline Consulting. All rights reserved.
+                       
                         </p>
                     </div>
                 </div>
             </footer>
-
             <!--END OF FOOTER-->
-
             <!--END OF PAGE-->
+
+
 
             <script src="js/roommagnet.js"></script>
 
@@ -203,5 +215,4 @@
         </div>
     </form>
 </body>
-
 </html>
