@@ -9,9 +9,10 @@ using System.Data.SqlClient;
 public partial class HostAccount : System.Web.UI.Page
 {
     public static DateTime ModifiedDate = DateTime.Now;
+    
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
     }
 
     protected void btnCreateAccount_Click(object sender, EventArgs e)
