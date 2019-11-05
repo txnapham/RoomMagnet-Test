@@ -42,7 +42,7 @@
                 <asp:RequiredFieldValidator ID="streetReqFieldValidator" Display ="Dynamic" runat="server" ErrorMessage="Please enter a street." ControlToValidate="txtStreet" Text="*"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="streetLetters" Display="Dynamic" runat="server" ErrorMessage="Please enter a valid street name" Text="*" ControlToValidate="txtStreet" ValidationExpression="^[a-zA-Z]+$"></asp:RegularExpressionValidator>
                 <div class="form-group">
-                    <asp:TextBox ID="txtStreet" runat="server" class="form-control form-control-lg" placeholder="Street" MaxLength="20"></asp:TextBox>
+                    <asp:TextBox ID="txtStreet" runat="server" class="form-control form-control-lg" placeholder="Street" MaxLength="30"></asp:TextBox>
                 </div>
                 <asp:RequiredFieldValidator ID="cityReqFieldValidator" Display ="Dynamic" runat="server" ErrorMessage="Please enter a city." ControlToValidate="txtCity" Text="*"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="cityLetters" Display="Dynamic" runat="server" ErrorMessage="Please enter a valid city name" Text="*" ControlToValidate="txtCity" ValidationExpression="^[a-zA-Z]+$"></asp:RegularExpressionValidator>
@@ -157,7 +157,7 @@
                     <label class="form-check-label" for="exampleCheck1">Agreement to Terms &amp; Conditions</label>
                 </div>
 
-                <asp:Button ID="btnCreateAccount" runat="server" Text="Create Account" class="btn btn-info" href="TenantAccountCategories.aspx" OnClick="btnCreateAccount_Click"/>
+                <asp:Button ID="btnCreateAccount" runat="server" Text="Create Account" class="btn btn-info" href="TenantAccountCategories.aspx" OnClick="btnCreateAccount_Click" CausesValidation="False" />
 
                 <%--<a class="btn btn-info" id="createAccountButton" href="tenant-create-account-categories.html">Create Account</a>--%>
                 <%--should only go to next page (host category when creation is successful--%>
