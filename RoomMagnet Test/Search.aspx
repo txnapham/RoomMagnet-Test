@@ -64,7 +64,7 @@
 
                                                 <div class="col-sm-12">
                                                     <div class="form-check">
-                                                        <asp:CheckBox ID="cbConBath" runat="server"  class="form-check-input"/>
+                                                        <asp:CheckBox ID="cbConBath" runat="server" class="form-check-input" />
                                                         <label class="form-check-label" for="cbConBath">Connected bathroom</label>
                                                     </div>
                                                 </div>
@@ -78,7 +78,7 @@
 
                                                 <div class="col-sm-12">
                                                     <div class="form-check">
-                                                        <asp:CheckBox ID="cbDryer" runat="server" class="form-check-input"/>
+                                                        <asp:CheckBox ID="cbDryer" runat="server" class="form-check-input" />
                                                         <label class="form-check-label" for="cbDryer">Dryer</label>
                                                     </div>
                                                 </div>
@@ -345,6 +345,7 @@
 
                         <!--BEGINNING OF SEARCH BUTTON-->
                         <asp:Button ID="btnSearch" OnClick="btnSearch_Click" runat="server" Text="Search" class="btn btn-info"/>
+
                         <!--END OF SERACH BUTTON-->
                     </div>
                 </div>
@@ -380,247 +381,12 @@
         </section>
 
         <!--BEGINNING OF HOUSE LISTINGS-->
-        <div>
-            <asp:Literal ID="Card1" runat="server" Mode="Transform"></asp:Literal>
-
-               <%-- <div class="col-md-3">
-                   
-                    <div class="card  shadow-sm  mb-4" >
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="search-result-page-detail.html" class="cardLinks">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer c </p>
-                            </div>
-                        </a>
-
-                        <!--FAVORITE BUTTON-->
-                        <div>
-                            <button id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
-                        </div>
-                        <!--END OF FAVORITE BUTTON-->
-                    </div>
-                </div>--%>
+        <section>
+            <div class="row px-3 py-3">
+                <asp:Literal ID="Card1" runat="server" Mode="Transform"></asp:Literal>
             </div>
- 
-<%--            <div class="col-md-3">
-                     <asp:Literal ID="Card2" runat="server" Mode="Transform"></asp:Literal>
-                    div class="card  shadow-sm  mb-4">
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="search-result-page-detail.html" class="cardLinks">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer c </p>
-                            </div>
-                        </a>
+        </section>
 
-                        <!--FAVORITE BUTTON-->
-                        <div>
-                            <button id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
-                        </div>
-                        <!--END OF FAVORITE BUTTON-->
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card  shadow-sm mb-4">
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="PropertyDetails.aspx" class="cardLinks">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer c </p>
-                            </div>
-                        </a>
-
-                        <!--FAVORITE BUTTON-->
-                        <div>
-                            <button id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
-                        </div>
-                        <!--END OF FABORITE BUTTON-->
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card  shadow-sm mb-4">
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="PropertyDetails.aspx" class="cardLinks">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer c </p>
-                            </div>
-                        </a>
-
-                        <!--FAVORITE BUTTON-->
-                        <div>
-                            <button id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
-                        </div>
-                        <!--END OF FABORITE BUTTON-->
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card  shadow-sm mb-4">
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="PropertyDetails.aspx" class="cardLinks">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer c </p>
-                            </div>
-                        </a>
-
-                        <!--FAVORITE BUTTON-->
-                        <div>
-                            <button id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
-                        </div>
-                        <!--END OF FABORITE BUTTON-->
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card  shadow-sm mb-4">
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="PropertyDetails.aspx" class="cardLinks">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer c </p>
-                            </div>
-                        </a>
-
-                        <!--FAVORITE BUTTON-->
-                        <div>
-                            <button id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
-                        </div>
-                        <!--END OF FABORITE BUTTON-->
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card shadow-sm  mb-4">
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="PropertyDetails.aspx" class="cardLinks">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer c </p>
-                            </div>
-                        </a>
-
-                        <!--FAVORITE BUTTON-->
-                        <div>
-                            <button id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
-                        </div>
-                        <!--END OF FABORITE BUTTON-->
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card shadow-sm  mb-4">
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="PropertyDetails.aspx" class="cardLinks">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer c </p>
-                            </div>
-                        </a>
-
-                        <!--FAVORITE BUTTON-->
-                        <div>
-                            <button id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
-                        </div>
-                        <!--END OF FABORITE BUTTON-->
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card  shadow-sm mb-4">
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="PropertyDetails.aspx" class="cardLinks">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer c </p>
-                            </div>
-                        </a>
-
-                        <!--FAVORITE BUTTON-->
-                        <div>
-                            <button id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
-                        </div>
-                        <!--END OF FABORITE BUTTON-->
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card  shadow-sm mb-4">
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="PropertyDetails.aspx" class="cardLinks">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer c </p>
-                            </div>
-                        </a>
-
-                        <!--FAVORITE BUTTON-->
-                        <div>
-                            <button id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
-                        </div>
-                        <!--END OF FABORITE BUTTON-->
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card shadow-sm  mb-4">
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="PropertyDetails.aspx" class="cardLinks">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer c </p>
-                            </div>
-                        </a>
-
-                        <!--FAVORITE BUTTON-->
-                        <div>
-                            <button id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
-                        </div>
-                        <!--END OF FABORITE BUTTON-->
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card shadow-sm  mb-4">
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="PropertyDetails.aspx" class="cardLinks">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer c </p>
-                            </div>
-                        </a>
-
-                        <!--FAVORITE BUTTON-->
-                        <div>
-                            <button id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
-                        </div>
-                        <!--END OF FABORITE BUTTON-->
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card  shadow-sm mb-4">
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="PropertyDetails.aspx" class="cardLinks">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer c </p>
-                            </div>
-                        </a>
-
-                        <!--FAVORITE BUTTON-->
-                        <div>
-                            <button id="heartbtn" class="btn favoriteHeartButton"><i id="hearti" class="far fa-heart"></i></button>
-                        </div>
-                        <!--END OF FABORITE BUTTON-->
-                    </div>
-                </div>
-            </div>
-        </section>--%>
         <!--END OF HOUSE LISTINGS-->
 
 
