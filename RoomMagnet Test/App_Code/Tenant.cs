@@ -1,6 +1,6 @@
 ﻿using System;
 
-public partial class Tenant
+public class Tenant : Account
 {
     //Attributes
     private int AccountID;
@@ -8,18 +8,15 @@ public partial class Tenant
     private String TenantReason;
     
     //Constructor
-	public Tenant(int AccountID, String BackgroundStatus, String TenantReason)
-	{
-
-        setAccountID(AccountID);
+	public Tenant(Account account, String BackgroundStatus, String TenantReason)
+        : base(account.getFirstName(), account.getMiddleName(), account.getLastName(), account.getPhone(),
+            account.getBday(), account.getEmail(), account.getHouseNumber(), account.getStreet(), account.getCity(),
+            account.getState(), account.getZip(), account.getCountry(), account.getAccType(), account.getPID())
+    {
         setBackgroundStatus(BackgroundStatus);
         setTenantReason(TenantReason);
     }
     //Setters
-    public void setAccountID(int AccountID)
-    {
-        this.AccountID = AccountID;
-    }
     public void setBackgroundStatus(String BackgroundStatus)
     {
         this.BackgroundStatus = BackgroundStatus;
@@ -29,10 +26,6 @@ public partial class Tenant
         this.TenantReason = TenantReason;
     }
     //Getters
-    public int getAccountID()
-    {
-        return this.AccountID;
-    }
     public String getBackgroundStatus()
     {
         return this.BackgroundStatus;

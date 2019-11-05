@@ -6,12 +6,15 @@ using System.Web;
 /// <summary>
 /// Summary description for Host
 /// </summary>
-public class Host
+public class Host : Account
 {
     private string BackCheck;
     private string HostReason;
 
-    public Host(string BackCheck, string HostReason)
+    public Host(Account account, string BackCheck, string HostReason)
+        : base(account.getFirstName(), account.getMiddleName(), account.getLastName(), account.getPhone(), 
+            account.getBday(), account.getEmail(), account.getHouseNumber(), account.getStreet(), account.getCity(), 
+            account.getState(), account.getZip(), account.getCountry(), account.getAccType(), account.getPID())
     {
         setBackCheck(BackCheck);
         setHostReason(HostReason);

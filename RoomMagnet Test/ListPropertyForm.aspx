@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ListPropertyForm.aspx.cs" Inherits="ListPropertyForm" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ListPropertyForm.aspx.cs" Inherits="ListPropertyForm" EnableEventValidation ="false"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -62,7 +62,7 @@
 
                     <div class="form-row">
                         <div class="form-group col-md-7">
-                            <asp:TextBox ID="txtcity" runat="server" class="form-control form-control-lg" placeholder="City"></asp:TextBox>
+                            <asp:TextBox ID="txtCity" runat="server" class="form-control form-control-lg" placeholder="City"></asp:TextBox>
                         </div>
 
 
@@ -77,6 +77,8 @@
                                 <asp:ListItem>CA</asp:ListItem>
                                 <asp:ListItem>CO</asp:ListItem>
                                 <asp:ListItem>CT</asp:ListItem>
+                                <asp:ListItem>CT</asp:ListItem>
+                                <asp:ListItem>DC</asp:ListItem>
                                 <asp:ListItem>DE</asp:ListItem>
                                 <asp:ListItem>FL</asp:ListItem>
                                 <asp:ListItem>GA</asp:ListItem>
@@ -527,12 +529,13 @@
                 </div>
             </form>
 
-            <asp:Button ID="btnListPropert" runat="server" class="btn btn-info btn-block" Text="List Property" />
+            <asp:Button ID="btnListPropert" runat="server" class="btn btn-info btn-block" Text="List Property" OnClick="btnListPropert_Click" EventValidation ="false"/>
 
 
 
 
         </div>
         <!--END OF BODY CONTENT-->
+    </div>
 </asp:Content>
 
