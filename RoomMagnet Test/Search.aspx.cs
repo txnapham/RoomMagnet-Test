@@ -15,6 +15,28 @@ using System.Data.SqlClient;
 
 public partial class Search : System.Web.UI.Page
 {
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        if (Session["type"] != null)
+        {
+            if ((int)Session["type"] == 1)
+            {
+                this.MasterPageFile = "~/AdminPage.master";
+            }
+            else if ((int)Session["type"] == 2)
+            {
+                this.MasterPageFile = "~/HostPage.master";
+            }
+            else if ((int)Session["type"] == 3)
+            {
+                this.MasterPageFile = "~/TenantPage.master";
+            }
+        }
+        else if (Session["type"] == null)
+        {
+            this.MasterPageFile = "~/MasterPage.master";
+        }
+    }
 
     System.Data.SqlClient.SqlConnection sqlConn = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ToString());
     String homeSearch = "";
@@ -94,6 +116,7 @@ public partial class Search : System.Web.UI.Page
         }
         else
         {
+            sqlConn.Close();
             sqlConn.Open();
             String classType = "card";
             String imgSource = "";
