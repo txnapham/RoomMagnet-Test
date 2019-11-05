@@ -1,6 +1,13 @@
 ﻿@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap");
 
+.dash-card-titles {
+    background-color: #5F6062;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+}
+
 .btn-info {
     color: #ffffff !important;
     background-color: #94D8E0;
@@ -17,7 +24,7 @@ nav {
 }
 
     nav .img-fluid {
-        max-width: 60%;
+        max-width: 20%;
         height: auto;
     }
 
@@ -30,7 +37,7 @@ footer {
 }
 
 header {
-    margin-top: 90px;
+    margin-top: 85px;
     margin-left: 0 auto;
     margin-right: 0 auto;
     padding: 250px;
@@ -42,6 +49,10 @@ header {
 
     header form .searchBar {
         padding: none;
+    }
+
+    header section {
+        color: #000;
     }
 
 .cardLinks {
@@ -103,7 +114,7 @@ a.doLaterLink {
 }
 
 .userDash {
-    margin-top: 99px;
+    margin-top: 84px;
     margin-bottom: 30px;
     margin-left: 0 auto;
     margin-right: 0 auto;
@@ -143,6 +154,12 @@ a.tenantdashlist {
 }
 
 textarea#messagePerson.form-control {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    min-height: 300px;
+}
+
+textarea#descriptionMessagebox.form-control {
     margin-top: 0px;
     margin-bottom: 0px;
     min-height: 300px;
@@ -265,6 +282,32 @@ body > div.container-fluid.userDash.mb-5.pb-3 > div > div > div {
     color: #000;
 }
 
+.cal {
+    max-width: 1300px;
+    height: auto;
+}
+
+@media (max-width: 225px) {
+    .display-4 {
+        font-size: 1.5rem;
+    }
+
+    .day h5 {
+        background-color: #f8f9fa;
+        padding: 3px 5px 5px;
+        margin: -8px -8px 8px -8px;
+    }
+
+    .date {
+        padding-left: 4px;
+    }
+}
+
+@media (min-width: 226px) {
+    .day {
+        height: 5.2857vw;
+    }
+}
 /*!
  * Bootstrap v4.2.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -730,7 +773,7 @@ mark,
 }
 
     .blockquote-footer::before {
-        content: "— ";
+        content: "— ";
     }
 
 .img-fluid {
