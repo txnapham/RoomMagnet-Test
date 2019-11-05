@@ -342,11 +342,11 @@
                                 <div class="col-md-6 searchBar">
                                     <input type="text" class="form-control form-control-lg" placeholder="Search">
                                 </div>
-<!--END OF SEARCH BAR-->
-                                
-<!--BEGINNING OF SEARCH BUTTON-->                               
-                                <button type="submit" class="btn btn-info">Search</button>
-<!--END OF SERACH BUTTON-->                                
+                                <!--END OF SEARCH BAR-->
+
+                                <!--BEGINNING OF SEARCH BUTTON-->
+                                <asp:Button ID="btnSearch" runat="server" Text="Search" class="btn btn-info" OnClick="btnSearch_Click"/>
+                                <!--END OF SERACH BUTTON-->
                             </div>
                         </div>    
                     </div>
