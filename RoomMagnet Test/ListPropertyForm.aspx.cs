@@ -16,7 +16,7 @@ public partial class ListPropertyForm : System.Web.UI.Page
 
     protected void btnListPropert_Click(object sender, EventArgs e)
     {
-        String countryText = "US";
+        
         Property newProperty = new Property(HttpUtility.HtmlEncode(txtHouseNum.Text), HttpUtility.HtmlEncode(txtStreet.Text), HttpUtility.HtmlEncode(txtCity.Text), ddState.SelectedValue, HttpUtility.HtmlEncode(txtZip.Text), HttpUtility.HtmlEncode(txtCountry.Text));
 
         if (cbGuest.Checked == true)
