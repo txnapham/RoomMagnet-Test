@@ -13,7 +13,7 @@
 
 
             <div class="progress" style="height: 30px;">
-                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Profile Completion</div>
+                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 66%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Profile Completion</div>
             </div>
 
         </div>
@@ -44,7 +44,7 @@
                 <div class="col-md-12">
                     <h6>Notifications</h6>
                     <div class="alert alert-info alert-dismissible fade show" role="alert">
-                        <strong>Someone favorited your property!</strong> You should check in on some of those fields below.
+                        <strong>Someone favorited your property!</strong> Click view message to respond.
                            
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>

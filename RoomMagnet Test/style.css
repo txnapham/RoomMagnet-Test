@@ -109,7 +109,7 @@ a.doLaterLink {
 }
 
 .userDash {
-  margin-top: 99px;
+  margin-top: 84px;
   margin-bottom: 30px;
   margin-left: 0 auto;
   margin-right: 0 auto;
@@ -149,6 +149,12 @@ a.tenantdashlist {
 }
 
 textarea#messagePerson.form-control {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  min-height: 300px;
+}
+
+textarea#descriptionMessagebox.form-control {
   margin-top: 0px;
   margin-bottom: 0px;
   min-height: 300px;

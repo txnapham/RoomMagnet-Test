@@ -172,15 +172,15 @@
                           <h5 class="card-title dash-card-titles">My Appointments</h5>
                         <div class="container-fluid cal pb-3">
                           <div>
-                            <h4 class="mb-4 text-center">November 2017</h4>
+                            <h4 class="mb-4 text-center">November 2019</h4>
                             <div class="row d-none d-sm-flex p-1 bg-dark text-white">
-                              <h5 class="col-sm p-1 text-center">Sunday</h5>
-                              <h5 class="col-sm p-1 text-center">Monday</h5>
-                              <h5 class="col-sm p-1 text-center">Tuesday</h5>
-                              <h5 class="col-sm p-1 text-center">Wednesday</h5>
-                              <h5 class="col-sm p-1 text-center">Thursday</h5>
-                              <h5 class="col-sm p-1 text-center">Friday</h5>
-                              <h5 class="col-sm p-1 text-center">Saturday</h5>
+                              <p class="col-sm p-1 text-center">Sun</p>
+                            <p class="col-sm p-1 text-center">Mon</p>
+                              <p class="col-sm p-1 text-center">Tues</p>
+                              <p class="col-sm p-1 text-center">Wed</p>
+                              <p class="col-sm p-1 text-center">Thurs</p>
+                              <p class="col-sm p-1 text-center">Fri</p>
+                              <p class="col-sm p-1 text-center">Sat</>
                             </div>
                           </div>
                           <div class="row border border-right-0 border-bottom-0">
@@ -230,7 +230,7 @@
                                 <small class="col d-sm-none text-center text-muted">Friday</small>
                                 <span class="col-1"></span>
                               </h5>
-                              <a class="event d-block p-1 pl-2 pr-2 mb-1 rounded text-truncate small bg-info text-white" title="Test Event 1">Test Event 1</a>
+                              <a class="event d-block p-1 pl-2 pr-2 mb-1 rounded text-truncate small bg-info text-white" title="Test Event 1">Meeting</a>
                             </div>
                             <div class="day col-sm p-2 border border-left-0 border-top-0 text-truncate ">
                               <h5 class="row align-items-center">
@@ -271,8 +271,7 @@
                                 <small class="col d-sm-none text-center text-muted">Wednesday</small>
                                 <span class="col-1"></span>
                               </h5>
-                              <a class="event d-block p-1 pl-2 pr-2 mb-1 rounded text-truncate small bg-success text-white" title="Test Event 2">Test Event 2</a>
-                              <a class="event d-block p-1 pl-2 pr-2 mb-1 rounded text-truncate small bg-danger text-white" title="Test Event 3">Test Event 3</a>
+                              <p class="d-sm-none">No events</p>
                             </div>
                             <div class="day col-sm p-2 border border-left-0 border-top-0 text-truncate ">
                               <h5 class="row align-items-center">
@@ -370,7 +369,7 @@
                                 <small class="col d-sm-none text-center text-muted">Monday</small>
                                 <span class="col-1"></span>
                               </h5>
-                              <a class="event d-block p-1 pl-2 pr-2 mb-1 rounded text-truncate small bg-primary text-white" title="Test Event with Super Duper Really Long Title">Test Event with Super Duper Really Long Title</a>
+                              <a class="event d-block p-1 pl-2 pr-2 mb-1 rounded text-truncate small bg-primary text-white" title="Test Event with Super Duper Really Long Title">Meeting</a>
                             </div>
                             <div class="day col-sm p-2 border border-left-0 border-top-0 text-truncate ">
                               <h5 class="row align-items-center">

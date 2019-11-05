@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h3>Account Created!</h3>
-                    <h6 class="headingsetPrefs">Set preferences now or <a class="doLaterLink" href="HostDashboard.aspx">do later</a></h6>
+                    <h6 class="headingsetPrefs">Set preferences now or <a class="doLaterLink" href="HostDashboard.aspx">later</a></h6>
                 </div>
             </div>
         </section>
@@ -113,7 +113,7 @@
         <section>
             <div class="row">
                 <div class="col-md-12">
-                    <h5>Please select topics that apply to you:</h5>
+                    <h5>Please select statements that apply to you:</h5>
                 </div>
             </div>
         </section>
@@ -181,7 +181,7 @@
                                 <asp:CheckBox ID="fbFamily" runat="server" />
                                 <span class="slider round"></span>
                             </label>
-                            <div>Family Oriented</div>
+                            <div>Family-Oriented</div>
                         </div>
                     </div>
 
@@ -205,7 +205,7 @@
                                 <asp:CheckBox ID="cbTechSavy" runat="server" />
                                 <span class="slider round"></span>
                             </label>
-                            <div>Tech Savy</div>
+                            <div>Tech-Savvy</div>
                         </div>
                     </div>
 
