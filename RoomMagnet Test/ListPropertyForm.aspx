@@ -429,7 +429,6 @@
             </section>
 
 
-
             <!--property type start here-->
             <section>
                 <div class="row px-5 py-3">
