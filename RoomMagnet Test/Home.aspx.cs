@@ -25,7 +25,7 @@ public partial class Home : System.Web.UI.Page
         //}
         //else
         //{
-        //    String property = searchBox.Text;
+        //    String property = HttpUtility.HtmlEncode(searchBox.Text);
         //    int space = property.IndexOf(" ");
         //    String houseNum = property.Substring(0, space);
         //    String street = property.Substring(space + 1);
