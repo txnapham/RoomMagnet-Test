@@ -5,11 +5,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <style>
         #map {
-            height: 300px;
-            width: auto;
+            height: 500px;
+            width: 100%;
+            box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+            -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+            -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
         }
     </style>
 
+    <div align="center">
+        <div id="map">
+        </div>
+    </div>
 
 
     <script>
@@ -35,12 +42,6 @@
     <!--BEGINNING OF SEARCH BAR-->
     <div class="container-fluid searchPageBodyContent">
 
-                <!--GOOGLE MAPS GOES HERE-->
-        <section>
-            <div id="map">
-            </div>
-        </section>
-        <!--END OF GOOGLE MAPS-->
 
 
         <section>
