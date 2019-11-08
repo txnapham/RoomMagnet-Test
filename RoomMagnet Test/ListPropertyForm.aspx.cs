@@ -72,6 +72,6 @@ public partial class ListPropertyForm : System.Web.UI.Page
         txtZip.Text = "";
         txtCountry.Text = "US";
 
-        cbApartment.Checked = true;
+        Response.Redirect("HostDashboard.aspx");
     }
 }

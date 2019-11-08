@@ -40,7 +40,7 @@
                     <asp:TextBox ID="txtHouseNum" runat="server" class="form-control form-control-lg" placeholder="House Number" MaxLength="10"></asp:TextBox>
                 </div>
                 <asp:RequiredFieldValidator ID="streetReqFieldValidator" Display ="Dynamic" runat="server" ErrorMessage="Please enter a street." ControlToValidate="txtStreet" Text="*Please enter a street"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="streetLetters" Display="Dynamic" runat="server" ErrorMessage="Please enter a valid street name" Text="*Please enter a valid street name" ControlToValidate="txtStreet" ValidationExpression="^[a-zA-Z/s]+$"></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="streetLetters" Display="Dynamic" runat="server" ErrorMessage="Please enter a valid street name" Text="*Please enter a valid street name" ControlToValidate="txtStreet" ValidationExpression="^[a-zA-Z\s]+$"></asp:RegularExpressionValidator>
                 <div class="form-group">
                     <asp:TextBox ID="txtStreet" runat="server" class="form-control form-control-lg" placeholder="Street" MaxLength="30"></asp:TextBox>
                 </div>
