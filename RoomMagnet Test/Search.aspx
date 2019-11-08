@@ -32,6 +32,26 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNcHEQpOGd14rKFMgFTgbH-fZS2dD1UBw&callback=initMap"
         async defer></script>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript">
+    </script>
+
+        <script type="text/javascript">  
+        function FavoriteProperty(PropertyID) 
+        {
+              $.ajax({  
+                      type: "POST",
+                      url: "WebMethodCall.aspx/FavoriteProperty",
+                      data: "{ PropertyID: " + PropertyID + "}",  
+                      contentType: "application/json; charset=utf-8",  
+                      dataType: "json",  
+                      success: function (response) {  
+                          alert(response.d);
+                          console.log('hi');
+                      }  
+                  });  
+              }  
+    </script>
+
     <!--BEGINNING OF SEARCH BAR-->
     <div class="container-fluid searchPageBodyContent">
 

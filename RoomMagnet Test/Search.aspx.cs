@@ -38,7 +38,6 @@ public partial class Search : System.Web.UI.Page
         }
     }
 
-    System.Data.SqlClient.SqlConnection sqlConn = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ToString());
     String homeSearch = "";
 
     protected void Page_Load(object sender, EventArgs e)
@@ -51,8 +50,11 @@ public partial class Search : System.Web.UI.Page
         }
     }
 
+    SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ToString());
+
     public void btnSearch_Click(String homeSearch)
     {
+
         if (String.IsNullOrEmpty(homeSearch))
         {
             // Do nothing
@@ -68,7 +70,7 @@ public partial class Search : System.Web.UI.Page
             int commaSplit = tSearch.IndexOf(",");
             String cityString = tSearch.Substring(0, commaSplit).ToUpper();
             String state = tSearch.Substring(commaSplit + 2).ToUpper();
-            String query = "select [City], [HomeState], [Zip], [RoomPriceRangeLow],[RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like '" + cityString + "' AND upper([HomeState]) like '" + state + "';";
+            String query = "select [PropertyID], [City], [HomeState], [RoomPriceRangeLow],[RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like '" + cityString + "' AND upper([HomeState]) like '" + state + "';";
             System.Data.SqlClient.SqlCommand sqlComm = new System.Data.SqlClient.SqlCommand(query, sqlConn);
             //sqlComm.CommandText = ("select [City], [HomeState], [Zip], [RoomPriceRangeLow], [RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like upper('%" + cityString + "%')"); 
             System.Data.SqlClient.SqlDataReader reader = sqlComm.ExecuteReader();
@@ -111,13 +113,14 @@ public partial class Search : System.Web.UI.Page
     [System.Web.Services.WebMethod]
     protected void btnSearch_Click(object sender, EventArgs e)
     {
+        SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ToString());
+
         if (String.IsNullOrEmpty(txtSearch.Text))
         {
             // Do nothing
         }
         else
         {
-            sqlConn.Close();
             sqlConn.Open();
             String classType = "card";
             String imgSource = "";
@@ -125,16 +128,18 @@ public partial class Search : System.Web.UI.Page
             String tSearch = HttpUtility.HtmlEncode(txtSearch.Text);
             int commaSplit = tSearch.IndexOf(",");
             String cityString = tSearch.Substring(0, commaSplit).ToUpper();
-            String state = tSearch.Substring(commaSplit + 2).ToUpper(); 
-            String query = "select [City], [HomeState], [Zip], [RoomPriceRangeLow],[RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like '" + cityString + "' AND upper([HomeState]) like '"+state+ "';";
+            String state = tSearch.Substring(commaSplit + 2).ToUpper();
+            String query = "select [PropertyID], [City], [HomeState], [Zip], [RoomPriceRangeLow],[RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like '" + cityString + "' AND upper([HomeState]) like '" + state + "';";
             System.Data.SqlClient.SqlCommand sqlComm = new System.Data.SqlClient.SqlCommand(query, sqlConn);
             //sqlComm.CommandText = ("select [City], [HomeState], [Zip], [RoomPriceRangeLow], [RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like upper('%" + cityString + "%')"); 
             System.Data.SqlClient.SqlDataReader reader = sqlComm.ExecuteReader();
 
             Card1.Text = "";
+            int resultCount = 0;
 
             while (reader.Read())
             {
+                int PropID = Convert.ToInt32(reader["PropertyID"]);
                 String city = reader["City"].ToString();
                 String homeState = reader["HomeState"].ToString();
                 String priceRangeLow = reader["RoomPriceRangeLow"].ToString();
@@ -153,73 +158,27 @@ public partial class Search : System.Web.UI.Page
                 .Append("                        </a>")
                 .Append("")
                 .Append("                        <div>")
-                .Append("                            <button id=\"heartbtn\" class=\"btn favoriteHeartButton\"><i id=\"hearti\" class=\"far fa-heart\"></i></button>")
+                .Append("                            <button id=\"heartbtn" + resultCount + "class=\"btn favoriteHeartButton\" onClicentClick=\"FavoriteProperty(" + PropID + ")\"><i id=\"hearti\" class=\"far fa-heart\"></i></button>")
                 .Append("                        </div>")
                 .Append("                    </div>")
                 .Append("</div>");
 
                 Card1.Text += myCard.ToString();
+                resultCount++;
             }
             reader.Close();
             Session["Search"] = null;
 
         }
+    }
 
-        //public void btnSearchHome(String homeSearch)
-        //{
-        //    if (String.IsNullOrEmpty(txtSearch.Text))
-        //    {
-        //        // Do nothing
-        //    }
-        //    else
-        //    {
-        //        sqlConn.Open();
-        //        String classType = "card";
-        //        String imgSource = "";
-        //        String cardBody = "";
-        //        String tSearch = homeSearch;
-        //        int commaSplit = tSearch.IndexOf(",");
-        //        String homeSearch = tSearch.Substring(0, commaSplit).ToUpper();
-        //        String state = tSearch.Substring(commaSplit + 2).ToUpper();
-        //        String query = "select [City], [HomeState], [Zip], [RoomPriceRangeLow],[RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like '" + homeSearch + "' AND upper([HomeState]) like '" + state + "';";
-        //        System.Data.SqlClient.SqlCommand sqlComm = new System.Data.SqlClient.SqlCommand(query, sqlConn);
-        //        //sqlComm.CommandText = ("select [City], [HomeState], [Zip], [RoomPriceRangeLow], [RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like upper('%" + cityString + "%')"); 
-        //        System.Data.SqlClient.SqlDataReader reader = sqlComm.ExecuteReader();
-
-        //        Card1.Text = "";
-
-        //        while (reader.Read())
-        //        {
-        //            String city = reader["City"].ToString();
-        //            String homeState = reader["HomeState"].ToString();
-        //            String priceRangeLow = reader["RoomPriceRangeLow"].ToString();
-        //            String priceRangeHigh = reader["RoomPriceRangeHigh"].ToString();
-
-        //            StringBuilder myCard = new StringBuilder();
-        //            myCard
-        //            .Append("<div class=\"col-xs-4 col-md-3\">")
-        //            .Append("<div class=\"card  shadow-sm  mb-4\" >")
-        //            .Append("                        <img src=\"images/scott-webb-1ddol8rgUH8-unsplash.jpg\" class=\"card-img-top\" alt=\"image\">")
-        //            .Append("                        <a href=\"search-result-page-detail.html\" class=\"cardLinks\">")
-        //            .Append("                            <div class=\"card-body\">")
-        //            .Append("                                <h5 class=\"card-title\">" + city + ", " + homeState + "</h5>")
-        //            .Append("                                <p class=\"card-text\">" + "$" + priceRangeLow + " - " + "$" + priceRangeHigh + "</p>")
-        //            .Append("                            </div>")
-        //            .Append("                        </a>")
-        //            .Append("")
-        //            .Append("                        <div>")
-        //            .Append("                            <button id=\"heartbtn\" class=\"btn favoriteHeartButton\"><i id=\"hearti\" class=\"far fa-heart\"></i></button>")
-        //            .Append("                        </div>")
-        //            .Append("                    </div>")
-        //            .Append("</div>");
-
-        //            Card1.Text += myCard.ToString();
-        //        }
-        //        reader.Close();
-
-        //    }
-
-        //}
-
-}
+    [System.Web.Services.WebMethod]
+    public static void FavoriteProperty(int PropertyID)
+    {
+        SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ToString());
+        SqlCommand favProperty = new System.Data.SqlClient.SqlCommand();
+        favProperty.Connection = sqlConn;
+        favProperty.CommandText = "Insert INTO FavoritedProperties VALUES(NULL, @PropertyID);";
+        favProperty.Parameters.Add(new SqlParameter("@PropertyID", PropertyID));
+    }
 }
