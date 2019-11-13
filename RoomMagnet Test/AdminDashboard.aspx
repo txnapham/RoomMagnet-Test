@@ -27,10 +27,8 @@
                                     <h5 class="card-title">Registered Hosts</h5>
 
                                     <ul>
-                                        <li><a class="tenantdashlist"href="#">Karen Smith</a></li>
-                                        <li><a class="tenantdashlist"href="#">Robert Johnson</a></li>
-                                        <li><a class="tenantdashlist"href="#">Betty Brown</a></li>
-                                        <li><a class="tenantdashlist"href="#">John Miller</a></li>
+                                        <asp:Literal ID="Card" runat="server" Mode="Transform"></asp:Literal>
+                                        
                                     </ul>
 
 
@@ -40,13 +38,10 @@
                         
                         <div class="card  shadow-sm  mb-4">
                                 <div class="card-body">
-                                    <h5 class="card-title">Registed Tenants</h5>
+                                    <h5 class="card-title">Registered Tenants</h5>
 
                                     <ul>
-                                        <li><a class="tenantdashlist"href="#">Liam Brown</a></li>
-                                        <li><a class="tenantdashlist"href="#">Jessica Cruz</a></li>
-                                        <li><a class="tenantdashlist"href="#">Jake Smith</a></li>
-                                        <li><a class="tenantdashlist"href="#">Hellen Wilson</a></li>
+                                        <asp:Literal ID="Card2" runat="server" Mode="Transform"></asp:Literal>
                                     </ul>
 
 
@@ -59,10 +54,7 @@
                                     <h5 class="card-title">Intended Leases</h5>
 
                                     <ul>
-                                        <li><a class="tenantdashlist"href="#"></a></li>
-                                        <li><a class="tenantdashlist"href="#"></a></li>
-                                        <li><a class="tenantdashlist"href="#"></a></li>
-                                        <li><a class="tenantdashlist"href="#"></a></li>
+                                        <asp:Literal ID="Card3" runat="server" Mode="Transform"></asp:Literal>
                                     </ul>
 
 
