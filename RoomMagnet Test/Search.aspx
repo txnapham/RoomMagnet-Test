@@ -39,6 +39,26 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNcHEQpOGd14rKFMgFTgbH-fZS2dD1UBw&callback=initMap"
         async defer></script>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript">
+    </script>
+
+        <script type="text/javascript">  
+        function FavoriteProperty(PropertyID) 
+        {
+              $.ajax({  
+                      type: "POST",
+                      url: "WebMethodCall.aspx/FavoriteProperty",
+                      data: "{ PropertyID: " + PropertyID + "}",  
+                      contentType: "application/json; charset=utf-8",  
+                      dataType: "json",  
+                      success: function (response) {  
+                          alert(response.d);
+                          console.log('hi');
+                      }  
+                  });  
+              }  
+    </script>
+
     <!--BEGINNING OF SEARCH BAR-->
     <div class="container-fluid searchPageBodyContent">
 
@@ -368,7 +388,7 @@
 
                         <!--SEARCH BAR-->
                         <div class="col-md-6 searchBar">
-                            <asp:TextBox ID="txtSearch" runat="server" class="form-control form-control-lg" placeholder="Search"></asp:TextBox>
+                            <asp:TextBox ID="txtSearch" runat="server" class="form-control form-control-lg" placeholder="Search" ClientIDMode="Static"></asp:TextBox>
                         </div>
                         <!--END OF SEARCH BAR-->
 
@@ -428,5 +448,20 @@
         <!--END OF PAGINATION-->
 
     </div>
+
+    <script src="awesomplete.js"></script>
+    <script type="text/javascript">
+
+        var ajax = new XMLHttpRequest();
+        ajax.open("GET", "csvjson.json", true);
+        ajax.onload = function () {
+            var list = JSON.parse(ajax.responseText).map(function (i) { return i.CityState; });
+            new Awesomplete(document.querySelector("#<%=txtSearch.ClientID %>"), {
+                list: list,
+                minChars: 1
+            });
+        };
+        ajax.send();
+    </script>
 </asp:Content>
 
