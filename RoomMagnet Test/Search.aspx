@@ -31,7 +31,13 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNcHEQpOGd14rKFMgFTgbH-fZS2dD1UBw&callback=initMap"
         async defer></script>
-
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+    </asp:ScriptManager>
+    <script>
+        function favoriteBtn(propertyID, city, state, priceLow, priceHigh) {
+            PageMethods.MiddleMan(propertyID, city, state, priceLow, priceHigh);
+        };
+    </script>
     <!--BEGINNING OF SEARCH BAR-->
     <div class="container-fluid searchPageBodyContent">
 

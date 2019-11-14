@@ -41,111 +41,11 @@
 
         <section>
             <div class="row px-3 py-3">
-
-                <div class="col-md-3">
-                    <div class="card shadow-sm  mb-4">
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="PropertyDetails.aspx" class="cardLinks">
-                            <div class="card-body">
-                                <h5 id="CityState" class="card-title"></h5>
-                                <p id="Price"class="card-text"></p>
-                            </div>
-                        </a>
-                        
-                        <!--FAVORITE BUTTON-->
-
-                          <div>
-                            <asp:CheckBox runat="server" id="heartbutton"  CausesValidation="false" />
-                        </div>
-
-                  </div>
-                </div>
-           </div>
+                <asp:Literal ID="Card3" runat="server" Mode="Transform"></asp:Literal>
+            </div>
         </section>
 
-                        <%--<div>
-
-                            <button class="btn" onclick="favoriteBtn()"><i class="fas fa-heart"></i></button>
-                            <script>
-                                function favoriteBtn() {
-                                    document.getElementById("field2").append = "Washington, DC";
-                                }
-                            </script>
-                        </div>--%>
-                        <!--END OF FABORITE BUTTON-->
-                   
-
-           <%--     <div class="col-md-3">
-                    <div class="card shadow-sm  mb-4">
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="PropertyDetails.aspx" class="cardLinks">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer c </p>
-                            </div>
-                        </a>
-
-                        <!--FAVORITE BUTTON-->
-                        <!-- <div>
-                                    <button id="heartbtn" class="btn favoriteHeartButton"> <i id="hearti" class="far fa-heart" ></i></button>    
-                                </div> -->
-
-                        <div>
-                            <button class="btn"><i class="fas fa-heart"></i></button>
-                        </div>
-
-
-                        <!--END OF FABORITE BUTTON-->
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card  shadow-sm mb-4">
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="PropertyDetails.aspx" class="cardLinks">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer c </p>
-                            </div>
-                        </a>
-
-                        <!--FAVORITE BUTTON-->
-
-                        <!-- <div>
-                                    <button id="heartbtn" class="btn favoriteHeartButton"> <i id="hearti" class="far fa-heart" ></i></button>    
-                                </div>-->
-
-
-                        <div>
-                            <button class="btn"><i class="fas fa-heart"></i></button>
-                        </div>
-                        <!--END OF FAVORITE BUTTON-->
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card shadow-sm  mb-4">
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="PropertyDetails.aspx" class="cardLinks">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer c </p>
-                            </div>
-                        </a>
-
-                        <!--FAVORITE BUTTON-->
-                        <!-- <div>
-                                    <button id="heartbtn" class="btn favoriteHeartButton"> <i id="hearti" class="far fa-heart" ></i></button>    
-                                </div> -->
-
-                        <div>
-                            <button class="btn"><i class="fas fa-heart"></i></button>
-                        </div>
-
-
-                        <!--END OF FABORITE BUTTON-->
-                    </div>
-                </div>--%>
+                       
 
                  
 
@@ -153,6 +53,5 @@
             
 
 
-    </div>
 </asp:Content>
 

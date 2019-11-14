@@ -41,28 +41,7 @@
 
         <section>
             <div class="row px-3 py-3">
-
-                <div class="col-md-3">
-                    <div class="card  shadow-sm mb-4">
-                        <img src="images/scott-webb-1ddol8rgUH8-unsplash.jpg" class="card-img-top" alt="image">
-                        <a href="PropertyDetails.aspx" class="cardLinks">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer c </p>
-                            </div>
-                        </a>
-
-                        <!--FAVORITE BUTTON-->
-
-                        <%--should be taken out--%>
-
-                        <%--<div>
-                            <button class="btn"><i class="fas fa-heart"></i></button>
-                        </div>--%>
-
-                        <!--END OF FABORITE BUTTON-->
-                    </div>
-                </div>
+                <asp:Literal ID="Card" runat="server" Mode="Transform"></asp:Literal>
             </div>
         </section>
 

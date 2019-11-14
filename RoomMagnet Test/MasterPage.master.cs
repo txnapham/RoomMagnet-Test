@@ -35,14 +35,20 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
                 if (PasswordHash.ValidatePassword(txtPassword.Text, storedHash)) // if the entered password matches what is stored, it will show success
                 {
-
                     System.Data.SqlClient.SqlCommand search = new System.Data.SqlClient.SqlCommand();
                     search.Connection = sc;
+                    //select variables for current user
                     search.CommandText = "SELECT AccountType from Account where Email = @email";
                     search.Parameters.Add(new SqlParameter("@email", txtEmail.Text));
                     int type = (int)search.ExecuteScalar();
 
-                    Session["type"] = type;
+                    //Current User id
+                    System.Data.SqlClient.SqlCommand search1 = new System.Data.SqlClient.SqlCommand();
+                    search1.Connection = sc;
+                    search1.CommandText = "SELECT AccountID from Account where Email = @email";
+                    search1.Parameters.Add(new SqlParameter("@email", txtEmail.Text));
+                    HttpContext.Current.Session["AccountId"] = search1.ExecuteScalar();
+
 
                     if (type == 1)
                     {

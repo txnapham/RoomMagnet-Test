@@ -72,7 +72,7 @@
                         <div class="card-body">
                           <h5 class="card-title dash-card-titles">Properties</h5>
                           <ul>
-                            <li><a href="#" class="tenantdashlist">South Main House</a></li>
+                              <asp:Literal ID="Card2" runat="server" Mode="Transform"></asp:Literal>
                         </ul>
                     <!--BUTTON-->    
                         <div class=" text-center">
@@ -84,57 +84,24 @@
                 </div>  
         <!--END OF PROPERTIES MOD-->
     
-            <!--message mod-->    
+            <!--message mod-->
                 <div class="col-md-12">
                         <div class="card shadow-sm  mb-4">
                             <div class="card-body">
                                 <h5 class="card-title dash-card-titles">Message Center</h5>
-                                
-                                <p>        <a class="navbar-brand" href="#">
-                                             <img src="images/ronny-sison-4lnzxFIgTmg-unsplash.jpg" alt="..." class="img-thumbnail" width="50" height="auto">
-                                        </a>
-                                        <a class="navbar-brand" href="#">
-                                            <img src="images/benjamin-parker-OhKElOkQ3RE-unsplash.jpg" alt="..." class="img-thumbnail" width="50" height="auto">
-                                        </a>
-                                        <a class="navbar-brand" href="#">
-                                             <img src="images/ronny-sison-4lnzxFIgTmg-unsplash.jpg" alt="..." class="img-thumbnail" width="50" height="auto">
-                                        </a>
-                                        <a class="navbar-brand" href="#">
-                                             <img src="images/benjamin-parker-OhKElOkQ3RE-unsplash.jpg" alt="..." class="img-thumbnail" width="50" height="auto">
-                                        </a>
-                                        <a class="navbar-brand" href="#">
-                                             <img src="images/ronny-sison-4lnzxFIgTmg-unsplash.jpg" alt="..." class="img-thumbnail" width="50" height="auto">
-                                        </a>
-                                     <a class="navbar-brand" href="#">
-                                             <img src="images/benjamin-parker-OhKElOkQ3RE-unsplash.jpg" alt="..." class="img-thumbnail" width="50" height="auto">
-                                        </a>
-                                        <a class="navbar-brand" href="#">
-                                             <img src="images/ronny-sison-4lnzxFIgTmg-unsplash.jpg" alt="..." class="img-thumbnail" width="50" height="auto">
-                                        </a>
-                                     <a class="navbar-brand" href="#">
-                                             <img src="images/benjamin-parker-OhKElOkQ3RE-unsplash.jpg" alt="..." class="img-thumbnail" width="50" height="auto">
-                                        </a>
-                                </p> 
 
-                                    <ul>
-                                        <li><a href="#" class="tenantdashlist">New Message</a></li>
-                                        <li><a href="#" class="tenantdashlist">New Message</a></li>
-                                        <li><a href="#" class="tenantdashlist">New Message</a></li>
+                            <asp:Literal ID="Card3" runat="server" Mode="Transform"></asp:Literal>
 
 
-                                    </ul>
-                                
-                                
-                                
-                        <!--BUTTON-->   
-                                <div class=" text-center">
-                                <a href="HostMessageCenter.aspx" class="btn btn-info">View Messages</a> 
+                        <!--BUTTON-->
+                                <div class=" text-center pt-3">
+                                <a href="message-page.html" class="btn btn-info">View Messages</a> 
                                 </div>
-                        <!--END OF BUTTON-->        
+                        <!--END OF BUTTON-->
                             </div>
                         </div>
                     </div>
-            <!--END OF MESSAGE MOD-->                 
+            <!--END OF MESSAGE MOD-->      
                 
              
                 
@@ -150,8 +117,7 @@
                             <div class="card-body">
                               <h5 class="card-title dash-card-titles">Tenants</h5>
                               <ul>
-                                <li><a href="#" class="tenantdashlist">Liam Brown</a></li>
-                                <li><a href="#" class="tenantdashlist">Jake Smith</a></li>
+                                <asp:Literal ID="Card" runat="server" Mode="Transform"></asp:Literal>
                             </ul>
                         <!--BUTTON-->        
                             <div class=" text-center">    
