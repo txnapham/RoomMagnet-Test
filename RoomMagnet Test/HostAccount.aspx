@@ -15,7 +15,7 @@
                 </div>
 
                 <%--<form>--%>
-                <asp:RequiredFieldValidator ID="fnReqFieldValidator" Display ="Dynamic" runat="server" ErrorMessage="Please enter a first name" Visible="False" Text="*Please enter a first name" ControlToValidate="txtFN"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="fnReqFieldValidator" Display ="Dynamic" runat="server" ErrorMessage="Please enter a first name" Text="*Please enter a first name" ControlToValidate="txtFN"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="fnLettersValidator" Display="Dynamic" runat="server" ErrorMessage="Please enter a valid first name" Text="*Please enter a valid first name" ControlToValidate="txtFN" ValidationExpression="^[a-zA-Z]+$"></asp:RegularExpressionValidator>
                 <div class="form-group">
                     <asp:TextBox ID="txtFN" runat="server" class="form-control form-control-lg" aria-describedby="FirstName" placeholder="First Name" MaxLength="50"></asp:TextBox>
@@ -117,7 +117,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <asp:TextBox ID="txtCountry" runat="server" class="form-control form-control-lg" placeholder="Country" MaxLength="2" Enabled="False">US</asp:TextBox>
+                    <asp:TextBox ID="txtCountry" runat="server" class="form-control form-control-lg" placeholder="Country" MaxLength="2">US</asp:TextBox>
                 </div>
 
                 <div class="form-group">
@@ -135,7 +135,6 @@
                 </div>
                 <asp:RequiredFieldValidator ID="passwordReqField" Display ="Dynamic" runat="server" ErrorMessage="Please enter a password." ControlToValidate="txtPassword" Text="*Please enter a password"></asp:RequiredFieldValidator>
                 <div class="form-group">
-                    <label for="txtPassword">Password</label>
                     <%--for testing purposes--%>
                     <asp:TextBox ID="txtPassword" runat="server" class="form-control form-control-lg" placeholder="Password" TextMode ="Password" MaxLength="256"></asp:TextBox>
                 </div>
@@ -145,9 +144,7 @@
                     <label class="form-check-label" for="exampleCheck1">Perform background check now</label>
                 </div>
 
-                <asp:CustomValidator ID="cbAgreementValidator" runat="server" 
-                    ErrorMessage="Please accept the term and conditions" 
-                    onservervalidate="cbAgreement_ServerValidate"></asp:CustomValidator>
+                <asp:CustomValidator ID="cbAgreementValidator" runat="server" Display="Dynamic" ErrorMessage="*Please accept the term and conditions</br>" ClientValidationFunction="validateTerms" ></asp:CustomValidator>
                 <div class="form-group form-check">
                     <asp:CheckBox ID="cbAgreement" runat="server" class="form-check-input" />
                     <label class="form-check-label" for="exampleCheck1">Agreement to Terms &amp; Conditions</label>
@@ -171,5 +168,16 @@
 
 
     </div>
+
+    <script>
+        function validateTerms(source, arguments) {
+            var $c = $('#<%= cbAgreement.ClientID %>');
+            if($c.prop("checked")){
+                arguments.IsValid = true;
+            } else {
+                arguments.IsValid = false;
+            }
+        }
+    </script>       
 </asp:Content>
 

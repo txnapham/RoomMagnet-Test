@@ -37,9 +37,9 @@ public partial class HostAccount : System.Web.UI.Page
         ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
     }
 
-    protected void cbAgreement_ServerValidate(object source, ServerValidateEventArgs args)
+    public void cbAgreementValidate(object o, ServerValidateEventArgs e)
     {
-        args.IsValid = cbAgreement.Checked;
+        e.IsValid = cbAgreement.Checked;
     }
 
     protected void btnCreateAccount_Click(object sender, EventArgs e)
