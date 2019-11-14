@@ -20,22 +20,7 @@
     <script src="https://kit.fontawesome.com/78c52ebafc.js" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" data-auto-replace-svg="nest"></script>
 
-    <script>
-        function favoriteBtn(propertyID, city, state, priceLow, priceHigh) {
-            populatePropID(propertyID);
-            populateCityState(city, state);
-            populatePrice(priceLow,priceHigh);
-        };
-        function populatePropID(propertyID) {
-            return propertyID;
-        };
-        function populateCityState(city, state) {
-            document.getElementById("CityState").innerHTML = city +", " + state;
-        };
-        function populatePrice(priceLow, priceHigh) {
-            document.getElementById("Price").innerHTML ="$"+ priceLow +" - "+"$"+ priceHigh;
-        };
-    </script>
+
 
     <!--Content Placeholder-->
 
@@ -52,7 +37,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top mainNav">
             <div class="container">
                 <a class="navbar-brand ml-0 logo" href="Home.aspx">
-                    <img src="images/roommagnetLOGO.png" alt="roommagnet logo" class="img-fluid" width="300" height="300"></a>
+                    <img src="images/roommagnetlogo1.png" alt="roommagnet logo" class="img-fluid" width="110" height="110"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -108,7 +93,7 @@
                         </div>
 
                         <asp:Button ID="btnLogin" runat="server" Text="Login" class="btn btn-md btn-info btn-block" OnClick="btnLogin_Click" />
-                        <asp:Label ID="lblStatus" runat="server" Text="Label"></asp:Label>
+                        
                     </div>
 
 

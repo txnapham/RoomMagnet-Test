@@ -80,9 +80,9 @@
             <section>
                 <div class="card  shadow-sm  mb-4">
                                 <div class="card-body">
-                                    <h5 class="card-title">Number of Users</h5>
-                                    <p>Amount of User: 5260</p>
-                                    <p>Amount of Leases: 735</p>
+                                    <h5 class="card-title">RoomMagnet Data</h5>
+                                    <p>Number of Users: 5260</p>
+                                    <p>Number of Leases: 735</p>
                                     
                                     <a href="#" class="btn btn-info">View more</a> 
                                 </div>

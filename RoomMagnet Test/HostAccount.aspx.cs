@@ -33,7 +33,6 @@ public partial class HostAccount : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        txtCountry.Enabled = false;
         txtCountry.Text = "US";
         ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
     }
@@ -102,18 +101,34 @@ public partial class HostAccount : System.Web.UI.Page
 
                 insert.ExecuteNonQuery();
 
-                Label1.Text = "Success";
+                //Label1.Text = "Success";
 
-                Response.Redirect("HostDashboard.aspx");
                 Session["type"] = 2;
+                Response.Redirect("HostDashboard.aspx");
+
 
                 sc.Close();
+
+                //Clear text boxes
+                txtFN.Text = "";
+                txtMN.Text = "";
+                txtLN.Text = "";
+                txtBday.Text = "";
+                txtEmail.Text = "";
+                txtPhone.Text = "";
+                txtPassword.Text = "";
+                txtHouseNum.Text = "";
+                txtStreet.Text = "";
+                txtCity.Text = "";
+                ddState.ClearSelection();
+                txtZip.Text = "";
+                txtCountry.Text = "US";
             }
             else if (emailCount == 0)
             {
                 insert.CommandText = "INSERT into Account VALUES (@fName, @mName, @lName, @phone, @bday, @email, @HouseNbr, @street, @city, @state, @zip, @country, @AccType, @ModDate, @PID); " +
                    "INSERT into Host VALUES(@@Identity, @BackCheck, @HostReason);" +
-                   "INSERT into Password VALUES((SELECT MAX(HostID) from HostID), @email, @password);";
+                   "INSERT into Password VALUES((SELECT MAX(HostID) from Host), @email, @password);";
 
                 //Insert into ACCOUNT
                 insert.Parameters.Add(new SqlParameter("@fName", newHost.getFirstName()));
@@ -141,17 +156,45 @@ public partial class HostAccount : System.Web.UI.Page
 
                 insert.ExecuteNonQuery();
 
-                Label1.Text = "Success";
-
-                Response.Redirect("HostDashboard.aspx");
+                //Label1.Text = "Success";
                 Session["type"] = 2;
+                Response.Redirect("HostDashboard.aspx");
+
 
                 sc.Close();
+                //Clear text boxes
+                txtFN.Text = "";
+                txtMN.Text = "";
+                txtLN.Text = "";
+                txtBday.Text = "";
+                txtEmail.Text = "";
+                txtPhone.Text = "";
+                txtPassword.Text = "";
+                txtHouseNum.Text = "";
+                txtStreet.Text = "";
+                txtCity.Text = "";
+                ddState.ClearSelection();
+                txtZip.Text = "";
+                txtCountry.Text = "US";
             }
             else
             {
-                Label1.Text = "Error";
+                //Label1.Text = "Error";
                 sc.Close();
+                //Clear text boxes
+                txtFN.Text = "";
+                txtMN.Text = "";
+                txtLN.Text = "";
+                txtBday.Text = "";
+                txtEmail.Text = "";
+                txtPhone.Text = "";
+                txtPassword.Text = "";
+                txtHouseNum.Text = "";
+                txtStreet.Text = "";
+                txtCity.Text = "";
+                ddState.ClearSelection();
+                txtZip.Text = "";
+                txtCountry.Text = "US";
             }
         }
     }

@@ -14,6 +14,7 @@ public partial class Home : System.Web.UI.Page
 
     protected void Page_PreInit(object sender, EventArgs e)
     {
+        Session.Clear();
         if (Session["type"] != null)
         {
             if ((int)Session["type"] == 1)
@@ -42,6 +43,8 @@ public partial class Home : System.Web.UI.Page
     [System.Web.Services.WebMethod]
     protected void btnSearch_Click(object sender, EventArgs e)
     {
+        Session["Search"] = txtSearch.Text;
+        Response.Redirect("Search.aspx");
         //if (String.IsNullOrEmpty(searchBox.Text))
         //{
 

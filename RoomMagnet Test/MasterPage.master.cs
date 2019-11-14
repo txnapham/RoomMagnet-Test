@@ -35,7 +35,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
                 if (PasswordHash.ValidatePassword(txtPassword.Text, storedHash)) // if the entered password matches what is stored, it will show success
                 {
-                    lblStatus.Text = "Success!";
 
                     System.Data.SqlClient.SqlCommand search = new System.Data.SqlClient.SqlCommand();
                     search.Connection = sc;
@@ -58,12 +57,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
                         Response.Redirect("TenantDashboard.aspx");
                     }
                 }
-                else
-                lblStatus.Text = "Password is wrong.";
             }
         }
         else // if the email doesn't exist, it will show failure
-        lblStatus.Text = "Email does not exist.";
 
         sc.Close();
     }
