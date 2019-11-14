@@ -1,7 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ListPropertyForm.aspx.cs" Inherits="ListPropertyForm" %>
 
-<%@ Register Assembly="Aurigma.ImageUploader" Namespace="Aurigma.ImageUploader" TagPrefix="cc1" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
