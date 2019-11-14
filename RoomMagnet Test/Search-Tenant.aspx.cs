@@ -13,7 +13,7 @@ using System.Xml.Linq;
 using System.Data.SqlClient;
 
 
-public partial class Search : System.Web.UI.Page
+public partial class Search_Tenant : System.Web.UI.Page
 {
     protected void Page_PreInit(object sender, EventArgs e)
     {
@@ -54,6 +54,15 @@ public partial class Search : System.Web.UI.Page
 
     public void btnSearch_Click(String homeSearch)
     {
+        Boolean searchCheck = false;
+        for (int i = 0; i < txtSearch.Text.Length - 1; i++)
+        {
+            String checkValue = txtSearch.Text.Substring(i, 2);
+            if (checkValue == ", ")
+            {
+                searchCheck = true;
+            }
+        }
 
         if (String.IsNullOrEmpty(homeSearch))
         {
@@ -61,16 +70,6 @@ public partial class Search : System.Web.UI.Page
         }
         else
         {
-            Boolean searchCheck = false;
-            for (int i = 0; i < txtSearch.Text.Length - 1; i++)
-            {
-                String checkValue = txtSearch.Text.Substring(i, 2);
-                if (checkValue == ", ")
-                {
-                    searchCheck = true;
-                }
-            }
-
             if (searchCheck == true)
             {
                 txtSearch.Text = homeSearch;
@@ -84,7 +83,6 @@ public partial class Search : System.Web.UI.Page
                 String state = tSearch.Substring(commaSplit + 2).ToUpper();
                 String query = "select [PropertyID], [City], [HomeState], [RoomPriceRangeLow],[RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like '" + cityString + "' AND upper([HomeState]) like '" + state + "';";
                 System.Data.SqlClient.SqlCommand sqlComm = new System.Data.SqlClient.SqlCommand(query, sqlConn);
-                //sqlComm.CommandText = ("select [City], [HomeState], [Zip], [RoomPriceRangeLow], [RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like upper('%" + cityString + "%')"); 
                 System.Data.SqlClient.SqlDataReader reader = sqlComm.ExecuteReader();
 
                 Card1.Text = "";
@@ -101,11 +99,16 @@ public partial class Search : System.Web.UI.Page
                     .Append("<div class=\"col-xs-4 col-md-3\">")
                     .Append("<div class=\"card  shadow-sm  mb-4\" >")
                     .Append("                        <img src=\"images/scott-webb-1ddol8rgUH8-unsplash.jpg\" class=\"card-img-top\" alt=\"image\">")
+                    .Append("                        <a href=\"search-result-page-detail.html\" class=\"cardLinks\">")
                     .Append("                            <div class=\"card-body\">")
                     .Append("                                <h5 class=\"card-title\">" + city + ", " + homeState + "</h5>")
                     .Append("                                <p class=\"card-text\">" + "$" + priceRangeLow + " - " + "$" + priceRangeHigh + "</p>")
                     .Append("                            </div>")
+                    .Append("                        </a>")
                     .Append("")
+                    .Append("                        <div>")
+                    .Append("                            <button id=\"heartbtn\" class=\"btn favoriteHeartButton\"><i id=\"hearti\" class=\"far fa-heart\"></i></button>")
+                    .Append("                        </div>")
                     .Append("                    </div>")
                     .Append("</div>");
 
@@ -121,10 +124,10 @@ public partial class Search : System.Web.UI.Page
     protected void btnSearch_Click(object sender, EventArgs e)
     {
         Boolean searchCheck = false;
-        for (int i = 0; i < txtSearch.Text.Length-1; i++)
+        for (int i = 0; i < txtSearch.Text.Length - 1; i++)
         {
             String checkValue = txtSearch.Text.Substring(i, 2);
-            if(checkValue == ", ")
+            if (checkValue == ", ")
             {
                 searchCheck = true;
             }
@@ -168,11 +171,16 @@ public partial class Search : System.Web.UI.Page
                     .Append("<div class=\"col-xs-4 col-md-3\">")
                     .Append("<div class=\"card  shadow-sm  mb-4\" >")
                     .Append("                        <img src=\"images/scott-webb-1ddol8rgUH8-unsplash.jpg\" class=\"card-img-top\" alt=\"image\">")
+                    .Append("                        <a href=\"search-result-page-detail.html\" class=\"cardLinks\">")
                     .Append("                            <div class=\"card-body\">")
                     .Append("                                <h5 class=\"card-title\">" + city + ", " + homeState + "</h5>")
                     .Append("                                <p class=\"card-text\">" + "$" + priceRangeLow + " - " + "$" + priceRangeHigh + "</p>")
                     .Append("                            </div>")
+                    .Append("                        </a>")
                     .Append("")
+                    .Append("                        <div>")
+                    .Append("                            <button id=\"heartbtn" + resultCount + "class=\"btn favoriteHeartButton\"><i id=\"hearti\" class=\"far fa-heart\"></i></button>")
+                    .Append("                        </div>")
                     .Append("                    </div>")
                     .Append("</div>");
 
@@ -181,7 +189,7 @@ public partial class Search : System.Web.UI.Page
                 }
                 reader.Close();
                 Session["Search"] = null;
-            }  
+            }
         }
         else
         {

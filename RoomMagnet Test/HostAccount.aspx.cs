@@ -37,6 +37,11 @@ public partial class HostAccount : System.Web.UI.Page
         ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
     }
 
+    protected void cbAgreement_ServerValidate(object source, ServerValidateEventArgs args)
+    {
+        args.IsValid = cbAgreement.Checked;
+    }
+
     protected void btnCreateAccount_Click(object sender, EventArgs e)
     {
         System.Data.SqlClient.SqlConnection sc = new System.Data.SqlClient.SqlConnection();
@@ -50,7 +55,6 @@ public partial class HostAccount : System.Web.UI.Page
         insert.Connection = sc;
 
         int emailCount;
-        int acctTypeCount;
 
         //create new account and host object
         //use HttpUtility.HtmlEncode for these inputs
@@ -62,140 +66,64 @@ public partial class HostAccount : System.Web.UI.Page
 
         emailCount = (int)checkEmailCount.ExecuteScalar();
 
-        if (emailCount < 2)
+        if (emailCount < 1 && cbAgreement.Checked == true)
         {
-            checkAcctType.CommandText = "SELECT COUNT(*) FROM ACCOUNT WHERE EMAIL = @emailCheck AND AccountType = 2";
-            checkAcctType.Parameters.Add(new SqlParameter("@emailCheck", newAccount.getEmail()));
+            insert.CommandText = "INSERT into Account VALUES (@fName, @mName, @lName, @phone, @bday, @email, @HouseNbr, @street, @city, @state, @zip, @country, @AccType, @ModDate, @PID); " +
+            "INSERT into Host VALUES(@@Identity, @BackCheck, @HostReason);" +
+            "INSERT into Password VALUES((SELECT MAX(HostID) from Host), @email, @password);";
 
-            acctTypeCount = (int)checkAcctType.ExecuteScalar();
+            //Insert into ACCOUNT
+            insert.Parameters.Add(new SqlParameter("@fName", newHost.getFirstName()));
+            insert.Parameters.Add(new SqlParameter("@mName", newHost.getMiddleName()));
+            insert.Parameters.Add(new SqlParameter("@lName", newHost.getLastName()));
+            insert.Parameters.Add(new SqlParameter("@phone", newHost.getPhone()));
+            insert.Parameters.Add(new SqlParameter("@bday", newHost.getBday()));
+            insert.Parameters.Add(new SqlParameter("@email", newHost.getEmail()));
+            insert.Parameters.Add(new SqlParameter("@HouseNbr", newHost.getHouseNumber()));
+            insert.Parameters.Add(new SqlParameter("@street", newHost.getStreet()));
+            insert.Parameters.Add(new SqlParameter("@city", newHost.getCity()));
+            insert.Parameters.Add(new SqlParameter("@state", newHost.getState()));
+            insert.Parameters.Add(new SqlParameter("@zip", newHost.getZip()));
+            insert.Parameters.Add(new SqlParameter("@country", newHost.getCountry()));
+            insert.Parameters.Add(new SqlParameter("@AccType", newHost.getAccType()));
+            insert.Parameters.Add(new SqlParameter("@ModDate", newHost.getModDate()));
+            insert.Parameters.Add(new SqlParameter("@PID", newHost.getPID()));
 
-            if (emailCount == 1 && acctTypeCount == 0)
-            {
-                insert.CommandText = "INSERT into Account VALUES (@fName, @mName, @lName, @phone, @bday, @email, @HouseNbr, @street, @city, @state, @zip, @country, @AccType, @ModDate, @PID); " +
-                    "INSERT into Host VALUES(@@Identity, @BackCheck, @HostReason);" +
-                    "INSERT into Password VALUES((SELECT MAX(HostID) from HostID), @email, @password);";
+            //Insert into HOST
+            insert.Parameters.Add(new SqlParameter("@BackCheck", newHost.getBackCheck()));
+            insert.Parameters.Add(new SqlParameter("@HostReason", newHost.getHostReason()));
 
-                //Insert into ACCOUNT
-                insert.Parameters.Add(new SqlParameter("@fName", newHost.getFirstName()));
-                insert.Parameters.Add(new SqlParameter("@mName", newHost.getMiddleName()));
-                insert.Parameters.Add(new SqlParameter("@lName", newHost.getLastName()));
-                insert.Parameters.Add(new SqlParameter("@phone", newHost.getPhone()));
-                insert.Parameters.Add(new SqlParameter("@bday", newHost.getBday()));
-                insert.Parameters.Add(new SqlParameter("@email", newHost.getEmail()));
-                insert.Parameters.Add(new SqlParameter("@HouseNbr", newHost.getHouseNumber()));
-                insert.Parameters.Add(new SqlParameter("@street", newHost.getStreet()));
-                insert.Parameters.Add(new SqlParameter("@city", newHost.getCity()));
-                insert.Parameters.Add(new SqlParameter("@state", newHost.getState()));
-                insert.Parameters.Add(new SqlParameter("@zip", newHost.getZip()));
-                insert.Parameters.Add(new SqlParameter("@country", newHost.getCountry()));
-                insert.Parameters.Add(new SqlParameter("@AccType", newHost.getAccType()));
-                insert.Parameters.Add(new SqlParameter("@ModDate", newHost.getModDate()));
-                insert.Parameters.Add(new SqlParameter("@PID", newHost.getPID()));
+            //Insert into PASSWORD
+            insert.Parameters.Add(new SqlParameter("@password", PasswordHash.HashPassword(txtPassword.Text))); // hash entered password
 
-                //Insert into HOST
-                insert.Parameters.Add(new SqlParameter("@BackCheck", newHost.getBackCheck()));
-                insert.Parameters.Add(new SqlParameter("@HostReason", newHost.getHostReason()));
+            insert.ExecuteNonQuery();
 
-                //Insert into PASSWORD
-                insert.Parameters.Add(new SqlParameter("@password", PasswordHash.HashPassword(txtPassword.Text))); // hash entered password
+            //Label1.Text = "Success";
 
-                insert.ExecuteNonQuery();
+            Session["type"] = 2;
+            Response.Redirect("HostDashboard.aspx");
 
-                //Label1.Text = "Success";
+            sc.Close();
 
-                Session["type"] = 2;
-                Response.Redirect("HostDashboard.aspx");
+            //Clear text boxes
+            txtFN.Text = "";
+            txtMN.Text = "";
+            txtLN.Text = "";
+            txtBday.Text = "";
+            txtEmail.Text = "";
+            txtPhone.Text = "";
+            txtPassword.Text = "";
+            txtHouseNum.Text = "";
+            txtStreet.Text = "";
+            txtCity.Text = "";
+            ddState.ClearSelection();
+            txtZip.Text = "";
+            txtCountry.Text = "US";
+        }
+        else
+        {
 
-
-                sc.Close();
-
-                //Clear text boxes
-                txtFN.Text = "";
-                txtMN.Text = "";
-                txtLN.Text = "";
-                txtBday.Text = "";
-                txtEmail.Text = "";
-                txtPhone.Text = "";
-                txtPassword.Text = "";
-                txtHouseNum.Text = "";
-                txtStreet.Text = "";
-                txtCity.Text = "";
-                ddState.ClearSelection();
-                txtZip.Text = "";
-                txtCountry.Text = "US";
-            }
-            else if (emailCount == 0)
-            {
-                insert.CommandText = "INSERT into Account VALUES (@fName, @mName, @lName, @phone, @bday, @email, @HouseNbr, @street, @city, @state, @zip, @country, @AccType, @ModDate, @PID); " +
-                   "INSERT into Host VALUES(@@Identity, @BackCheck, @HostReason);" +
-                   "INSERT into Password VALUES((SELECT MAX(HostID) from Host), @email, @password);";
-
-                //Insert into ACCOUNT
-                insert.Parameters.Add(new SqlParameter("@fName", newHost.getFirstName()));
-                insert.Parameters.Add(new SqlParameter("@mName", newHost.getMiddleName()));
-                insert.Parameters.Add(new SqlParameter("@lName", newHost.getLastName()));
-                insert.Parameters.Add(new SqlParameter("@phone", newHost.getPhone()));
-                insert.Parameters.Add(new SqlParameter("@bday", newHost.getBday()));
-                insert.Parameters.Add(new SqlParameter("@email", newHost.getEmail()));
-                insert.Parameters.Add(new SqlParameter("@HouseNbr", newHost.getHouseNumber()));
-                insert.Parameters.Add(new SqlParameter("@street", newHost.getStreet()));
-                insert.Parameters.Add(new SqlParameter("@city", newHost.getCity()));
-                insert.Parameters.Add(new SqlParameter("@state", newHost.getState()));
-                insert.Parameters.Add(new SqlParameter("@zip", newHost.getZip()));
-                insert.Parameters.Add(new SqlParameter("@country", newHost.getCountry()));
-                insert.Parameters.Add(new SqlParameter("@AccType", newHost.getAccType()));
-                insert.Parameters.Add(new SqlParameter("@ModDate", newHost.getModDate()));
-                insert.Parameters.Add(new SqlParameter("@PID", newHost.getPID()));
-
-                //Insert into HOST
-                insert.Parameters.Add(new SqlParameter("@BackCheck", newHost.getBackCheck()));
-                insert.Parameters.Add(new SqlParameter("@HostReason", newHost.getHostReason()));
-
-                //Insert into PASSWORD
-                insert.Parameters.Add(new SqlParameter("@password", PasswordHash.HashPassword(txtPassword.Text))); // hash entered password
-
-                insert.ExecuteNonQuery();
-
-                //Label1.Text = "Success";
-                Session["type"] = 2;
-                Response.Redirect("HostDashboard.aspx");
-
-
-                sc.Close();
-                //Clear text boxes
-                txtFN.Text = "";
-                txtMN.Text = "";
-                txtLN.Text = "";
-                txtBday.Text = "";
-                txtEmail.Text = "";
-                txtPhone.Text = "";
-                txtPassword.Text = "";
-                txtHouseNum.Text = "";
-                txtStreet.Text = "";
-                txtCity.Text = "";
-                ddState.ClearSelection();
-                txtZip.Text = "";
-                txtCountry.Text = "US";
-            }
-            else
-            {
-                //Label1.Text = "Error";
-                sc.Close();
-                //Clear text boxes
-                txtFN.Text = "";
-                txtMN.Text = "";
-                txtLN.Text = "";
-                txtBday.Text = "";
-                txtEmail.Text = "";
-                txtPhone.Text = "";
-                txtPassword.Text = "";
-                txtHouseNum.Text = "";
-                txtStreet.Text = "";
-                txtCity.Text = "";
-                ddState.ClearSelection();
-                txtZip.Text = "";
-                txtCountry.Text = "US";
-            }
+            sc.Close();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Search.aspx.cs" Inherits="Search" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Search-Tenant.aspx.cs" Inherits="Search_Tenant" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -30,8 +30,14 @@
                     zoom: 8
                 });
         }
+
+        function newLocation(newLat, newLng) {
+            map.setCenter({ newLat, newLng })
+            return false;
+        }
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNcHEQpOGd14rKFMgFTgbH-fZS2dD1UBw&callback=initMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNcHEQpOGd14rKFMgFTgbH-fZS2dD1UBw&callback=initMap"
+        async defer></script>
 
     <!--BEGINNING OF SEARCH BAR-->
     <div class="container-fluid searchPageBodyContent">
@@ -368,7 +374,7 @@
 
 
                         <!--BEGINNING OF SEARCH BUTTON-->
-                        <asp:Button ID="btnSearch" OnClick="btnSearch_Click" runat="server" Text="Search" class="btn btn-info" ClientIDMode="Static" OnClientClick=""/>
+                        <asp:Button ID="btnSearch" OnClick="btnSearch_Click" runat="server" Text="Search" class="btn btn-info"/>
 
                         <!--END OF SERACH BUTTON-->
                     </div>
@@ -444,34 +450,6 @@
             });
         };
         ajax.send();
-    </script>
-    
-    <script type="text/javascript">
-        function codeAddress(address) 
-        {
-          geocoder.geocode( {address:address}, function(results, status) 
-          {
-            if (status == google.maps.GeocoderStatus.OK) 
-            {
-              document.getElementById('map').setCenter(results[0].geometry.location);//center the map over the result
-              //place a marker at the location
-              var marker = new google.maps.Marker(
-              {
-                  map: map,
-                  position: results[0].geometry.location,
-                  icon: {
-                        path: google.maps.SymbolPath.CIRCLE,
-                        scale: 8.5,
-                        fillColor: "#F00",
-                        fillOpacity: 0.4,
-                        strokeWeight: 0.4
-                  },
-              });
-            } else {
-              alert('Geocode was not successful for the following reason: ' + status);
-           }
-          });
-        }
     </script>
 </asp:Content>
 
