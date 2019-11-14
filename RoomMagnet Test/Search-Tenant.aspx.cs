@@ -72,50 +72,69 @@ public partial class Search_Tenant : System.Web.UI.Page
         {
             if (searchCheck == true)
             {
-                txtSearch.Text = homeSearch;
-                sqlConn.Open();
-                String classType = "card";
-                String imgSource = "";
-                String cardBody = "";
-                String tSearch = homeSearch;
-                int commaSplit = tSearch.IndexOf(",");
-                String cityString = tSearch.Substring(0, commaSplit).ToUpper();
-                String state = tSearch.Substring(commaSplit + 2).ToUpper();
-                String query = "select [PropertyID], [City], [HomeState], [RoomPriceRangeLow],[RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like '" + cityString + "' AND upper([HomeState]) like '" + state + "';";
-                System.Data.SqlClient.SqlCommand sqlComm = new System.Data.SqlClient.SqlCommand(query, sqlConn);
-                System.Data.SqlClient.SqlDataReader reader = sqlComm.ExecuteReader();
+                SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ToString());
 
-                Card1.Text = "";
-
-                while (reader.Read())
+                if (String.IsNullOrEmpty(txtSearch.Text))
                 {
-                    String city = reader["City"].ToString();
-                    String homeState = reader["HomeState"].ToString();
-                    String priceRangeLow = reader["RoomPriceRangeLow"].ToString();
-                    String priceRangeHigh = reader["RoomPriceRangeHigh"].ToString();
-
-                    StringBuilder myCard = new StringBuilder();
-                    myCard
-                    .Append("<div class=\"col-xs-4 col-md-3\">")
-                    .Append("<div class=\"card  shadow-sm  mb-4\" >")
-                    .Append("                        <img src=\"images/scott-webb-1ddol8rgUH8-unsplash.jpg\" class=\"card-img-top\" alt=\"image\">")
-                    .Append("                        <a href=\"search-result-page-detail.html\" class=\"cardLinks\">")
-                    .Append("                            <div class=\"card-body\">")
-                    .Append("                                <h5 class=\"card-title\">" + city + ", " + homeState + "</h5>")
-                    .Append("                                <p class=\"card-text\">" + "$" + priceRangeLow + " - " + "$" + priceRangeHigh + "</p>")
-                    .Append("                            </div>")
-                    .Append("                        </a>")
-                    .Append("")
-                    .Append("                        <div>")
-                    .Append("                            <button id=\"heartbtn\" class=\"btn favoriteHeartButton\"><i id=\"hearti\" class=\"far fa-heart\"></i></button>")
-                    .Append("                        </div>")
-                    .Append("                    </div>")
-                    .Append("</div>");
-
-                    Card1.Text += myCard.ToString();
+                    // Do nothing
                 }
-                reader.Close();
-                Session["Search"] = null;
+                else
+                {
+                    sqlConn.Open();
+                    String classType = "card";
+                    String imgSource = "";
+                    String cardBody = "";
+                    String tSearch = HttpUtility.HtmlEncode(txtSearch.Text);
+                    int commaSplit = tSearch.IndexOf(",");
+                    String cityString = tSearch.Substring(0, commaSplit).ToUpper();
+                    String state = tSearch.Substring(commaSplit + 2).ToUpper();
+                    String query = "select [PropertyID], [City], [HomeState], [Zip], [RoomPriceRangeLow],[RoomPriceRangeHigh] from[dbo].[Property] where upper([City]) like '" + cityString + "' AND upper([HomeState]) like '" + state + "';";
+                    System.Data.SqlClient.SqlCommand sqlComm = new System.Data.SqlClient.SqlCommand(query, sqlConn);
+                    System.Data.SqlClient.SqlDataReader reader = sqlComm.ExecuteReader();
+
+                    Card1.Text = "";
+                    int resultCount = 0;
+
+                    while (reader.Read())
+                    {
+                        int PropID = Convert.ToInt32(reader["PropertyID"]);
+                        String city = reader["City"].ToString();
+                        String homeState = reader["HomeState"].ToString();
+                        String priceRangeLow = reader["RoomPriceRangeLow"].ToString();
+                        String priceRangeHigh = reader["RoomPriceRangeHigh"].ToString();
+                        double priceLowRounded = Math.Round(Convert.ToDouble(priceRangeLow), 0, MidpointRounding.ToEven);
+                        double priceHighRounded = Math.Round(Convert.ToDouble(priceRangeHigh), 0, MidpointRounding.ToEven);
+
+                        StringBuilder myCard = new StringBuilder();
+                        myCard
+                        .Append("<div class=\"col-xs-4 col-md-3\">")
+                        .Append("<div class=\"card  shadow-sm  mb-4\" >")
+                        .Append("                        <img src=\"images/scott-webb-1ddol8rgUH8-unsplash.jpg\" class=\"card-img-top\" alt=\"image\">")
+                        .Append("                        <a href=\"search-result-page-detail.html\" class=\"cardLinks\">")
+                        .Append("                            <div class=\"card-body\">")
+                        .Append("                                <h5 class=\"card-title\">" + city + ", " + homeState + "</h5>")
+                        .Append("                                <p class=\"card-text\">" + "$" + priceLowRounded + " - " + "$" + priceHighRounded + "</p>")
+                        .Append("                            </div>")
+                        .Append("                        </a>")
+                        .Append("")
+                        .Append("                        <div>")
+                        .Append("                            <button type=\"button\" id=\"heartbtn" + resultCount + "\" onClick=\"favoriteBtn(" + PropID + "," + "\'" + city + "\'" + "," +
+                                                        "\'" + homeState + "\'" + "," + priceLowRounded + "," + priceHighRounded + ")\" " +
+                                                    "class=\"btn favoriteHeartButton\"><i id=\"hearti\" class=\"far fa-heart\"></i></button>")
+                        .Append("                        </div>")
+                        .Append("                    </div>")
+                        .Append("</div>");
+
+                        Card1.Text += myCard.ToString();
+                        resultCount++;
+                    }
+                    reader.Close();
+                    Session["Search"] = null;
+                }
+            }
+            else
+            {
+                txtSearch.Text = "That Search Query Did Not Display Results";
             }
         }
     }
@@ -165,6 +184,8 @@ public partial class Search_Tenant : System.Web.UI.Page
                     String homeState = reader["HomeState"].ToString();
                     String priceRangeLow = reader["RoomPriceRangeLow"].ToString();
                     String priceRangeHigh = reader["RoomPriceRangeHigh"].ToString();
+                    double priceLowRounded = Math.Round(Convert.ToDouble(priceRangeLow), 0, MidpointRounding.ToEven);
+                    double priceHighRounded = Math.Round(Convert.ToDouble(priceRangeHigh), 0, MidpointRounding.ToEven);
 
                     StringBuilder myCard = new StringBuilder();
                     myCard
@@ -174,12 +195,14 @@ public partial class Search_Tenant : System.Web.UI.Page
                     .Append("                        <a href=\"search-result-page-detail.html\" class=\"cardLinks\">")
                     .Append("                            <div class=\"card-body\">")
                     .Append("                                <h5 class=\"card-title\">" + city + ", " + homeState + "</h5>")
-                    .Append("                                <p class=\"card-text\">" + "$" + priceRangeLow + " - " + "$" + priceRangeHigh + "</p>")
+                    .Append("                                <p class=\"card-text\">" + "$" + priceLowRounded + " - " + "$" + priceHighRounded + "</p>")
                     .Append("                            </div>")
                     .Append("                        </a>")
                     .Append("")
                     .Append("                        <div>")
-                    .Append("                            <button id=\"heartbtn" + resultCount + "class=\"btn favoriteHeartButton\"><i id=\"hearti\" class=\"far fa-heart\"></i></button>")
+                    .Append("                            <button type=\"button\" id=\"heartbtn" + resultCount + "\" onClick=\"favoriteBtn(" + PropID + "," + "\'" + city + "\'" + "," +
+                                                    "\'" + homeState + "\'" + "," + priceLowRounded + "," + priceHighRounded + ")\" " +
+                                                "class=\"btn favoriteHeartButton\"><i id=\"hearti\" class=\"far fa-heart\"></i></button>")
                     .Append("                        </div>")
                     .Append("                    </div>")
                     .Append("</div>");
@@ -193,7 +216,32 @@ public partial class Search_Tenant : System.Web.UI.Page
         }
         else
         {
-            txtSearch.Text = "Try Again Loser!";
+            txtSearch.Text = "That Search Query Did Not Display Results";
         }
+    }
+
+
+    [System.Web.Services.WebMethod]
+    [System.Web.Script.Services.ScriptMethod]
+    public static void MiddleMan(int propertyID, string city, string state, double priceLow, double priceHigh)
+    {
+        int propID = propertyID;
+        int loginID = Convert.ToInt32(HttpContext.Current.Session["AccountId"].ToString());
+
+        System.Data.SqlClient.SqlConnection sqlConn = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ToString());
+        sqlConn.Open();
+
+        System.Data.SqlClient.SqlCommand insert = new System.Data.SqlClient.SqlCommand();
+        insert.Connection = sqlConn;
+        insert.CommandText = "INSERT into [dbo].[FavoritedProperties] VALUES(@tenantID,@propertyID)";
+        insert.Parameters.Add(new SqlParameter("@tenantID", loginID));
+        insert.Parameters.Add(new SqlParameter("@propertyID", propID));
+
+        insert.ExecuteNonQuery();
+        //Place holder for variables in favorited properties dash
+        HttpContext.Current.Session["city"] = city;
+        HttpContext.Current.Session["state"] = state;
+        HttpContext.Current.Session["priceLow"] = priceLow;
+        HttpContext.Current.Session["priceHigh"] = priceHigh;
     }
 }
