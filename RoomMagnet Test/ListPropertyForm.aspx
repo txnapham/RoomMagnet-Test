@@ -535,11 +535,34 @@
             </section>
             <!--end of homesharesmarter-->
 
-            <form class="pt-4">
-                <div class="form-group">
+            <%--<form class="pt-4">--%>
+<%--                <input id="filMyFile" type="file" runat="server"></input>
+                <asp:Button ID="UploadButton" runat="server" Text="Upload File" OnClick="UploadButton_Click" />--%>
+<%--                <asp:ScriptManager runat ="server"></asp:ScriptManager>
+                <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Always" runat="server">
+                    <ContentTemplate>
+                        <asp:FileUpload ID="FilesUpload" runat="server" />
+                        <asp:Button ID="UploadButton" runat="server" Text="Upload Selected File" OnClick="UploadButton_Click" />
+                        <asp:Label ID="UploadDetails" runat="server" Text=""></asp:Label>
+                    </ContentTemplate>
+                    <Triggers>
+                        <asp:PostBackTrigger ControlID="UploadButton" />
+                    </Triggers>
+                </asp:UpdatePanel>--%>
+            <div class="form-group">
                     <h5>Upload property images here:</h5>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                </div>
+                    <asp:FileUpload ID="FileUploadControl" runat="server" AllowMultiple="false" />
+                    <asp:Button runat="server" ID="FilesUpload" Text="Save to Property" AutoPostBack="true" OnClientClick="FileUpload1_Click" />
+<%--                    <section>
+                        <div class="row px-3 py-3">
+                            <asp:Literal ID="photos" runat="server" Mode="Transform"></asp:Literal>
+                        </div>
+                    </section>--%>
+                    <br />
+                    <br />
+                    <asp:Label runat="server" ID="StatusLabel" Text="Upload status: " />
+                </div>    
+
 
 
                 <div class="form-group form-check pt-4">
@@ -551,7 +574,7 @@
                     <asp:CheckBox ID="cbAgreement" runat="server" class="form-check-input" />
                     <label class="form-check-label" for="exampleCheck1">Agreement to Terms &amp; Conditions</label>
                 </div>
-            </form>
+            <%--</form>--%>
 
             <asp:Button ID="btnListProperty" runat="server" class="btn btn-info btn-block" Text="List Property" CausesValidation="false" OnClick="btnListProperty_Click"/>
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="Home" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="HomeLogout.aspx.cs" Inherits="HomeLogout" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -340,7 +340,7 @@
                                 
 <!--SEARCH BAR-->                                
                                 <div class="col-md-6 searchBar">
-                                    <asp:TextBox ID="txtSearch" runat="server" class="form-control form-control-lg" placeholder="Search" ClientIDMode="Static"></asp:TextBox>
+                                    <asp:TextBox ID="txtSearch" runat="server" class="form-control form-control-lg" placeholder="Search"></asp:TextBox>
                                 </div>
                                 <!--END OF SEARCH BAR-->
 
@@ -580,19 +580,5 @@
             
         </div>
 <!--END OF BODY CONTENT-->            
-    <script src="awesomplete.js"></script>
-    <script type="text/javascript">
-
-        var ajax = new XMLHttpRequest();
-        ajax.open("GET", "csvjson.json", true);
-        ajax.onload = function () {
-            var list = JSON.parse(ajax.responseText).map(function (i) { return i.CityState; });
-            new Awesomplete(document.querySelector("#<%=txtSearch.ClientID %>"), {
-                list: list,
-                minChars: 1
-            });
-        };
-        ajax.send();
-    </script>
 
 </asp:Content>

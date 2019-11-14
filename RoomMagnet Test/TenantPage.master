@@ -45,7 +45,7 @@
                             <a class="nav-link " href="Home.aspx">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="active nav-link" href="Search.aspx">Search</a>
+                            <a class="active nav-link" href="Search-Tenant.aspx">Search</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
@@ -63,7 +63,7 @@
                                 <a class="dropdown-item js-scroll-trigger" href="TenantDashboard.aspx">View Profile</a>
                                 <a class="dropdown-item js-scroll-trigger" href="#">Edit Profile</a>
                                 <a class="dropdown-item js-scroll-trigger" href="#">Settings</a>
-                                <a class="dropdown-item js-scroll-trigger" href="Home.aspx">Logout</a>
+                                <a class="dropdown-item js-scroll-trigger" href="HomeLogout.aspx">Logout</a>
                             </div>
                         </li>
 
