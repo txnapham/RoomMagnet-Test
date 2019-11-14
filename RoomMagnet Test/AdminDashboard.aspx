@@ -73,9 +73,12 @@
                 <div class="card  shadow-sm  mb-4">
                                 <div class="card-body">
                                     <h5 class="card-title">RoomMagnet Data</h5>
-                                    <p>Number of Users: 5260</p>
-                                    <p>Number of Leases: 735</p>
-                                    
+                                    <%--<p>Number of Users: 5260</p>
+                                    <p>Number of Leases: 735</p>--%>
+                                    <ul>
+                                        <asp:Literal ID="Card4" runat="server" Mode="Transform"></asp:Literal>
+                                        <asp:Literal ID="Card5" runat="server" Mode="Transform"></asp:Literal>
+                                    </ul>
                                     <a href="#" class="btn btn-info">View more</a> 
                                 </div>
                             </div> 

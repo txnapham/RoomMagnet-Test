@@ -41,6 +41,18 @@ public partial class AdminDashboard : System.Web.UI.Page
         System.Data.SqlClient.SqlCommand selectTenant = new System.Data.SqlClient.SqlCommand();
         System.Data.SqlClient.SqlCommand selectIntendedHostLease = new System.Data.SqlClient.SqlCommand();
         System.Data.SqlClient.SqlCommand selectIntendedTenantLease = new System.Data.SqlClient.SqlCommand();
+        System.Data.SqlClient.SqlCommand selectUsers = new System.Data.SqlClient.SqlCommand();
+        System.Data.SqlClient.SqlCommand selectLeases = new System.Data.SqlClient.SqlCommand();
+
+        //Connections
+        selectHost.Connection = sc;
+        selectTenant.Connection = sc;
+        selectIntendedHostLease.Connection = sc;
+        selectIntendedTenantLease.Connection = sc;
+        selectUsers.Connection = sc;
+        selectLeases.Connection = sc;
+        sc.Open();
+
         //Host Select
         selectHost.CommandText = "SELECT TOP(5) FirstName, LastName FROM Account WHERE (AccountType = 2);";
 
@@ -53,12 +65,16 @@ public partial class AdminDashboard : System.Web.UI.Page
         //Intended Tenant Lease Select
         selectIntendedTenantLease.CommandText = "SELECT TOP(5) firstName, LastName from account where AccountID in " +
             "(select tenantId from Tenant where tenantID in (select tenantID from lease));";
-        //Connections
-        selectHost.Connection = sc;
-        selectTenant.Connection = sc;
-        selectIntendedHostLease.Connection = sc;
-        selectIntendedTenantLease.Connection = sc;
-        sc.Open();
+
+        //Select Number of Users 
+        selectUsers.CommandText = "SELECT COUNT(*) FROM Account;";
+        int userCount = (int)selectUsers.ExecuteScalar();
+
+        //Number of Leases
+        selectLeases.CommandText = "SELECT COUNT(*) FROM Lease;";
+        int leaseCount = (int)selectLeases.ExecuteScalar();
+
+        
 
         //Populate Dashboard with Host Info 
         System.Data.SqlClient.SqlDataReader reader = selectHost.ExecuteReader();
@@ -110,5 +126,16 @@ public partial class AdminDashboard : System.Web.UI.Page
         }
         tenantRdr.Close();
         sc.Close();
+
+        //StringBuilder for Amount of Users
+        StringBuilder myCard4 = new StringBuilder();
+        myCard4.Append("<li><a href =\"#\" class=\"tenantdashlist\">" + "Number of Users: " + userCount + "</a></li>");
+        Card4.Text += myCard4.ToString();
+
+    
+        //StringBuilder
+        StringBuilder myCard5 = new StringBuilder();
+        myCard5.Append("<li><a href =\"#\" class=\"tenantdashlist\">" + "Number of Users: " + leaseCount + "</a></li>");
+        Card5.Text += myCard5.ToString();
     }
 }
