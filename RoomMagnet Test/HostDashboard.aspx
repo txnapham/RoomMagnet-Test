@@ -10,6 +10,9 @@
             <p>
                 <img src="images/robert-godwin-cdksyTqEXzo-unsplash.jpg" alt="..." class="img-thumbnail" width="40" height="auto">
                 Welcome USER,
+                <ul>
+                                        <asp:Literal ID="UserNameCard" runat="server" Mode="Transform"></asp:Literal>
+                                    </ul>
             </p>
 
 

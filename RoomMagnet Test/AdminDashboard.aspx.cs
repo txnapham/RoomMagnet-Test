@@ -43,7 +43,7 @@ public partial class AdminDashboard : System.Web.UI.Page
         System.Data.SqlClient.SqlCommand selectIntendedTenantLease = new System.Data.SqlClient.SqlCommand();
         System.Data.SqlClient.SqlCommand selectUsers = new System.Data.SqlClient.SqlCommand();
         System.Data.SqlClient.SqlCommand selectLeases = new System.Data.SqlClient.SqlCommand();
-
+        System.Data.SqlClient.SqlCommand selectUserName = new System.Data.SqlClient.SqlCommand();
         //Connections
         selectHost.Connection = sc;
         selectTenant.Connection = sc;
@@ -51,7 +51,11 @@ public partial class AdminDashboard : System.Web.UI.Page
         selectIntendedTenantLease.Connection = sc;
         selectUsers.Connection = sc;
         selectLeases.Connection = sc;
+        selectUserName.Connection = sc;
         sc.Open();
+
+        //Host Select
+        selectUserName.CommandText = "SELECT FirstName FROM Account WHERE (AccountID = FILL IN ) ;";
 
         //Host Select
         selectHost.CommandText = "SELECT TOP(5) FirstName, LastName FROM Account WHERE (AccountType = 2);";
@@ -74,7 +78,7 @@ public partial class AdminDashboard : System.Web.UI.Page
         selectLeases.CommandText = "SELECT COUNT(*) FROM Lease;";
         int leaseCount = (int)selectLeases.ExecuteScalar();
 
-        
+
 
         //Populate Dashboard with Host Info 
         System.Data.SqlClient.SqlDataReader reader = selectHost.ExecuteReader();
@@ -114,6 +118,7 @@ public partial class AdminDashboard : System.Web.UI.Page
             Card3.Text += myCard3.ToString();
         }
         hostRdr.Close();
+
         System.Data.SqlClient.SqlDataReader tenantRdr = selectIntendedTenantLease.ExecuteReader();
         while (tenantRdr.Read())
         {
@@ -137,5 +142,21 @@ public partial class AdminDashboard : System.Web.UI.Page
         StringBuilder myCard5 = new StringBuilder();
         myCard5.Append("<li><a href =\"#\" class=\"tenantdashlist\">" + "Number of Users: " + leaseCount + "</a></li>");
         Card5.Text += myCard5.ToString();
+
+
+        //Populate Dashboard with Admin Name
+        System.Data.SqlClient.SqlDataReader nameReader = selecty.ExecuteReader();
+        while (nameReader.Read())
+        {
+            String firstName = nameReader["FirstName"].ToString();
+           
+            //StringBuilder
+            StringBuilder nameCard = new StringBuilder();
+            nameCard.Append("<li><a href =\"#\" class=\"tenantdashlist\">" + "Welcome, "+ firstName + "</a></li>");
+            UserNameCard.Text += nameCard.ToString();
+        }
+        nameReader.Close();
+
+
     }
 }
