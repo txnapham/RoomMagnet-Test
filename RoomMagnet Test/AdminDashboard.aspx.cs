@@ -54,7 +54,7 @@ public partial class AdminDashboard : System.Web.UI.Page
         selectUserName.Connection = sc;
         sc.Open();
 
-        //Host Select
+        //User Name Select
         selectUserName.CommandText = "SELECT FirstName FROM Account WHERE (AccountID = FILL IN ) ;";
 
         //Host Select
@@ -145,7 +145,7 @@ public partial class AdminDashboard : System.Web.UI.Page
 
 
         //Populate Dashboard with Admin Name
-        System.Data.SqlClient.SqlDataReader nameReader = selecty.ExecuteReader();
+        System.Data.SqlClient.SqlDataReader nameReader = selectUserName.ExecuteReader();
         while (nameReader.Read())
         {
             String firstName = nameReader["FirstName"].ToString();

@@ -10,6 +10,10 @@
             <p>
                 <img src="images/ronny-sison-4lnzxFIgTmg-unsplash.jpg" class="img-fluid img-thumbnail " alt="..." width="50" height="auto">
                 Welcome USER,</p>
+            <ul>
+                                        <asp:Literal ID="Card" runat="server" Mode="Transform"></asp:Literal>
+                                        
+                                    </ul>
 
 
             <div class="progress" style="height: 30px;">
