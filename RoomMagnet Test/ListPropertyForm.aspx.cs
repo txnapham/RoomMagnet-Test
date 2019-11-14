@@ -14,6 +14,8 @@ using Amazon.S3.Transfer;
 using awsTestUpload;
 using System.Collections;
 using System.Text;
+using System.Configuration;
+using System.Data.SqlClient;
 
 public partial class ListPropertyForm : System.Web.UI.Page
 {
@@ -40,7 +42,7 @@ public partial class ListPropertyForm : System.Web.UI.Page
         }
     }
 
-
+    SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ToString());
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -119,6 +121,25 @@ public partial class ListPropertyForm : System.Web.UI.Page
             bool a;
             AmazonUploader myUploader = new AmazonUploader();
             a = myUploader.sendMyFileToS3(st, myBucketName, s3DirectoryName, s3FileName);
+
+            System.Data.SqlClient.SqlConnection sc = new System.Data.SqlClient.SqlConnection();
+            sc.ConnectionString = "server=aa1evano00xv2xb.cqpnea2xsqc1.us-east-1.rds.amazonaws.com;database=roommagnetdb;uid=admin;password=Skylinejmu2019;";
+            System.Data.SqlClient.SqlCommand insert = new System.Data.SqlClient.SqlCommand();
+            insert.Connection = sc;
+            sc.Open();
+
+            insert.Parameters.Add(new System.Data.SqlClient.SqlParameter("@imageid", ));
+            insert.Parameters.Add(new System.Data.SqlClient.SqlParameter("@propertyid", ));
+            insert.Parameters.Add(new System.Data.SqlClient.SqlParameter("@roomid", ));
+            insert.Parameters.Add(new System.Data.SqlClient.SqlParameter("@imagefilename", s3FileName)); 
+            insert.CommandText = "INSERT INTO PROPERTYROOMIMAGES VALUES(@imagefilename)";
+
+            string check = insert.CommandText;
+            Console.Write(check);
+            insert.ExecuteNonQuery();
+
+            sc.Close();
+
             StatusLabel.Text = "Imaged Saved!";
         }
         else
