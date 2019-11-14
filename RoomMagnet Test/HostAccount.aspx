@@ -29,7 +29,7 @@
                 <div class="form-group">
                     <asp:TextBox ID="txtLN" runat="server" class="form-control form-control-lg" aria-describedby="LastName" placeholder="Last Name" MaxLength="50"></asp:TextBox>
                 </div>
-                <asp:RegularExpressionValidator ID="bdayCharValidator" Display="Dynamic" runat="server" ErrorMessage="Please enter a valid birth date" Text="*Please enter a valid birth date" ControlToValidate="txtBday" ValidationExpression="^[0-9-]+$"></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="bdayCharValidator" Display="Dynamic" runat="server" ErrorMessage="Please enter a valid birth date (MM-DD-YYYY)" Text="*Please enter a valid birth date" ControlToValidate="txtBday" ValidationExpression="^[0-9-]+$"></asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="bdayReqFieldValidator" Display ="Dynamic" runat="server" ErrorMessage="Please enter a birth date." ControlToValidate="txtBday" Text="*Please enter a birth date"></asp:RequiredFieldValidator>
                 <div class="form-group">
                     <asp:TextBox ID="txtBday" runat="server" class="form-control form-control-lg" placeholder="Birthdate (MM-DD-YYYY)" MaxLength="10"></asp:TextBox>
@@ -64,6 +64,7 @@
                             <asp:ListItem>CO</asp:ListItem>
                             <asp:ListItem>CT</asp:ListItem>
                             <asp:ListItem>DE</asp:ListItem>
+                            <asp:ListItem>DC</asp:ListItem>
                             <asp:ListItem>FL</asp:ListItem>
                             <asp:ListItem>GA</asp:ListItem>
                             <asp:ListItem>HI</asp:ListItem>
@@ -144,15 +145,19 @@
                     <label class="form-check-label" for="exampleCheck1">Perform background check now</label>
                 </div>
 
+                <asp:CustomValidator ID="cbAgreementValidator" runat="server" 
+                    ErrorMessage="Please accept the term and conditions" 
+                    onservervalidate="cbAgreement_ServerValidate"></asp:CustomValidator>
                 <div class="form-group form-check">
                     <asp:CheckBox ID="cbAgreement" runat="server" class="form-check-input" />
                     <label class="form-check-label" for="exampleCheck1">Agreement to Terms &amp; Conditions</label>
                 </div>
 
+
                 <%--<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>--%>
                 <%--for testing purpose--%>
 
-                <asp:Button ID="btnCreateAccount" runat="server" Text="Create Account" class="btn btn-info" OnClick="btnCreateAccount_Click"  CausesValidation="false"/>
+                <asp:Button ID="btnCreateAccount" runat="server" Text="Create Account" class="btn btn-info" OnClick="btnCreateAccount_Click"  CausesValidation="true"/>
                 <asp:Label ID="resultLabel" runat="server" Text="Result Label" Visible="False" ForeColor="Red"></asp:Label>
                 <%--<a class="btn btn-info" id="createAccountButton" href="HostAccountCategories.aspx">Create Account</a>--%>
 
