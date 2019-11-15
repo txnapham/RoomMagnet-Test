@@ -146,7 +146,7 @@ public partial class ListPropertyForm : System.Web.UI.Page
             sc.Open();
 
             insert.Parameters.Add(new System.Data.SqlClient.SqlParameter("@imagefilename", s3FileName));
-            insert.CommandText = "INSERT INTO ProprtyRoomImages VALUES(@imagefilename)";
+            insert.CommandText = "INSERT INTO PropertyRoomImages VALUES(NULL, NULL, @imagefilename)";
 
             string check = insert.CommandText;
             Console.Write(check);
@@ -165,26 +165,6 @@ public partial class ListPropertyForm : System.Web.UI.Page
         {
             StatusLabel.Text = "";
         }
-        //if (FileUploadControl.HasFiles)
-        //{
-        //    foreach (HttpPostedFile uploadedFile in FileUploadControl.PostedFiles)
-        //    {
-        //        Stream st = uploadedFile.InputStream;
-        //        string name = Path.GetFileName(FileUploadControl.FileName);
-        //        string myBucketName = "elasticbeanstalk-us-east-1-606091308774"; //your s3 bucket name goes here  
-        //        string s3DirectoryName = "PropertyImages";
-        //        string s3FileName = @name;
-        //        bool a;
-        //        AmazonUploader myUploader = new AmazonUploader();
-        //        a = myUploader.sendMyFileToS3(st, myBucketName, s3DirectoryName, s3FileName);
-        //        StatusLabel.Text = "Imaged Saved!";
-        //    }
-
-        //}
-        //else
-        //{
-        //    StatusLabel.Text = "";
-        //}
     }
 }
 

@@ -552,7 +552,7 @@
             <div class="form-group">
                     <h5>Upload property images here:</h5>
                     <asp:FileUpload ID="FileUploadControl" runat="server" AllowMultiple="false" />
-                    <asp:Button runat="server" ID="FilesUpload" Text="Save to Property" AutoPostBack="true" OnClientClick="FileUpload1_Click" />
+                    <asp:Button runat="server" ID="FilesUpload" Text="Save to Property" AutoPostBack="true" OnClientClick="FileUpload1_Click" CausesValidation="False" />
 <%--                    <section>
                         <div class="row px-3 py-3">
                             <asp:Literal ID="photos" runat="server" Mode="Transform"></asp:Literal>
