@@ -66,6 +66,8 @@ public partial class ListPropertyForm : System.Web.UI.Page
         insert.Connection = sc;
         sc.Open();
 
+        string description = HttpUtility.HtmlEncode(Request.Form["descriptionBox"]);
+
         insert.Parameters.Add(new System.Data.SqlClient.SqlParameter("@houseNum", newProperty.getHouseNumber()));
         insert.Parameters.Add(new System.Data.SqlClient.SqlParameter("@street", newProperty.getStreet()));
         insert.Parameters.Add(new System.Data.SqlClient.SqlParameter("@city", newProperty.getCity()));
@@ -73,8 +75,11 @@ public partial class ListPropertyForm : System.Web.UI.Page
         insert.Parameters.Add(new System.Data.SqlClient.SqlParameter("@zip", newProperty.getZip()));
         insert.Parameters.Add(new System.Data.SqlClient.SqlParameter("@country", newProperty.getCountry()));
         insert.Parameters.Add(new System.Data.SqlClient.SqlParameter("@date", newProperty.getModDate()));
+        insert.Parameters.Add(new System.Data.SqlClient.SqlParameter("@description", description));
 
-        insert.CommandText = "INSERT INTO PROPERTY VALUES(@houseNum, @street, @city, @homeState, @zip, @country, 0, 0, 0, 0, @date, 7)";
+
+        insert.CommandText = "INSERT INTO PROPERTY VALUES(@houseNum, @street, @city, @homeState, @zip, @country, 0, 0, 0, 0, @date, 7);" +
+            "INSERT INTO PropertyRoom(0, @description, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);";
 
         string check = insert.CommandText;
         Console.Write(check);
@@ -89,26 +94,38 @@ public partial class ListPropertyForm : System.Web.UI.Page
         txtZip.Text = "";
         txtCountry.Text = "US";
 
-        //if (FileUploadControl.HasFile)
-        //{
-        //    Stream st = FileUploadControl.PostedFile.InputStream;
-        //    string name = Path.GetFileName(FileUploadControl.FileName);
-        //    string myBucketName = "elasticbeanstalk-us-east-1-606091308774"; //your s3 bucket name goes here  
-        //    string s3DirectoryName = "PropertyImages";
-        //    string s3FileName = @name;
-        //    bool a;
-        //    AmazonUploader myUploader = new AmazonUploader();
-        //    a = myUploader.sendMyFileToS3(st, myBucketName, s3DirectoryName, s3FileName);
-        //    StatusLabel.Text = "Imaged Saved!";
-        //}
-        //else
-        //{
-        //    StatusLabel.Text = "";
-        //}
+        string propertyIdQuery = "SELECT MAX(PropertyID) from Property";
+        System.Data.SqlClient.SqlCommand propertyIdGrab = new System.Data.SqlClient.SqlCommand(propertyIdQuery, sc);
+        sc.Open();
+
+        int propertyID = (int)propertyIdGrab.ExecuteScalar();
+
+        sc.Close();
+
+        string roomIdQuery = "SELECT MAX(RoomID) from PropertyRoom";
+        System.Data.SqlClient.SqlCommand roomIdGrab = new System.Data.SqlClient.SqlCommand(roomIdQuery, sc);
+        sc.Open();
+        int roomID = (int)roomIdGrab.ExecuteScalar();
+        sc.Close();
+
+        System.Data.SqlClient.SqlCommand imageLink = new System.Data.SqlClient.SqlCommand();
+        imageLink.Connection = sc;
+        imageLink.Parameters.Add(new System.Data.SqlClient.SqlParameter("@propID", propertyID));
+        imageLink.Parameters.Add(new System.Data.SqlClient.SqlParameter("@roomID", roomID));
+
+        for (int i = 0; i < imageId.Capacity; i++)
+        {
+            string arrayImageId = imageId[i].ToString();
+            imageLink.Parameters.Add(new System.Data.SqlClient.SqlParameter("@insertImage", arrayImageId));
+            imageLink.CommandText = "UPDATE PropertyRoomImages SET PropertyID = @propID, RoomID = @roomID WHERE ImagesID = @insertImage";
+            imageLink.ExecuteNonQuery();
+        }
+        imageId.Clear();
 
         Response.Redirect("HostDashboard.aspx");
     }
 
+    ArrayList imageId = new ArrayList();
     protected void FileUpload1_Click(object sender, EventArgs e)
     {
         if (FileUploadControl.HasFile)
@@ -128,17 +145,19 @@ public partial class ListPropertyForm : System.Web.UI.Page
             insert.Connection = sc;
             sc.Open();
 
-            insert.Parameters.Add(new System.Data.SqlClient.SqlParameter("@imageid", ));
-            insert.Parameters.Add(new System.Data.SqlClient.SqlParameter("@propertyid", ));
-            insert.Parameters.Add(new System.Data.SqlClient.SqlParameter("@roomid", ));
-            insert.Parameters.Add(new System.Data.SqlClient.SqlParameter("@imagefilename", s3FileName)); 
-            insert.CommandText = "INSERT INTO PROPERTYROOMIMAGES VALUES(@imagefilename)";
+            insert.Parameters.Add(new System.Data.SqlClient.SqlParameter("@imagefilename", s3FileName));
+            insert.CommandText = "INSERT INTO ProprtyRoomImages VALUES(@imagefilename)";
 
             string check = insert.CommandText;
             Console.Write(check);
             insert.ExecuteNonQuery();
 
             sc.Close();
+
+            string selectQ = "SELECT MAX(ImagesID) from PropertyRoomImages";
+            System.Data.SqlClient.SqlCommand select = new System.Data.SqlClient.SqlCommand(selectQ, sc);
+            sc.Open();
+            imageId.Add((int)select.ExecuteScalar());
 
             StatusLabel.Text = "Imaged Saved!";
         }

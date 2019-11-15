@@ -159,7 +159,7 @@
             <section>
                 <form>           
                         <div class="form-group descripmessagebox">
-                            <textarea class="form-control " id="descriptionMessagebox"> </textarea>
+                            <textarea class="form-control " id="descriptionBox" name="descriptionBox"> </textarea>
                         </div>
                     
                 </form>
